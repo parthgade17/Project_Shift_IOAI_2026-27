@@ -1,0 +1,9 @@
+# PROJECT SHIFT: Semantic Adaptation Across Communities and Historical Time
+# IOAI 2027 Task Development Benchmark
+#
+# Core system is designed with Python 3.10+ standard library
+# (dataclasses, typing, json, re, random, collections, math, argparse, unittest)
+# for zero external dependency overhead in sandboxed competition environments.
+
+# Optional development & testing packages:
+pytest>=7.4.0

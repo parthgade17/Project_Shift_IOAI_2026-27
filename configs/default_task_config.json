@@ -1,0 +1,34 @@
+{
+  "task_name": "PROJECT_SHIFT",
+  "version": "0.2.0",
+  "target_olympiad": "IOAI 2027",
+  "dataset_settings": {
+    "pilot_size": 100,
+    "default_k_support": 8,
+    "k_support_experiments": [0, 4, 8, 16, 32],
+    "splits": {
+      "train": 100,
+      "val": 30,
+      "public_dev": 30,
+      "hidden_test": 100
+    }
+  },
+  "ontology": {
+    "agent_count": 10,
+    "action_count": 8,
+    "object_count": 8,
+    "tenses": ["past", "present", "future"],
+    "polarities": ["affirmative", "negative"]
+  },
+  "linguistic_settings": {
+    "word_orders": ["SOV", "SVO", "VSO"],
+    "communities": ["comm_north", "comm_coast", "comm_east", "comm_citadel"],
+    "historical_periods": ["period_archaic", "period_classical", "period_contemporary"]
+  },
+  "evaluation_metrics": [
+    "exact_match_frame_accuracy",
+    "slot_macro_f1",
+    "reference_resolution_accuracy",
+    "latency_per_query_ms"
+  ]
+}
