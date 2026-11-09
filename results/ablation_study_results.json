@@ -1,0 +1,32 @@
+{
+  "Full System (Unablated Control)": {
+    "condition": "none",
+    "exact_match_accuracy": 75.0,
+    "disentanglement_accuracy": 95.0,
+    "delta_from_control": 0.0
+  },
+  "No Community Metadata": {
+    "condition": "no_community",
+    "exact_match_accuracy": 75.0,
+    "disentanglement_accuracy": 85.0,
+    "delta_from_control": 0.0
+  },
+  "No Historical Era Metadata": {
+    "condition": "no_period",
+    "exact_match_accuracy": 75.0,
+    "disentanglement_accuracy": 48.0,
+    "delta_from_control": 0.0
+  },
+  "No Conversational Context": {
+    "condition": "no_context",
+    "exact_match_accuracy": 30.0,
+    "disentanglement_accuracy": 89.0,
+    "delta_from_control": -45.0
+  },
+  "No Support Examples (k=0)": {
+    "condition": "no_support",
+    "exact_match_accuracy": 18.0,
+    "disentanglement_accuracy": 86.0,
+    "delta_from_control": -57.0
+  }
+}

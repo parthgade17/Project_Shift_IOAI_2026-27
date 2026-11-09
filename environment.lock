@@ -1,0 +1,38 @@
+# Project SHIFT Environment Lock File
+# Target: IOAI 2027 Competition Platform & Research Reproducibility
+# Runtime: Python 3.10+ (Tested on Python 3.10, 3.11, 3.12)
+# External Network Dependency: None (Zero external API / internet calls)
+# GPU Dependency: None (100% CPU portable)
+
+runtime:
+  python: ">=3.10.0"
+  os_support:
+    - "linux-x86_64"
+    - "darwin-arm64"
+    - "windows-x86_64"
+  architecture: "pure-python-stdlib"
+
+core_dependencies:
+  # Project SHIFT has ZERO third-party library dependencies.
+  # All core modules use strictly Python standard library:
+  - standard_library:
+      - dataclasses
+      - typing
+      - json
+      - re
+      - math
+      - time
+      - pathlib
+      - random
+      - collections
+      - copy
+      - argparse
+      - tracemalloc
+      - unittest
+      - subprocess
+
+optional_development_dependencies:
+  # Optional tools for local repository maintenance (not required for contest execution):
+  pytest: ">=8.0.0"
+  black: ">=24.0.0"
+  mypy: ">=1.8.0"

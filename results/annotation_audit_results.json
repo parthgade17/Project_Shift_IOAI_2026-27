@@ -1,0 +1,24 @@
+{
+  "total_datasets_checked": 4,
+  "total_episodes_audited": 260,
+  "discrepancies": 0,
+  "results_by_split": {
+    "hidden_test_full_reference.jsonl": {
+      "episodes": 100,
+      "discrepancies": 0
+    },
+    "train.jsonl": {
+      "episodes": 100,
+      "discrepancies": 0
+    },
+    "val.jsonl": {
+      "episodes": 30,
+      "discrepancies": 0
+    },
+    "public_dev.jsonl": {
+      "episodes": 30,
+      "discrepancies": 0
+    }
+  },
+  "is_100_percent_consistent": true
+}

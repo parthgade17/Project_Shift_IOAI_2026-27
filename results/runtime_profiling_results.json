@@ -1,0 +1,16 @@
+{
+  "dataset_size": 100,
+  "loading_time_ms": 68.18,
+  "total_inference_time_ms": 13.64,
+  "latency_ms_per_episode": 0.136,
+  "throughput_episodes_per_sec": 7329.8,
+  "memory_peak_mb": 1.21,
+  "ioai_limits": {
+    "max_memory_mb": 2048.0,
+    "max_latency_ms": 100.0,
+    "memory_compliant": true,
+    "latency_compliant": true,
+    "network_independent": true,
+    "gpu_independent": true
+  }
+}

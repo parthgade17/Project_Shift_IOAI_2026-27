@@ -1,0 +1,362 @@
+{
+  "Majority Baseline": {
+    "total_episodes": 100,
+    "exact_match_accuracy": 1.0,
+    "composite_competition_score": 23.83,
+    "disentanglement_accuracy": 0.0,
+    "reference_resolution_accuracy": 26.0,
+    "slot_accuracies": {
+      "agent": 20.0,
+      "action": 39.0,
+      "object": 30.0,
+      "tense": 60.0,
+      "polarity": 95.0
+    },
+    "slot_macro_f1": {
+      "agent": {
+        "macro_precision": 19.65,
+        "macro_recall": 20.08,
+        "macro_f1": 19.53
+      },
+      "action": {
+        "macro_precision": 40.03,
+        "macro_recall": 39.93,
+        "macro_f1": 37.38
+      },
+      "object": {
+        "macro_precision": 29.58,
+        "macro_recall": 30.48,
+        "macro_f1": 29.17
+      },
+      "tense": {
+        "macro_precision": 59.8,
+        "macro_recall": 59.93,
+        "macro_f1": 59.67
+      },
+      "polarity": {
+        "macro_precision": 97.45,
+        "macro_recall": 64.29,
+        "macro_f1": 70.91
+      }
+    },
+    "counterfactual_consistency": {
+      "total_pairs": 0,
+      "consistent_pairs": 0,
+      "consistency_score": 100.0
+    },
+    "progressive_levels": {
+      "Level_1": {
+        "total": 11,
+        "accuracy": 9.09
+      },
+      "Level_2": {
+        "total": 14,
+        "accuracy": 0.0
+      },
+      "Level_3": {
+        "total": 1,
+        "accuracy": 0.0
+      },
+      "Level_4": {
+        "total": 74,
+        "accuracy": 0.0
+      }
+    },
+    "phenomenon_breakdown": {
+      "direct": {
+        "total": 26,
+        "accuracy": 3.85
+      },
+      "coreference": {
+        "total": 26,
+        "accuracy": 0.0
+      },
+      "ellipsis": {
+        "total": 24,
+        "accuracy": 0.0
+      },
+      "correction": {
+        "total": 24,
+        "accuracy": 0.0
+      }
+    },
+    "schema_validation": {
+      "total_submitted": 100,
+      "valid_submissions": 100,
+      "invalid_submissions": 0,
+      "is_perfectly_formed": true,
+      "errors": {}
+    },
+    "latency_ms_per_episode": 0.046
+  },
+  "Surface Lookup Baseline": {
+    "total_episodes": 100,
+    "exact_match_accuracy": 0.0,
+    "composite_competition_score": 20.45,
+    "disentanglement_accuracy": 0.0,
+    "reference_resolution_accuracy": 28.0,
+    "slot_accuracies": {
+      "agent": 35.0,
+      "action": 17.0,
+      "object": 12.0,
+      "tense": 42.0,
+      "polarity": 93.0
+    },
+    "slot_macro_f1": {
+      "agent": {
+        "macro_precision": 35.71,
+        "macro_recall": 34.82,
+        "macro_f1": 34.77
+      },
+      "action": {
+        "macro_precision": 17.73,
+        "macro_recall": 16.76,
+        "macro_f1": 16.07
+      },
+      "object": {
+        "macro_precision": 11.61,
+        "macro_recall": 13.08,
+        "macro_f1": 12.04
+      },
+      "tense": {
+        "macro_precision": 42.75,
+        "macro_recall": 42.33,
+        "macro_f1": 41.87
+      },
+      "polarity": {
+        "macro_precision": 46.5,
+        "macro_recall": 50.0,
+        "macro_f1": 48.19
+      }
+    },
+    "counterfactual_consistency": {
+      "total_pairs": 0,
+      "consistent_pairs": 0,
+      "consistency_score": 100.0
+    },
+    "progressive_levels": {
+      "Level_1": {
+        "total": 11,
+        "accuracy": 0.0
+      },
+      "Level_2": {
+        "total": 14,
+        "accuracy": 0.0
+      },
+      "Level_3": {
+        "total": 1,
+        "accuracy": 0.0
+      },
+      "Level_4": {
+        "total": 74,
+        "accuracy": 0.0
+      }
+    },
+    "phenomenon_breakdown": {
+      "direct": {
+        "total": 26,
+        "accuracy": 0.0
+      },
+      "coreference": {
+        "total": 26,
+        "accuracy": 0.0
+      },
+      "ellipsis": {
+        "total": 24,
+        "accuracy": 0.0
+      },
+      "correction": {
+        "total": 24,
+        "accuracy": 0.0
+      }
+    },
+    "schema_validation": {
+      "total_submitted": 100,
+      "valid_submissions": 100,
+      "invalid_submissions": 0,
+      "is_perfectly_formed": true,
+      "errors": {}
+    },
+    "latency_ms_per_episode": 0.021
+  },
+  "Statistical Naive Bayes": {
+    "total_episodes": 100,
+    "exact_match_accuracy": 75.0,
+    "composite_competition_score": 71.8,
+    "disentanglement_accuracy": 0.0,
+    "reference_resolution_accuracy": 84.0,
+    "slot_accuracies": {
+      "agent": 88.0,
+      "action": 94.0,
+      "object": 88.0,
+      "tense": 100.0,
+      "polarity": 100.0
+    },
+    "slot_macro_f1": {
+      "agent": {
+        "macro_precision": 88.64,
+        "macro_recall": 88.58,
+        "macro_f1": 88.26
+      },
+      "action": {
+        "macro_precision": 94.88,
+        "macro_recall": 94.64,
+        "macro_f1": 93.88
+      },
+      "object": {
+        "macro_precision": 86.4,
+        "macro_recall": 86.7,
+        "macro_f1": 85.94
+      },
+      "tense": {
+        "macro_precision": 100.0,
+        "macro_recall": 100.0,
+        "macro_f1": 100.0
+      },
+      "polarity": {
+        "macro_precision": 100.0,
+        "macro_recall": 100.0,
+        "macro_f1": 100.0
+      }
+    },
+    "counterfactual_consistency": {
+      "total_pairs": 0,
+      "consistent_pairs": 0,
+      "consistency_score": 100.0
+    },
+    "progressive_levels": {
+      "Level_1": {
+        "total": 11,
+        "accuracy": 100.0
+      },
+      "Level_2": {
+        "total": 14,
+        "accuracy": 100.0
+      },
+      "Level_3": {
+        "total": 1,
+        "accuracy": 100.0
+      },
+      "Level_4": {
+        "total": 74,
+        "accuracy": 66.22
+      }
+    },
+    "phenomenon_breakdown": {
+      "direct": {
+        "total": 26,
+        "accuracy": 100.0
+      },
+      "coreference": {
+        "total": 26,
+        "accuracy": 80.77
+      },
+      "ellipsis": {
+        "total": 24,
+        "accuracy": 37.5
+      },
+      "correction": {
+        "total": 24,
+        "accuracy": 79.17
+      }
+    },
+    "schema_validation": {
+      "total_submitted": 100,
+      "valid_submissions": 100,
+      "invalid_submissions": 0,
+      "is_perfectly_formed": true,
+      "errors": {}
+    },
+    "latency_ms_per_episode": 0.052
+  },
+  "Inductive Rule Learner": {
+    "total_episodes": 100,
+    "exact_match_accuracy": 75.0,
+    "composite_competition_score": 86.05,
+    "disentanglement_accuracy": 95.0,
+    "reference_resolution_accuracy": 84.0,
+    "slot_accuracies": {
+      "agent": 88.0,
+      "action": 94.0,
+      "object": 88.0,
+      "tense": 100.0,
+      "polarity": 100.0
+    },
+    "slot_macro_f1": {
+      "agent": {
+        "macro_precision": 88.64,
+        "macro_recall": 88.58,
+        "macro_f1": 88.26
+      },
+      "action": {
+        "macro_precision": 94.88,
+        "macro_recall": 94.64,
+        "macro_f1": 93.88
+      },
+      "object": {
+        "macro_precision": 86.4,
+        "macro_recall": 86.7,
+        "macro_f1": 85.94
+      },
+      "tense": {
+        "macro_precision": 100.0,
+        "macro_recall": 100.0,
+        "macro_f1": 100.0
+      },
+      "polarity": {
+        "macro_precision": 100.0,
+        "macro_recall": 100.0,
+        "macro_f1": 100.0
+      }
+    },
+    "counterfactual_consistency": {
+      "total_pairs": 0,
+      "consistent_pairs": 0,
+      "consistency_score": 100.0
+    },
+    "progressive_levels": {
+      "Level_1": {
+        "total": 11,
+        "accuracy": 100.0
+      },
+      "Level_2": {
+        "total": 14,
+        "accuracy": 100.0
+      },
+      "Level_3": {
+        "total": 1,
+        "accuracy": 100.0
+      },
+      "Level_4": {
+        "total": 74,
+        "accuracy": 66.22
+      }
+    },
+    "phenomenon_breakdown": {
+      "direct": {
+        "total": 26,
+        "accuracy": 100.0
+      },
+      "coreference": {
+        "total": 26,
+        "accuracy": 80.77
+      },
+      "ellipsis": {
+        "total": 24,
+        "accuracy": 37.5
+      },
+      "correction": {
+        "total": 24,
+        "accuracy": 79.17
+      }
+    },
+    "schema_validation": {
+      "total_submitted": 100,
+      "valid_submissions": 100,
+      "invalid_submissions": 0,
+      "is_perfectly_formed": true,
+      "errors": {}
+    },
+    "latency_ms_per_episode": 0.024
+  }
+}

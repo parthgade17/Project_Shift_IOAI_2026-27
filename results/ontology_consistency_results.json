@@ -1,0 +1,13 @@
+{
+  "status": "PASSED",
+  "is_perfect": true,
+  "ontology_sizes": {
+    "agents": 10,
+    "actions": 8,
+    "objects": 8,
+    "tenses": 3,
+    "polarities": 2,
+    "drift_sources": 4
+  },
+  "issues": []
+}

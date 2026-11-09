@@ -1,0 +1,192 @@
+{
+  "train.jsonl": {
+    "total_episodes": 100,
+    "difficulty_levels": {
+      "Level_1": 17,
+      "Level_4": 75,
+      "Level_2": 8
+    },
+    "phenomena": {
+      "direct": 25,
+      "coreference": 25,
+      "ellipsis": 25,
+      "correction": 25
+    },
+    "agents": {
+      "scholar_kappa": 15,
+      "scout_beta": 14,
+      "artisan_gamma": 13,
+      "guardian_sigma": 14,
+      "scout_alpha": 9,
+      "scholar_omega": 10,
+      "guardian_theta": 16,
+      "artisan_delta": 9
+    },
+    "actions": {
+      "abandon": 14,
+      "forge": 12,
+      "harvest": 22,
+      "repair": 10,
+      "inspect": 10,
+      "activate": 13,
+      "relocate": 9,
+      "secure": 10
+    },
+    "objects": {
+      "data_capsule": 20,
+      "signal_beacon": 12,
+      "energy_matrix": 12,
+      "shelter_dome": 9,
+      "ancient_relic": 13,
+      "crystal_core": 11,
+      "stone_monolith": 11,
+      "water_purifier": 12
+    },
+    "tenses": {
+      "present": 38,
+      "future": 30,
+      "past": 32
+    },
+    "polarities": {
+      "affirmative": 91,
+      "negative": 9
+    },
+    "communities": {
+      "comm_citadel": 34,
+      "comm_north": 33,
+      "comm_coast": 33
+    },
+    "periods": {
+      "period_classical": 51,
+      "period_archaic": 49
+    }
+  },
+  "public_dev.jsonl": {
+    "total_episodes": 30,
+    "difficulty_levels": {
+      "Level_1": 5,
+      "Level_4": 22,
+      "Level_2": 2,
+      "Level_3": 1
+    },
+    "phenomena": {
+      "direct": 8,
+      "coreference": 8,
+      "ellipsis": 7,
+      "correction": 7
+    },
+    "agents": {
+      "scholar_kappa": 7,
+      "artisan_delta": 4,
+      "guardian_sigma": 4,
+      "guardian_theta": 4,
+      "scout_beta": 3,
+      "scout_alpha": 2,
+      "artisan_gamma": 5,
+      "scholar_omega": 1
+    },
+    "actions": {
+      "forge": 5,
+      "relocate": 5,
+      "inspect": 2,
+      "activate": 2,
+      "abandon": 4,
+      "repair": 6,
+      "secure": 4,
+      "harvest": 2
+    },
+    "objects": {
+      "energy_matrix": 3,
+      "shelter_dome": 8,
+      "signal_beacon": 3,
+      "ancient_relic": 7,
+      "stone_monolith": 4,
+      "data_capsule": 2,
+      "crystal_core": 2,
+      "water_purifier": 1
+    },
+    "tenses": {
+      "future": 10,
+      "past": 10,
+      "present": 10
+    },
+    "polarities": {
+      "affirmative": 28,
+      "negative": 2
+    },
+    "communities": {
+      "comm_citadel": 10,
+      "comm_north": 10,
+      "comm_coast": 10
+    },
+    "periods": {
+      "period_classical": 15,
+      "period_archaic": 15
+    }
+  },
+  "hidden_test_full_reference.jsonl": {
+    "total_episodes": 100,
+    "difficulty_levels": {
+      "Level_1": 11,
+      "Level_4": 74,
+      "Level_3": 1,
+      "Level_2": 14
+    },
+    "phenomena": {
+      "direct": 26,
+      "coreference": 26,
+      "ellipsis": 24,
+      "correction": 24
+    },
+    "agents": {
+      "scout_beta": 16,
+      "guardian_theta": 13,
+      "scholar_omega": 10,
+      "artisan_gamma": 14,
+      "guardian_sigma": 12,
+      "scholar_kappa": 12,
+      "artisan_delta": 13,
+      "scout_alpha": 10
+    },
+    "actions": {
+      "harvest": 13,
+      "abandon": 14,
+      "activate": 13,
+      "forge": 19,
+      "secure": 10,
+      "inspect": 8,
+      "relocate": 6,
+      "repair": 17
+    },
+    "objects": {
+      "energy_matrix": 20,
+      "shelter_dome": 7,
+      "crystal_core": 19,
+      "data_capsule": 8,
+      "ancient_relic": 13,
+      "stone_monolith": 16,
+      "water_purifier": 7,
+      "signal_beacon": 10
+    },
+    "tenses": {
+      "present": 27,
+      "past": 38,
+      "future": 35
+    },
+    "polarities": {
+      "affirmative": 93,
+      "negative": 7
+    },
+    "communities": {
+      "comm_citadel": 40,
+      "comm_north": 20,
+      "comm_coast": 20,
+      "comm_east": 20
+    },
+    "periods": {
+      "period_classical": 50,
+      "period_archaic": 30,
+      "period_contemporary": 20
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "seeds": [
+    42,
+    101,
+    555,
+    999,
+    2027
+  ],
+  "models": {
+    "Inductive Rule Learner": {
+      "exact_match": {
+        "mean": 90.0,
+        "std": 6.37,
+        "ci_95": 5.59,
+        "lower_bound": 84.41,
+        "upper_bound": 95.59,
+        "runs": [
+          97.5,
+          92.5,
+          90.0,
+          80.0,
+          90.0
+        ]
+      },
+      "composite_score": {
+        "mean": 95.2,
+        "std": 2.66,
+        "ci_95": 2.34,
+        "lower_bound": 92.86,
+        "upper_bound": 97.53,
+        "runs": [
+          98.37,
+          96.08,
+          95.55,
+          91.03,
+          94.95
+        ]
+      },
+      "disentanglement": {
+        "mean": 98.5,
+        "std": 1.37,
+        "ci_95": 1.2,
+        "lower_bound": 97.3,
+        "upper_bound": 99.7,
+        "runs": [
+          97.5,
+          97.5,
+          100.0,
+          100.0,
+          97.5
+        ]
+      }
+    },
+    "Statistical Naive Bayes": {
+      "exact_match": {
+        "mean": 90.0,
+        "std": 6.37,
+        "ci_95": 5.59,
+        "lower_bound": 84.41,
+        "upper_bound": 95.59,
+        "runs": [
+          97.5,
+          92.5,
+          90.0,
+          80.0,
+          90.0
+        ]
+      },
+      "composite_score": {
+        "mean": 80.42,
+        "std": 2.8,
+        "ci_95": 2.46,
+        "lower_bound": 77.96,
+        "upper_bound": 82.88,
+        "runs": [
+          83.74,
+          81.46,
+          80.55,
+          76.03,
+          80.32
+        ]
+      },
+      "disentanglement": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_95": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0,
+        "runs": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Surface Lookup Baseline": {
+      "exact_match": {
+        "mean": 0.5,
+        "std": 1.12,
+        "ci_95": 0.98,
+        "lower_bound": -0.48,
+        "upper_bound": 1.48,
+        "runs": [
+          2.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "composite_score": {
+        "mean": 21.59,
+        "std": 0.86,
+        "ci_95": 0.76,
+        "lower_bound": 20.83,
+        "upper_bound": 22.35,
+        "runs": [
+          22.22,
+          20.96,
+          20.39,
+          22.29,
+          22.1
+        ]
+      },
+      "disentanglement": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_95": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0,
+        "runs": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Majority Baseline": {
+      "exact_match": {
+        "mean": 1.0,
+        "std": 1.37,
+        "ci_95": 1.2,
+        "lower_bound": -0.2,
+        "upper_bound": 2.2,
+        "runs": [
+          2.5,
+          2.5,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "composite_score": {
+        "mean": 22.36,
+        "std": 1.16,
+        "ci_95": 1.02,
+        "lower_bound": 21.34,
+        "upper_bound": 23.38,
+        "runs": [
+          22.31,
+          23.47,
+          21.7,
+          23.51,
+          20.81
+        ]
+      },
+      "disentanglement": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_95": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0,
+        "runs": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "hypothesis_testing": {
+    "exact_match_t_test": {
+      "t_statistic": 0.0,
+      "p_value": 0.0
+    },
+    "disentanglement_t_test": {
+      "t_statistic": 160.8498,
+      "p_value": 0.0,
+      "statistically_significant": true
+    }
+  }
+}

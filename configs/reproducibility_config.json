@@ -1,0 +1,34 @@
+{
+  "benchmark_version": "v0.3.0",
+  "project_name": "Project SHIFT",
+  "competition": "IOAI 2027",
+  "reproducibility_seeds": {
+    "dataset_generation_seed": 2027,
+    "pilot_dataset_seed": 42,
+    "statistical_analysis_seeds": [42, 101, 555, 999, 2027],
+    "few_shot_support_seeds": [42, 101, 2027]
+  },
+  "dataset_split_configuration": {
+    "train_episodes": 100,
+    "validation_episodes": 30,
+    "public_development_episodes": 30,
+    "hidden_competition_test_episodes": 100,
+    "counterfactual_paired_episodes": 20,
+    "support_set_size_k": 8
+  },
+  "few_shot_evaluation_sizes": [0, 4, 8, 16, 32],
+  "scoring_weights": {
+    "exact_match_weight": 0.40,
+    "macro_slot_f1_weight": 0.25,
+    "disentanglement_weight": 0.15,
+    "reference_resolution_weight": 0.10,
+    "counterfactual_consistency_weight": 0.10
+  },
+  "computational_constraints": {
+    "max_memory_mb": 2048.0,
+    "max_inference_latency_ms_per_episode": 100.0,
+    "hardware_target": "Consumer CPU (x86_64 or ARM64)",
+    "internet_required": false,
+    "gpu_required": false
+  }
+}
