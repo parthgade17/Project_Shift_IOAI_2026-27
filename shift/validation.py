@@ -71,32 +71,16 @@ def validate_episode_schema(ep: Episode) -> Tuple[bool, List[str]]:
 
 def audit_episode_learnability(ep: Episode) -> Tuple[bool, List[str]]:
     """
-    Quality Gate B: Learnability audit.
-    Verifies that the target query's constituents (agent, action, object, tense, polarity)
-    are evidenced in the support examples so the query is solvable without arbitrary guessing.
+    Quality Gate B: Learnability audit using six-check validation.
+    Verifies lexical, grammar, semantic drift, context sufficiency, unique interpretation,
+    and compositional learnability so the query is solvable without arbitrary guessing.
     """
     if not ep.query_label:
         return True, [] # Can only audit when ground truth is known
 
-    target = ep.query_label
-    supp_agents: Set[str] = {s.event_frame.agent for s in ep.support_set}
-    supp_actions: Set[str] = {s.event_frame.action for s in ep.support_set}
-    supp_objects: Set[str] = {s.event_frame.object for s in ep.support_set}
-    supp_tenses: Set[str] = {s.event_frame.tense for s in ep.support_set}
-    supp_polarities: Set[str] = {s.event_frame.polarity for s in ep.support_set}
-
-    missing = []
-    # If agent or object is resolved via context dialogue (e.g. pronoun), they are in dialogue context
-    if target.agent not in supp_agents and ep.query.phenomenon not in ("coreference", "correction"):
-        missing.append(f"Agent '{target.agent}' absent from support set")
-    if target.action not in supp_actions and ep.query.phenomenon not in ("ellipsis", "correction"):
-        missing.append(f"Action '{target.action}' absent from support set")
-    if target.object not in supp_objects and ep.query.phenomenon not in ("coreference", "correction"):
-        missing.append(f"Object '{target.object}' absent from support set")
-    if target.tense not in supp_tenses:
-        missing.append(f"Tense '{target.tense}' absent from support set")
-
-    return len(missing) == 0, missing
+    from shift.learnability_validator import LearnabilityValidator
+    audit = LearnabilityValidator.audit_episode(ep)
+    return audit.is_solvable, audit.failure_reasons
 
 
 def audit_context_determinacy(ep: Episode) -> Tuple[bool, List[str]]:

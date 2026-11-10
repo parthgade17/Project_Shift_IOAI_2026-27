@@ -1,36 +1,36 @@
 {
   "total_episodes": 100,
-  "exact_match_accuracy": 75.0,
-  "composite_competition_score": 84.54,
-  "disentanglement_accuracy": 88.0,
-  "reference_resolution_accuracy": 81.0,
+  "exact_match_accuracy": 86.0,
+  "composite_competition_score": 89.31,
+  "disentanglement_accuracy": 82.0,
+  "reference_resolution_accuracy": 86.0,
   "slot_accuracies": {
-    "agent": 88.0,
-    "action": 94.0,
-    "object": 88.0,
-    "tense": 97.0,
+    "agent": 96.0,
+    "action": 100.0,
+    "object": 87.0,
+    "tense": 100.0,
     "polarity": 100.0
   },
   "slot_macro_f1": {
     "agent": {
-      "macro_precision": 88.64,
-      "macro_recall": 88.58,
-      "macro_f1": 88.26
+      "macro_precision": 96.09,
+      "macro_recall": 95.74,
+      "macro_f1": 95.78
     },
     "action": {
-      "macro_precision": 94.88,
-      "macro_recall": 94.64,
-      "macro_f1": 93.88
+      "macro_precision": 100.0,
+      "macro_recall": 100.0,
+      "macro_f1": 100.0
     },
     "object": {
-      "macro_precision": 86.4,
-      "macro_recall": 86.7,
-      "macro_f1": 85.94
+      "macro_precision": 85.43,
+      "macro_recall": 84.46,
+      "macro_f1": 84.38
     },
     "tense": {
-      "macro_precision": 96.67,
-      "macro_recall": 97.22,
-      "macro_f1": 96.82
+      "macro_precision": 100.0,
+      "macro_recall": 100.0,
+      "macro_f1": 100.0
     },
     "polarity": {
       "macro_precision": 100.0,
@@ -45,20 +45,16 @@
   },
   "progressive_levels": {
     "Level_1": {
-      "total": 11,
+      "total": 12,
       "accuracy": 100.0
     },
     "Level_2": {
       "total": 14,
       "accuracy": 100.0
     },
-    "Level_3": {
-      "total": 1,
-      "accuracy": 100.0
-    },
     "Level_4": {
       "total": 74,
-      "accuracy": 66.22
+      "accuracy": 81.08
     }
   },
   "phenomenon_breakdown": {
@@ -72,7 +68,7 @@
     },
     "ellipsis": {
       "total": 24,
-      "accuracy": 37.5
+      "accuracy": 83.33
     },
     "correction": {
       "total": 24,

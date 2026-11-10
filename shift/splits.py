@@ -222,6 +222,31 @@ class SplitManager:
             )
             splits.test_counterfactual.extend([ep_a, ep_b])
 
+        # Guarantee 100% Learnability Certification across all partitioned splits
+        from shift.learnability_validator import LearnabilityValidator
+        splits.train, _ = LearnabilityValidator.audit_and_repair_dataset(splits.train, generator=gen)
+        splits.val, _ = LearnabilityValidator.audit_and_repair_dataset(splits.val, generator=gen)
+        train_queries_active = {ep.query.utterance for ep in splits.train}
+        splits.public_dev, _ = LearnabilityValidator.audit_and_repair_dataset(
+            splits.public_dev, generator=gen, forbidden_queries=train_queries_active
+        )
+        forbidden_for_test = train_queries_active.union({ep.query.utterance for ep in splits.public_dev})
+        splits.test_iid, _ = LearnabilityValidator.audit_and_repair_dataset(
+            splits.test_iid, generator=gen, forbidden_queries=forbidden_for_test
+        )
+        splits.test_compositional_ood, _ = LearnabilityValidator.audit_and_repair_dataset(
+            splits.test_compositional_ood, generator=gen, forbidden_queries=forbidden_for_test
+        )
+        splits.test_heldout_community, _ = LearnabilityValidator.audit_and_repair_dataset(
+            splits.test_heldout_community, generator=gen, forbidden_queries=forbidden_for_test
+        )
+        splits.test_heldout_period, _ = LearnabilityValidator.audit_and_repair_dataset(
+            splits.test_heldout_period, generator=gen, forbidden_queries=forbidden_for_test
+        )
+        splits.test_counterfactual, _ = LearnabilityValidator.audit_and_repair_dataset(
+            splits.test_counterfactual, generator=gen, forbidden_queries=forbidden_for_test
+        )
+
         # Aggregate hidden test set
         splits.hidden_test = (
             splits.test_iid +

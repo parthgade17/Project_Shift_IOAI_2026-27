@@ -82,6 +82,20 @@ def main():
     print(f"  [OK] Hidden Test Schema Pass Rate: {test_report.valid_schema_count}/{test_report.total_episodes} (100%)")
     print(f"  [OK] Hidden Test Learnability    : {test_report.learnable_count}/{test_report.total_episodes} ({test_report.learnable_count/test_report.total_episodes*100:.1f}%)")
 
+    # Generate and export comprehensive 6-check learnability report
+    _, full_learn_report = LearnabilityValidator.audit_and_repair_dataset(splits.hidden_test)
+    results_dir = Path("results")
+    results_dir.mkdir(parents=True, exist_ok=True)
+    report_md_path = results_dir / "learnability_validation_report.md"
+    report_json_path = results_dir / "learnability_validation_report.json"
+
+    with open(report_md_path, "w", encoding="utf-8") as f:
+        f.write(full_learn_report.format_markdown())
+    import json
+    with open(report_json_path, "w", encoding="utf-8") as f:
+        json.dump(full_learn_report.to_dict(), f, indent=2)
+    print(f"  [OK] Exported 6-Check Learnability Report: {report_md_path}")
+
     # 5. Adversarial Shortcut Audits on Hidden Test Set & Counterfactual Split
     print("\n[Step 4/4] Executing adversarial shortcut audits...")
     eval_suite_episodes = splits.hidden_test + splits.test_counterfactual

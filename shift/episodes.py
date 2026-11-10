@@ -141,6 +141,23 @@ class EpisodeGenerator:
         self.base_seed = base_seed
         self.rng = random.Random(base_seed)
 
+    def get_grammar_for_episode(
+        self,
+        episode_id: str,
+        community_id: str = CommunityId.CITADEL.value,
+        period_id: str = HistoricalPeriod.CLASSICAL.value
+    ) -> GrammarEngine:
+        """Derives the exact grammar engine for an episode based on base_seed."""
+        ep_seed = abs(hash(f"{self.base_seed}_{episode_id}_{community_id}_{period_id}")) % (2**31)
+        base_lex = Lexicon(seed=ep_seed)
+        drift = DriftEngine(community_id=community_id, period_id=period_id)
+        drifted_lex = drift.transform_lexicon(base_lex)
+        return GrammarEngine(
+            lexicon=drifted_lex,
+            community_profile=drift.community_profile,
+            historical_profile=drift.historical_profile
+        )
+
     def generate_single_episode(
         self,
         episode_id: str,
@@ -155,19 +172,9 @@ class EpisodeGenerator:
         Builds a single episode with k_support labelled support examples and 1 query.
         Guarantees that query morphemes are present in the support set.
         """
-        # Seed derivation for reproducible episode setup
         ep_seed = abs(hash(f"{self.base_seed}_{episode_id}_{community_id}_{period_id}")) % (2**31)
-        base_lex = Lexicon(seed=ep_seed)
-
+        grammar = self.get_grammar_for_episode(episode_id, community_id, period_id)
         drift = DriftEngine(community_id=community_id, period_id=period_id)
-        drifted_lex = drift.transform_lexicon(base_lex)
-
-        grammar = GrammarEngine(
-            lexicon=drifted_lex,
-            community_profile=drift.community_profile,
-            historical_profile=drift.historical_profile
-        )
-
         dialogue_gen = DialogueGenerator(grammar=grammar, seed=ep_seed)
 
         # 1. Generate target query and context
@@ -235,10 +242,12 @@ class EpisodeGenerator:
 
         # Also, if query has dialogue phenomenon (e.g. coreference or ellipsis),
         # include at least 1 demonstration of that phenomenon in the support set!
-        if k_support >= 4 and phenomenon in ("coreference", "ellipsis", "correction"):
+        # Place it at the end of the support set to preserve critical lexical coverage at indices 0-3.
+        if k_support >= 5 and phenomenon in ("coreference", "ellipsis", "correction"):
             supp_ctx, supp_q = dialogue_gen.generate_dialogue_episode(phenomenon=phenomenon)
-            support_examples[0] = SupportExample(
-                example_id=1,
+            demo_idx = len(support_examples) - 1
+            support_examples[demo_idx] = SupportExample(
+                example_id=demo_idx + 1,
                 utterance=supp_q.utterance,
                 event_frame=supp_q.event_frame,
                 context=[t.to_dict() for t in supp_ctx]
@@ -262,7 +271,7 @@ class EpisodeGenerator:
         if phenomenon in ("coreference", "ellipsis", "correction"):
             diff_level = 4
 
-        return Episode(
+        ep = Episode(
             episode_id=episode_id,
             community_id=community_id,
             period_id=period_id,
@@ -280,6 +289,16 @@ class EpisodeGenerator:
                 "phenomenon": phenomenon
             }
         )
+
+        # Automatic Learnability Quality Gate & In-Place Repair
+        from shift.learnability_validator import LearnabilityValidator
+        audit = LearnabilityValidator.audit_episode(ep)
+        if not audit.is_solvable:
+            repaired_ep, success, _ = LearnabilityValidator.repair_episode(ep, grammar_engine=grammar)
+            if success:
+                ep = repaired_ep
+
+        return ep
 
     def generate_counterfactual_episode_pair(
         self,
@@ -399,4 +418,7 @@ class EpisodeGenerator:
             )
             episodes.append(ep)
 
-        return episodes
+        # Audit and guarantee 100% learnability across the entire batch
+        from shift.learnability_validator import LearnabilityValidator
+        certified_episodes, _ = LearnabilityValidator.audit_and_repair_dataset(episodes, generator=self)
+        return certified_episodes

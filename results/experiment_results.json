@@ -2,47 +2,47 @@
   "metadata": {
     "benchmark_version": "v0.3.0",
     "hidden_test_size": 100,
-    "generated_timestamp": "2026-11-10 01:15:47"
+    "generated_timestamp": "2026-11-10 12:24:07"
   },
   "baseline_comparison": {
     "Majority Baseline": {
       "total_episodes": 100,
       "exact_match_accuracy": 1.0,
-      "composite_competition_score": 23.83,
+      "composite_competition_score": 24.84,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 26.0,
       "slot_accuracies": {
-        "agent": 20.0,
-        "action": 39.0,
-        "object": 30.0,
-        "tense": 60.0,
-        "polarity": 95.0
+        "agent": 59.0,
+        "action": 35.0,
+        "object": 25.0,
+        "tense": 79.0,
+        "polarity": 91.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 19.65,
-          "macro_recall": 20.08,
-          "macro_f1": 19.53
+          "macro_precision": 61.03,
+          "macro_recall": 58.5,
+          "macro_f1": 58.38
         },
         "action": {
-          "macro_precision": 40.03,
-          "macro_recall": 39.93,
-          "macro_f1": 37.38
+          "macro_precision": 34.84,
+          "macro_recall": 32.23,
+          "macro_f1": 32.34
         },
         "object": {
-          "macro_precision": 29.58,
-          "macro_recall": 30.48,
-          "macro_f1": 29.17
+          "macro_precision": 22.43,
+          "macro_recall": 22.64,
+          "macro_f1": 21.24
         },
         "tense": {
-          "macro_precision": 59.8,
-          "macro_recall": 59.93,
-          "macro_f1": 59.67
+          "macro_precision": 76.8,
+          "macro_recall": 77.86,
+          "macro_f1": 77.13
         },
         "polarity": {
-          "macro_precision": 97.45,
-          "macro_recall": 64.29,
-          "macro_f1": 70.91
+          "macro_precision": 45.5,
+          "macro_recall": 50.0,
+          "macro_f1": 47.64
         }
       },
       "counterfactual_consistency": {
@@ -52,15 +52,11 @@
       },
       "progressive_levels": {
         "Level_1": {
-          "total": 11,
-          "accuracy": 9.09
+          "total": 12,
+          "accuracy": 8.33
         },
         "Level_2": {
           "total": 14,
-          "accuracy": 0.0
-        },
-        "Level_3": {
-          "total": 1,
           "accuracy": 0.0
         },
         "Level_4": {
@@ -93,46 +89,46 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.036
+      "avg_latency_ms": 0.049
     },
     "Surface Lookup Baseline": {
       "total_episodes": 100,
-      "exact_match_accuracy": 0.0,
-      "composite_competition_score": 20.45,
+      "exact_match_accuracy": 1.0,
+      "composite_competition_score": 24.45,
       "disentanglement_accuracy": 0.0,
-      "reference_resolution_accuracy": 28.0,
+      "reference_resolution_accuracy": 27.0,
       "slot_accuracies": {
-        "agent": 35.0,
-        "action": 17.0,
-        "object": 12.0,
-        "tense": 42.0,
-        "polarity": 93.0
+        "agent": 65.0,
+        "action": 27.0,
+        "object": 25.0,
+        "tense": 58.0,
+        "polarity": 92.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 35.71,
-          "macro_recall": 34.82,
-          "macro_f1": 34.77
+          "macro_precision": 65.59,
+          "macro_recall": 65.61,
+          "macro_f1": 64.87
         },
         "action": {
-          "macro_precision": 17.73,
-          "macro_recall": 16.76,
-          "macro_f1": 16.07
+          "macro_precision": 26.61,
+          "macro_recall": 24.0,
+          "macro_f1": 24.75
         },
         "object": {
-          "macro_precision": 11.61,
-          "macro_recall": 13.08,
-          "macro_f1": 12.04
+          "macro_precision": 23.82,
+          "macro_recall": 23.69,
+          "macro_f1": 22.48
         },
         "tense": {
-          "macro_precision": 42.75,
-          "macro_recall": 42.33,
-          "macro_f1": 41.87
+          "macro_precision": 57.61,
+          "macro_recall": 59.79,
+          "macro_f1": 56.93
         },
         "polarity": {
-          "macro_precision": 46.5,
-          "macro_recall": 50.0,
-          "macro_f1": 48.19
+          "macro_precision": 95.96,
+          "macro_recall": 55.56,
+          "macro_f1": 57.89
         }
       },
       "counterfactual_consistency": {
@@ -142,15 +138,11 @@
       },
       "progressive_levels": {
         "Level_1": {
-          "total": 11,
-          "accuracy": 0.0
+          "total": 12,
+          "accuracy": 8.33
         },
         "Level_2": {
           "total": 14,
-          "accuracy": 0.0
-        },
-        "Level_3": {
-          "total": 1,
           "accuracy": 0.0
         },
         "Level_4": {
@@ -161,7 +153,7 @@
       "phenomenon_breakdown": {
         "direct": {
           "total": 26,
-          "accuracy": 0.0
+          "accuracy": 3.85
         },
         "coreference": {
           "total": 26,
@@ -183,36 +175,36 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.022
+      "avg_latency_ms": 0.046
     },
     "Statistical Naive Bayes": {
       "total_episodes": 100,
-      "exact_match_accuracy": 75.0,
-      "composite_competition_score": 71.8,
+      "exact_match_accuracy": 86.0,
+      "composite_competition_score": 77.41,
       "disentanglement_accuracy": 0.0,
-      "reference_resolution_accuracy": 84.0,
+      "reference_resolution_accuracy": 90.0,
       "slot_accuracies": {
-        "agent": 88.0,
-        "action": 94.0,
-        "object": 88.0,
+        "agent": 96.0,
+        "action": 100.0,
+        "object": 87.0,
         "tense": 100.0,
         "polarity": 100.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 88.64,
-          "macro_recall": 88.58,
-          "macro_f1": 88.26
+          "macro_precision": 96.09,
+          "macro_recall": 95.74,
+          "macro_f1": 95.78
         },
         "action": {
-          "macro_precision": 94.88,
-          "macro_recall": 94.64,
-          "macro_f1": 93.88
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 86.4,
-          "macro_recall": 86.7,
-          "macro_f1": 85.94
+          "macro_precision": 85.43,
+          "macro_recall": 84.46,
+          "macro_f1": 84.38
         },
         "tense": {
           "macro_precision": 100.0,
@@ -232,20 +224,16 @@
       },
       "progressive_levels": {
         "Level_1": {
-          "total": 11,
+          "total": 12,
           "accuracy": 100.0
         },
         "Level_2": {
           "total": 14,
           "accuracy": 100.0
         },
-        "Level_3": {
-          "total": 1,
-          "accuracy": 100.0
-        },
         "Level_4": {
           "total": 74,
-          "accuracy": 66.22
+          "accuracy": 81.08
         }
       },
       "phenomenon_breakdown": {
@@ -259,7 +247,7 @@
         },
         "ellipsis": {
           "total": 24,
-          "accuracy": 37.5
+          "accuracy": 83.33
         },
         "correction": {
           "total": 24,
@@ -273,36 +261,36 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.043
+      "avg_latency_ms": 0.135
     },
     "Inductive Rule Learner": {
       "total_episodes": 100,
-      "exact_match_accuracy": 75.0,
-      "composite_competition_score": 86.05,
-      "disentanglement_accuracy": 95.0,
-      "reference_resolution_accuracy": 84.0,
+      "exact_match_accuracy": 86.0,
+      "composite_competition_score": 91.96,
+      "disentanglement_accuracy": 97.0,
+      "reference_resolution_accuracy": 90.0,
       "slot_accuracies": {
-        "agent": 88.0,
-        "action": 94.0,
-        "object": 88.0,
+        "agent": 96.0,
+        "action": 100.0,
+        "object": 87.0,
         "tense": 100.0,
         "polarity": 100.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 88.64,
-          "macro_recall": 88.58,
-          "macro_f1": 88.26
+          "macro_precision": 96.09,
+          "macro_recall": 95.74,
+          "macro_f1": 95.78
         },
         "action": {
-          "macro_precision": 94.88,
-          "macro_recall": 94.64,
-          "macro_f1": 93.88
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 86.4,
-          "macro_recall": 86.7,
-          "macro_f1": 85.94
+          "macro_precision": 85.43,
+          "macro_recall": 84.46,
+          "macro_f1": 84.38
         },
         "tense": {
           "macro_precision": 100.0,
@@ -322,20 +310,16 @@
       },
       "progressive_levels": {
         "Level_1": {
-          "total": 11,
+          "total": 12,
           "accuracy": 100.0
         },
         "Level_2": {
           "total": 14,
           "accuracy": 100.0
         },
-        "Level_3": {
-          "total": 1,
-          "accuracy": 100.0
-        },
         "Level_4": {
           "total": 74,
-          "accuracy": 66.22
+          "accuracy": 81.08
         }
       },
       "phenomenon_breakdown": {
@@ -349,7 +333,7 @@
         },
         "ellipsis": {
           "total": 24,
-          "accuracy": 37.5
+          "accuracy": 83.33
         },
         "correction": {
           "total": 24,
@@ -363,7 +347,7 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.037
+      "avg_latency_ms": 0.086
     }
   },
   "shortcut_audits": {
@@ -375,36 +359,36 @@
       "permutation_drop": 1.0
     },
     "Surface Lookup Baseline": {
-      "clean_accuracy": 0.0,
+      "clean_accuracy": 1.0,
       "support_ablation_accuracy": 0.0,
       "context_ablation_accuracy": 0.0,
       "metadata_only_accuracy": 1.0,
-      "permutation_drop": 0.0
+      "permutation_drop": 1.0
     },
     "Statistical Naive Bayes": {
-      "clean_accuracy": 75.0,
-      "support_ablation_accuracy": 18.0,
-      "context_ablation_accuracy": 2.0,
+      "clean_accuracy": 86.0,
+      "support_ablation_accuracy": 17.0,
+      "context_ablation_accuracy": 6.0,
       "metadata_only_accuracy": 1.0,
-      "permutation_drop": 57.0
+      "permutation_drop": 69.0
     },
     "Inductive Rule Learner": {
-      "clean_accuracy": 75.0,
-      "support_ablation_accuracy": 18.0,
-      "context_ablation_accuracy": 2.0,
+      "clean_accuracy": 86.0,
+      "support_ablation_accuracy": 17.0,
+      "context_ablation_accuracy": 12.0,
       "metadata_only_accuracy": 1.0,
-      "permutation_drop": 57.0
+      "permutation_drop": 69.0
     }
   },
   "sub_split_generalization": {
     "IID Test Set (Seen Communities & Eras)": {
       "total_episodes": 30,
-      "exact_match_accuracy": 90.0,
-      "composite_competition_score": 94.58,
+      "exact_match_accuracy": 93.33,
+      "composite_competition_score": 96.36,
       "disentanglement_accuracy": 96.67,
       "reference_resolution_accuracy": 100.0,
       "slot_accuracies": {
-        "agent": 90.0,
+        "agent": 93.33,
         "action": 100.0,
         "object": 93.33,
         "tense": 100.0,
@@ -412,9 +396,9 @@
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 89.29,
-          "macro_recall": 90.34,
-          "macro_f1": 89.21
+          "macro_precision": 94.79,
+          "macro_recall": 95.83,
+          "macro_f1": 94.58
         },
         "action": {
           "macro_precision": 100.0,
@@ -422,98 +406,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 94.27,
-          "macro_recall": 92.71,
-          "macro_f1": 92.38
-        },
-        "tense": {
-          "macro_precision": 100.0,
-          "macro_recall": 100.0,
-          "macro_f1": 100.0
-        },
-        "polarity": {
-          "macro_precision": 100.0,
-          "macro_recall": 100.0,
-          "macro_f1": 100.0
-        }
-      },
-      "counterfactual_consistency": {
-        "total_pairs": 0,
-        "consistent_pairs": 0,
-        "consistency_score": 100.0
-      },
-      "progressive_levels": {
-        "Level_1": {
-          "total": 4,
-          "accuracy": 100.0
-        },
-        "Level_2": {
-          "total": 3,
-          "accuracy": 100.0
-        },
-        "Level_3": {
-          "total": 1,
-          "accuracy": 100.0
-        },
-        "Level_4": {
-          "total": 22,
-          "accuracy": 86.36
-        }
-      },
-      "phenomenon_breakdown": {
-        "direct": {
-          "total": 8,
-          "accuracy": 100.0
-        },
-        "coreference": {
-          "total": 8,
-          "accuracy": 100.0
-        },
-        "ellipsis": {
-          "total": 7,
-          "accuracy": 57.14
-        },
-        "correction": {
-          "total": 7,
-          "accuracy": 100.0
-        }
-      },
-      "schema_validation": {
-        "total_submitted": 30,
-        "valid_submissions": 30,
-        "invalid_submissions": 0,
-        "is_perfectly_formed": true,
-        "errors": {}
-      }
-    },
-    "Compositional OOD (Unseen Combos)": {
-      "total_episodes": 30,
-      "exact_match_accuracy": 76.67,
-      "composite_competition_score": 86.34,
-      "disentanglement_accuracy": 96.67,
-      "reference_resolution_accuracy": 80.0,
-      "slot_accuracies": {
-        "agent": 86.67,
-        "action": 80.0,
-        "object": 100.0,
-        "tense": 100.0,
-        "polarity": 100.0
-      },
-      "slot_macro_f1": {
-        "agent": {
-          "macro_precision": 90.18,
-          "macro_recall": 85.71,
-          "macro_f1": 86.09
-        },
-        "action": {
-          "macro_precision": 93.18,
-          "macro_recall": 78.57,
-          "macro_f1": 77.3
-        },
-        "object": {
-          "macro_precision": 100.0,
-          "macro_recall": 100.0,
-          "macro_f1": 100.0
+          "macro_precision": 98.57,
+          "macro_recall": 94.29,
+          "macro_f1": 96.07
         },
         "tense": {
           "macro_precision": 100.0,
@@ -542,7 +437,7 @@
         },
         "Level_4": {
           "total": 22,
-          "accuracy": 68.18
+          "accuracy": 90.91
         }
       },
       "phenomenon_breakdown": {
@@ -556,7 +451,92 @@
         },
         "ellipsis": {
           "total": 7,
-          "accuracy": 0.0
+          "accuracy": 71.43
+        },
+        "correction": {
+          "total": 7,
+          "accuracy": 100.0
+        }
+      },
+      "schema_validation": {
+        "total_submitted": 30,
+        "valid_submissions": 30,
+        "invalid_submissions": 0,
+        "is_perfectly_formed": true,
+        "errors": {}
+      }
+    },
+    "Compositional OOD (Unseen Combos)": {
+      "total_episodes": 30,
+      "exact_match_accuracy": 93.33,
+      "composite_competition_score": 96.33,
+      "disentanglement_accuracy": 100.0,
+      "reference_resolution_accuracy": 100.0,
+      "slot_accuracies": {
+        "agent": 93.33,
+        "action": 100.0,
+        "object": 93.33,
+        "tense": 100.0,
+        "polarity": 100.0
+      },
+      "slot_macro_f1": {
+        "agent": {
+          "macro_precision": 89.58,
+          "macro_recall": 94.27,
+          "macro_f1": 90.0
+        },
+        "action": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        },
+        "object": {
+          "macro_precision": 96.63,
+          "macro_recall": 88.89,
+          "macro_f1": 89.89
+        },
+        "tense": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        },
+        "polarity": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        }
+      },
+      "counterfactual_consistency": {
+        "total_pairs": 0,
+        "consistent_pairs": 0,
+        "consistency_score": 100.0
+      },
+      "progressive_levels": {
+        "Level_1": {
+          "total": 5,
+          "accuracy": 100.0
+        },
+        "Level_2": {
+          "total": 3,
+          "accuracy": 100.0
+        },
+        "Level_4": {
+          "total": 22,
+          "accuracy": 90.91
+        }
+      },
+      "phenomenon_breakdown": {
+        "direct": {
+          "total": 8,
+          "accuracy": 100.0
+        },
+        "coreference": {
+          "total": 8,
+          "accuracy": 100.0
+        },
+        "ellipsis": {
+          "total": 7,
+          "accuracy": 71.43
         },
         "correction": {
           "total": 7,
@@ -573,22 +553,22 @@
     },
     "Held-out Community (Unseen Dialect)": {
       "total_episodes": 20,
-      "exact_match_accuracy": 35.0,
-      "composite_competition_score": 63.59,
-      "disentanglement_accuracy": 85.0,
+      "exact_match_accuracy": 50.0,
+      "composite_competition_score": 70.28,
+      "disentanglement_accuracy": 90.0,
       "reference_resolution_accuracy": 50.0,
       "slot_accuracies": {
-        "agent": 85.0,
+        "agent": 100.0,
         "action": 100.0,
-        "object": 50.0,
+        "object": 55.0,
         "tense": 100.0,
         "polarity": 100.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 88.81,
-          "macro_recall": 86.9,
-          "macro_f1": 84.33
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
         },
         "action": {
           "macro_precision": 100.0,
@@ -596,9 +576,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 58.13,
-          "macro_recall": 61.25,
-          "macro_f1": 52.56
+          "macro_precision": 33.75,
+          "macro_recall": 38.75,
+          "macro_f1": 35.62
         },
         "tense": {
           "macro_precision": 100.0,
@@ -627,7 +607,7 @@
         },
         "Level_4": {
           "total": 15,
-          "accuracy": 13.33
+          "accuracy": 33.33
         }
       },
       "phenomenon_breakdown": {
@@ -641,7 +621,7 @@
         },
         "ellipsis": {
           "total": 5,
-          "accuracy": 40.0
+          "accuracy": 100.0
         },
         "correction": {
           "total": 5,
@@ -658,12 +638,12 @@
     },
     "Held-out Period (Unseen Historical Epoch)": {
       "total_episodes": 20,
-      "exact_match_accuracy": 90.0,
-      "composite_competition_score": 95.37,
+      "exact_match_accuracy": 100.0,
+      "composite_competition_score": 100.0,
       "disentanglement_accuracy": 100.0,
       "reference_resolution_accuracy": 100.0,
       "slot_accuracies": {
-        "agent": 90.0,
+        "agent": 100.0,
         "action": 100.0,
         "object": 100.0,
         "tense": 100.0,
@@ -671,9 +651,9 @@
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 90.0,
-          "macro_recall": 90.0,
-          "macro_f1": 87.3
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
         },
         "action": {
           "macro_precision": 100.0,
@@ -708,7 +688,7 @@
         },
         "Level_4": {
           "total": 15,
-          "accuracy": 86.67
+          "accuracy": 100.0
         }
       },
       "phenomenon_breakdown": {
@@ -722,7 +702,7 @@
         },
         "ellipsis": {
           "total": 5,
-          "accuracy": 60.0
+          "accuracy": 100.0
         },
         "correction": {
           "total": 5,
@@ -811,20 +791,20 @@
       "Inductive Rule Learner": 23.33
     },
     "k=4": {
-      "Majority Baseline": 3.33,
+      "Majority Baseline": 0.0,
       "Surface Lookup Baseline": 0.0,
-      "Statistical Naive Bayes": 83.33,
-      "Inductive Rule Learner": 83.33
+      "Statistical Naive Bayes": 100.0,
+      "Inductive Rule Learner": 100.0
     },
     "k=8": {
       "Majority Baseline": 3.33,
-      "Surface Lookup Baseline": 0.0,
-      "Statistical Naive Bayes": 93.33,
-      "Inductive Rule Learner": 93.33
+      "Surface Lookup Baseline": 3.33,
+      "Statistical Naive Bayes": 100.0,
+      "Inductive Rule Learner": 100.0
     },
     "k=16": {
       "Majority Baseline": 0.0,
-      "Surface Lookup Baseline": 0.0,
+      "Surface Lookup Baseline": 3.33,
       "Statistical Naive Bayes": 100.0,
       "Inductive Rule Learner": 100.0
     },
