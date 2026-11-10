@@ -31,14 +31,21 @@ class DialogueTurn:
     event_frame: EventFrame
     reference_type_used: str = "direct"
 
-    def to_dict(self) -> Dict[str, Any]:
-        return {
+    def to_dict(self, include_gold: bool = True) -> Dict[str, Any]:
+        """Serializes turn. If include_gold is False, strips event_frame and reference_type_used."""
+        data: Dict[str, Any] = {
             "turn_id": self.turn_id,
             "speaker": self.speaker,
-            "utterance": self.utterance,
-            "event_frame": self.event_frame.to_dict(),
-            "reference_type_used": self.reference_type_used
+            "utterance": self.utterance
         }
+        if include_gold:
+            data["event_frame"] = self.event_frame.to_dict()
+            data["reference_type_used"] = self.reference_type_used
+        return data
+
+    def to_public_dict(self) -> Dict[str, Any]:
+        """Contestant-visible view with zero gold event frame annotations."""
+        return self.to_dict(include_gold=False)
 
 
 @dataclass

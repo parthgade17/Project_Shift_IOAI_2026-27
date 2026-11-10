@@ -9,34 +9,108 @@ biases, metadata memorisation, bag-of-words artifacts, or context-free shortcuts
 from __future__ import annotations
 import copy
 import random
-from typing import Dict, List, Tuple, Any
+from collections import defaultdict, Counter
+from typing import Dict, List, Tuple, Any, Optional
 
-from shift.ontology import EventFrame
+from shift.ontology import (
+    EventFrame, AgentEntity, ActionPredicate, ObjectEntity, Tense, Polarity
+)
 from shift.episodes import Episode
 from baselines.majority import MajorityBaseline
 from baselines.rule_based import RuleBasedLearner
 from baselines.evaluate import Evaluator
 
 
+class GenuineMetadataAttackBaseline:
+    """
+    Genuine Metadata-Only Adversarial Attack.
+    Attempts to predict target event frames strictly from environment metadata:
+    (community_id, period_id, word_order, difficulty_level, phenomenon)
+    without observing support set utterances, support frames, or the query utterance.
+    """
+    def __init__(self, calibration_episodes: Optional[List[Episode]] = None):
+        self.name = "Genuine Metadata Attack"
+        self.conditional_tables: Dict[str, Dict[str, Counter]] = {
+            "agent": defaultdict(Counter),
+            "action": defaultdict(Counter),
+            "object": defaultdict(Counter),
+            "tense": defaultdict(Counter),
+            "polarity": defaultdict(Counter)
+        }
+        self.global_counts: Dict[str, Counter] = {
+            "agent": Counter(),
+            "action": Counter(),
+            "object": Counter(),
+            "tense": Counter(),
+            "polarity": Counter()
+        }
+        if calibration_episodes:
+            self.fit(calibration_episodes)
+
+    def _meta_key(self, ep: Episode) -> str:
+        phenom = ep.query.phenomenon if ep.query else "direct"
+        return f"{ep.community_id}_{ep.period_id}_{ep.word_order}_{ep.difficulty_level}_{phenom}"
+
+    def fit(self, episodes: List[Episode]) -> None:
+        for ep in episodes:
+            if not ep.query_label:
+                continue
+            k = self._meta_key(ep)
+            for slot in ["agent", "action", "object", "tense", "polarity"]:
+                val = getattr(ep.query_label, slot)
+                self.conditional_tables[slot][k][val] += 1
+                self.global_counts[slot][val] += 1
+
+    def predict_episode(self, episode: Episode) -> EventFrame:
+        k = self._meta_key(episode)
+        preds = {}
+        defaults = {
+            "agent": AgentEntity.SCOUT_ALPHA.value,
+            "action": ActionPredicate.INSPECT.value,
+            "object": ObjectEntity.CRYSTAL_CORE.value,
+            "tense": Tense.PRESENT.value,
+            "polarity": Polarity.AFFIRMATIVE.value
+        }
+        for slot in ["agent", "action", "object", "tense", "polarity"]:
+            if self.conditional_tables[slot][k]:
+                preds[slot] = self.conditional_tables[slot][k].most_common(1)[0][0]
+            elif self.global_counts[slot]:
+                preds[slot] = self.global_counts[slot].most_common(1)[0][0]
+            else:
+                preds[slot] = defaults[slot]
+
+        return EventFrame(
+            agent=preds["agent"],
+            action=preds["action"],
+            object=preds["object"],
+            tense=preds["tense"],
+            polarity=preds["polarity"],
+            resolved_references={}
+        )
+
+
 class ShortcutAuditor:
     """Detects dataset shortcuts, superficial artifacts, and memorisation vulnerabilities."""
 
     @staticmethod
-    def audit_metadata_shortcut(episodes: List[Episode]) -> Dict[str, Any]:
+    def audit_metadata_shortcut(
+        episodes: List[Episode],
+        calibration_episodes: Optional[List[Episode]] = None
+    ) -> Dict[str, Any]:
         """
-        Attack 1: Metadata-only Prediction Attack.
-        Predicts using a mapping solely from (community, period) to majority label,
-        completely ignoring the query utterance.
+        Attack 1: Genuine Metadata-only Prediction Attack.
+        Predicts using a mapping solely from (community, period, order, level, phenomenon)
+        to target slots, completely ignoring the query utterance and support set.
         """
         ground_truth = {ep.episode_id: ep.query_label for ep in episodes if ep.query_label}
-        majority_model = MajorityBaseline()
-        predictions = {ep.episode_id: majority_model.predict_episode(ep) for ep in episodes}
+        meta_model = GenuineMetadataAttackBaseline(calibration_episodes or episodes)
+        predictions = {ep.episode_id: meta_model.predict_episode(ep) for ep in episodes}
 
         metrics = Evaluator.evaluate(predictions, ground_truth)
         em_acc = metrics.get("exact_match_accuracy", 0.0)
 
         return {
-            "attack_type": "metadata_only_attack",
+            "attack_type": "genuine_metadata_only_attack",
             "exact_match_accuracy": em_acc,
             "threshold": 25.0,
             "vulnerability_detected": em_acc > 25.0,

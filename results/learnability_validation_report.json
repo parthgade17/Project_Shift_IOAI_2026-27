@@ -28,6 +28,10 @@
     "compositional_learnability": {
       "passed": 100,
       "rate": 100.0
+    },
+    "contestant_solvability": {
+      "passed": 100,
+      "rate": 100.0
     }
   },
   "failure_taxonomy": {},
@@ -37,13 +41,14 @@
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -65,16 +70,161 @@
             ],
             "supp_actions": [
               "abandon",
+              "activate",
               "forge",
               "harvest",
               "inspect",
               "repair"
             ],
             "supp_objects": [
-              "ancient_relic",
               "crystal_core",
+              "data_capsule",
               "energy_matrix",
               "shelter_dome",
+              "stone_monolith",
+              "water_purifier"
+            ]
+          }
+        },
+        "grammar_inferability": {
+          "check": "grammar_inferability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "supp_tenses": [
+              "future",
+              "past",
+              "present"
+            ],
+            "supp_polarities": [
+              "affirmative",
+              "negative"
+            ],
+            "word_order": "SOV"
+          }
+        },
+        "semantic_drift_inferability": {
+          "check": "semantic_drift_inferability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        "context_sufficiency": {
+          "check": "context_sufficiency",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "context_turns": 1,
+            "phenomenon": "direct"
+          }
+        },
+        "unique_interpretation": {
+          "check": "unique_interpretation",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "masculine_antecedents": [],
+            "feminine_antecedents": [
+              "guardian_sigma"
+            ],
+            "ambiguities": []
+          }
+        },
+        "compositional_learnability": {
+          "check": "compositional_learnability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "grounded_primitives": {
+              "agents": 8,
+              "actions": 6,
+              "objects": 6
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "scout_alpha",
+              "action": "activate",
+              "object": "data_capsule",
+              "tense": "present",
+              "polarity": "negative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "test_iid_0002",
+      "is_solvable": true,
+      "was_repaired": false,
+      "repair_actions": [],
+      "checks": {
+        "lexical_inferability": true,
+        "grammar_inferability": true,
+        "semantic_drift_inferability": true,
+        "context_sufficiency": true,
+        "unique_interpretation": true,
+        "compositional_learnability": true,
+        "contestant_solvability": true
+      },
+      "missing_evidence": [],
+      "ambiguities": [],
+      "failure_reasons": [],
+      "check_details": {
+        "lexical_inferability": {
+          "check": "lexical_inferability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "supp_agents": [
+              "artisan_delta",
+              "artisan_gamma",
+              "guardian_sigma",
+              "scholar_omega",
+              "scout_beta"
+            ],
+            "supp_actions": [
+              "activate",
+              "forge",
+              "harvest",
+              "inspect",
+              "repair",
+              "secure"
+            ],
+            "supp_objects": [
+              "ancient_relic",
+              "crystal_core",
+              "data_capsule",
+              "energy_matrix",
+              "signal_beacon",
               "stone_monolith",
               "water_purifier"
             ]
@@ -143,26 +293,50 @@
           "missing_evidence": [],
           "details": {
             "grounded_primitives": {
-              "agents": 8,
-              "actions": 5,
-              "objects": 6
+              "agents": 7,
+              "actions": 7,
+              "objects": 7
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "guardian_sigma",
+              "action": "forge",
+              "object": "ancient_relic",
+              "tense": "future",
+              "polarity": "affirmative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
             }
           }
         }
       }
     },
     {
-      "episode_id": "test_iid_0002",
+      "episode_id": "test_iid_0003",
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -177,8 +351,8 @@
             "supp_agents": [
               "artisan_delta",
               "guardian_sigma",
-              "guardian_theta",
               "scholar_kappa",
+              "scholar_omega",
               "scout_alpha",
               "scout_beta"
             ],
@@ -186,10 +360,11 @@
               "activate",
               "forge",
               "harvest",
+              "inspect",
+              "repair",
               "secure"
             ],
             "supp_objects": [
-              "ancient_relic",
               "energy_matrix",
               "shelter_dome",
               "signal_beacon",
@@ -223,7 +398,7 @@
           "details": {
             "drift_attribution": {
               "agent": "stable",
-              "action": "community_shift",
+              "action": "stable",
               "object": "stable",
               "tense": "stable",
               "polarity": "stable"
@@ -237,7 +412,7 @@
           "missing_evidence": [],
           "details": {
             "context_turns": 1,
-            "phenomenon": "coreference"
+            "phenomenon": "direct"
           }
         },
         "unique_interpretation": {
@@ -248,7 +423,7 @@
           "details": {
             "masculine_antecedents": [],
             "feminine_antecedents": [
-              "guardian_sigma"
+              "artisan_delta"
             ],
             "ambiguities": []
           }
@@ -261,25 +436,49 @@
           "details": {
             "grounded_primitives": {
               "agents": 8,
-              "actions": 4,
-              "objects": 5
+              "actions": 6,
+              "objects": 4
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "scholar_omega",
+              "action": "inspect",
+              "object": "stone_monolith",
+              "tense": "present",
+              "polarity": "negative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
             }
           }
         }
       }
     },
     {
-      "episode_id": "test_iid_0003",
+      "episode_id": "test_iid_0004",
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -293,7 +492,6 @@
           "details": {
             "supp_agents": [
               "artisan_delta",
-              "artisan_gamma",
               "guardian_sigma",
               "scholar_kappa",
               "scholar_omega"
@@ -302,10 +500,10 @@
               "abandon",
               "activate",
               "forge",
-              "inspect",
               "relocate"
             ],
             "supp_objects": [
+              "crystal_core",
               "data_capsule",
               "energy_matrix",
               "shelter_dome",
@@ -329,7 +527,7 @@
               "affirmative",
               "negative"
             ],
-            "word_order": "SVO"
+            "word_order": "SOV"
           }
         },
         "semantic_drift_inferability": {
@@ -354,7 +552,7 @@
           "missing_evidence": [],
           "details": {
             "context_turns": 1,
-            "phenomenon": "ellipsis"
+            "phenomenon": "direct"
           }
         },
         "unique_interpretation": {
@@ -364,7 +562,7 @@
           "missing_evidence": [],
           "details": {
             "masculine_antecedents": [
-              "scout_alpha"
+              "guardian_theta"
             ],
             "feminine_antecedents": [],
             "ambiguities": []
@@ -377,26 +575,50 @@
           "missing_evidence": [],
           "details": {
             "grounded_primitives": {
-              "agents": 8,
+              "agents": 7,
               "actions": 5,
-              "objects": 5
+              "objects": 6
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "guardian_sigma",
+              "action": "activate",
+              "object": "signal_beacon",
+              "tense": "future",
+              "polarity": "affirmative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
             }
           }
         }
       }
     },
     {
-      "episode_id": "test_iid_0004",
+      "episode_id": "test_iid_0005",
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -413,22 +635,19 @@
               "artisan_gamma",
               "guardian_sigma",
               "scholar_kappa",
-              "scholar_omega",
               "scout_alpha"
             ],
             "supp_actions": [
               "abandon",
               "activate",
+              "forge",
               "harvest",
               "inspect",
-              "relocate",
-              "repair",
               "secure"
             ],
             "supp_objects": [
               "ancient_relic",
               "crystal_core",
-              "data_capsule",
               "energy_matrix",
               "signal_beacon"
             ]
@@ -462,126 +681,7 @@
               "agent": "stable",
               "action": "stable",
               "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        "context_sufficiency": {
-          "check": "context_sufficiency",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "context_turns": 2,
-            "phenomenon": "correction"
-          }
-        },
-        "unique_interpretation": {
-          "check": "unique_interpretation",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "masculine_antecedents": [
-              "artisan_gamma",
-              "artisan_gamma"
-            ],
-            "feminine_antecedents": [],
-            "ambiguities": []
-          }
-        },
-        "compositional_learnability": {
-          "check": "compositional_learnability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "grounded_primitives": {
-              "agents": 8,
-              "actions": 7,
-              "objects": 5
-            }
-          }
-        }
-      }
-    },
-    {
-      "episode_id": "test_iid_0005",
-      "is_solvable": true,
-      "was_repaired": false,
-      "repair_actions": [],
-      "six_checks": {
-        "lexical_inferability": true,
-        "grammar_inferability": true,
-        "semantic_drift_inferability": true,
-        "context_sufficiency": true,
-        "unique_interpretation": true,
-        "compositional_learnability": true
-      },
-      "missing_evidence": [],
-      "ambiguities": [],
-      "failure_reasons": [],
-      "check_details": {
-        "lexical_inferability": {
-          "check": "lexical_inferability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "supp_agents": [
-              "artisan_delta",
-              "artisan_gamma",
-              "guardian_sigma",
-              "scholar_omega",
-              "scout_alpha"
-            ],
-            "supp_actions": [
-              "activate",
-              "forge",
-              "relocate",
-              "repair",
-              "secure"
-            ],
-            "supp_objects": [
-              "ancient_relic",
-              "crystal_core",
-              "data_capsule",
-              "energy_matrix",
-              "stone_monolith",
-              "water_purifier"
-            ]
-          }
-        },
-        "grammar_inferability": {
-          "check": "grammar_inferability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "supp_tenses": [
-              "future",
-              "past",
-              "present"
-            ],
-            "supp_polarities": [
-              "affirmative",
-              "negative"
-            ],
-            "word_order": "SOV"
-          }
-        },
-        "semantic_drift_inferability": {
-          "check": "semantic_drift_inferability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
+              "tense": "stable",
               "polarity": "stable"
             }
           }
@@ -604,7 +704,7 @@
           "details": {
             "masculine_antecedents": [],
             "feminine_antecedents": [
-              "artisan_delta"
+              "scout_beta"
             ],
             "ambiguities": []
           }
@@ -616,9 +716,32 @@
           "missing_evidence": [],
           "details": {
             "grounded_primitives": {
-              "agents": 7,
-              "actions": 5,
-              "objects": 6
+              "agents": 8,
+              "actions": 6,
+              "objects": 5
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "guardian_sigma",
+              "action": "forge",
+              "object": "signal_beacon",
+              "tense": "present",
+              "polarity": "affirmative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
             }
           }
         }
@@ -629,13 +752,14 @@
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -649,138 +773,25 @@
           "details": {
             "supp_agents": [
               "artisan_delta",
-              "guardian_sigma",
-              "guardian_theta",
-              "scholar_kappa",
-              "scholar_omega"
-            ],
-            "supp_actions": [
-              "activate",
-              "harvest",
-              "inspect",
-              "repair",
-              "secure"
-            ],
-            "supp_objects": [
-              "ancient_relic",
-              "data_capsule",
-              "shelter_dome",
-              "stone_monolith",
-              "water_purifier"
-            ]
-          }
-        },
-        "grammar_inferability": {
-          "check": "grammar_inferability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "supp_tenses": [
-              "future",
-              "present"
-            ],
-            "supp_polarities": [
-              "affirmative",
-              "negative"
-            ],
-            "word_order": "SVO"
-          }
-        },
-        "semantic_drift_inferability": {
-          "check": "semantic_drift_inferability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        "context_sufficiency": {
-          "check": "context_sufficiency",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "context_turns": 1,
-            "phenomenon": "coreference"
-          }
-        },
-        "unique_interpretation": {
-          "check": "unique_interpretation",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "masculine_antecedents": [],
-            "feminine_antecedents": [
-              "artisan_delta"
-            ],
-            "ambiguities": []
-          }
-        },
-        "compositional_learnability": {
-          "check": "compositional_learnability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "grounded_primitives": {
-              "agents": 7,
-              "actions": 6,
-              "objects": 5
-            }
-          }
-        }
-      }
-    },
-    {
-      "episode_id": "test_iid_0007",
-      "is_solvable": true,
-      "was_repaired": false,
-      "repair_actions": [],
-      "six_checks": {
-        "lexical_inferability": true,
-        "grammar_inferability": true,
-        "semantic_drift_inferability": true,
-        "context_sufficiency": true,
-        "unique_interpretation": true,
-        "compositional_learnability": true
-      },
-      "missing_evidence": [],
-      "ambiguities": [],
-      "failure_reasons": [],
-      "check_details": {
-        "lexical_inferability": {
-          "check": "lexical_inferability",
-          "passed": true,
-          "reasons": [],
-          "missing_evidence": [],
-          "details": {
-            "supp_agents": [
               "artisan_gamma",
-              "scholar_kappa",
+              "guardian_sigma",
               "scholar_omega",
               "scout_alpha"
             ],
             "supp_actions": [
+              "abandon",
               "activate",
-              "inspect",
+              "forge",
               "relocate",
-              "repair",
               "secure"
             ],
             "supp_objects": [
               "ancient_relic",
+              "crystal_core",
+              "data_capsule",
               "energy_matrix",
-              "signal_beacon",
-              "stone_monolith"
+              "stone_monolith",
+              "water_purifier"
             ]
           }
         },
@@ -824,7 +835,7 @@
           "missing_evidence": [],
           "details": {
             "context_turns": 1,
-            "phenomenon": "ellipsis"
+            "phenomenon": "direct"
           }
         },
         "unique_interpretation": {
@@ -833,10 +844,10 @@
           "reasons": [],
           "missing_evidence": [],
           "details": {
-            "masculine_antecedents": [],
-            "feminine_antecedents": [
-              "scout_beta"
+            "masculine_antecedents": [
+              "scout_alpha"
             ],
+            "feminine_antecedents": [],
             "ambiguities": []
           }
         },
@@ -848,25 +859,49 @@
           "details": {
             "grounded_primitives": {
               "agents": 7,
-              "actions": 5,
-              "objects": 5
+              "actions": 6,
+              "objects": 6
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "artisan_delta",
+              "action": "abandon",
+              "object": "energy_matrix",
+              "tense": "past",
+              "polarity": "affirmative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
             }
           }
         }
       }
     },
     {
-      "episode_id": "test_iid_0008",
+      "episode_id": "test_iid_0007",
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -879,6 +914,146 @@
           "missing_evidence": [],
           "details": {
             "supp_agents": [
+              "artisan_delta",
+              "guardian_sigma",
+              "scholar_kappa",
+              "scholar_omega"
+            ],
+            "supp_actions": [
+              "activate",
+              "harvest",
+              "inspect",
+              "repair",
+              "secure"
+            ],
+            "supp_objects": [
+              "data_capsule",
+              "shelter_dome",
+              "stone_monolith",
+              "water_purifier"
+            ]
+          }
+        },
+        "grammar_inferability": {
+          "check": "grammar_inferability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "supp_tenses": [
+              "future",
+              "past",
+              "present"
+            ],
+            "supp_polarities": [
+              "affirmative",
+              "negative"
+            ],
+            "word_order": "SOV"
+          }
+        },
+        "semantic_drift_inferability": {
+          "check": "semantic_drift_inferability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        "context_sufficiency": {
+          "check": "context_sufficiency",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "context_turns": 1,
+            "phenomenon": "direct"
+          }
+        },
+        "unique_interpretation": {
+          "check": "unique_interpretation",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "masculine_antecedents": [
+              "scholar_omega"
+            ],
+            "feminine_antecedents": [],
+            "ambiguities": []
+          }
+        },
+        "compositional_learnability": {
+          "check": "compositional_learnability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "grounded_primitives": {
+              "agents": 6,
+              "actions": 5,
+              "objects": 4
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "scholar_kappa",
+              "action": "harvest",
+              "object": "data_capsule",
+              "tense": "present",
+              "polarity": "negative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "test_iid_0008",
+      "is_solvable": true,
+      "was_repaired": false,
+      "repair_actions": [],
+      "checks": {
+        "lexical_inferability": true,
+        "grammar_inferability": true,
+        "semantic_drift_inferability": true,
+        "context_sufficiency": true,
+        "unique_interpretation": true,
+        "compositional_learnability": true,
+        "contestant_solvability": true
+      },
+      "missing_evidence": [],
+      "ambiguities": [],
+      "failure_reasons": [],
+      "check_details": {
+        "lexical_inferability": {
+          "check": "lexical_inferability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "supp_agents": [
+              "artisan_delta",
               "guardian_theta",
               "scholar_kappa",
               "scout_alpha"
@@ -886,8 +1061,8 @@
             "supp_actions": [
               "abandon",
               "activate",
-              "forge",
               "harvest",
+              "inspect",
               "secure"
             ],
             "supp_objects": [
@@ -907,6 +1082,7 @@
           "details": {
             "supp_tenses": [
               "future",
+              "past",
               "present"
             ],
             "supp_polarities": [
@@ -924,7 +1100,7 @@
           "details": {
             "drift_attribution": {
               "agent": "stable",
-              "action": "stable",
+              "action": "community_shift",
               "object": "community_shift",
               "tense": "stable",
               "polarity": "stable"
@@ -962,9 +1138,35 @@
           "missing_evidence": [],
           "details": {
             "grounded_primitives": {
-              "agents": 5,
+              "agents": 6,
               "actions": 5,
-              "objects": 5
+              "objects": 6
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "scout_alpha",
+              "action": "harvest",
+              "object": "crystal_core",
+              "tense": "future",
+              "polarity": "affirmative",
+              "resolved_references": {
+                "el": "scout_alpha",
+                "id": "crystal_core"
+              },
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "community_shift",
+                "object": "stable",
+                "tense": "stable",
+                "polarity": "stable"
+              }
             }
           }
         }
@@ -975,13 +1177,14 @@
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -1044,7 +1247,7 @@
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
-              "object": "stable",
+              "object": "community_shift",
               "tense": "stable",
               "polarity": "stable"
             }
@@ -1067,7 +1270,7 @@
           "missing_evidence": [],
           "details": {
             "masculine_antecedents": [
-              "scholar_omega"
+              "guardian_theta"
             ],
             "feminine_antecedents": [],
             "ambiguities": []
@@ -1082,7 +1285,30 @@
             "grounded_primitives": {
               "agents": 8,
               "actions": 6,
-              "objects": 5
+              "objects": 6
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "scholar_omega",
+              "action": "activate",
+              "object": "water_purifier",
+              "tense": "past",
+              "polarity": "affirmative",
+              "resolved_references": {},
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "community_shift",
+                "tense": "stable",
+                "polarity": "stable"
+              }
             }
           }
         }
@@ -1093,13 +1319,14 @@
       "is_solvable": true,
       "was_repaired": false,
       "repair_actions": [],
-      "six_checks": {
+      "checks": {
         "lexical_inferability": true,
         "grammar_inferability": true,
         "semantic_drift_inferability": true,
         "context_sufficiency": true,
         "unique_interpretation": true,
-        "compositional_learnability": true
+        "compositional_learnability": true,
+        "contestant_solvability": true
       },
       "missing_evidence": [],
       "ambiguities": [],
@@ -1114,6 +1341,7 @@
             "supp_agents": [
               "artisan_gamma",
               "guardian_sigma",
+              "guardian_theta",
               "scholar_kappa",
               "scholar_omega"
             ],
@@ -1121,10 +1349,10 @@
               "abandon",
               "harvest",
               "relocate",
-              "repair"
+              "repair",
+              "secure"
             ],
             "supp_objects": [
-              "ancient_relic",
               "crystal_core",
               "data_capsule",
               "energy_matrix",
@@ -1184,7 +1412,7 @@
           "missing_evidence": [],
           "details": {
             "masculine_antecedents": [
-              "scholar_omega"
+              "guardian_theta"
             ],
             "feminine_antecedents": [],
             "ambiguities": []
@@ -1197,9 +1425,35 @@
           "missing_evidence": [],
           "details": {
             "grounded_primitives": {
-              "agents": 6,
+              "agents": 7,
               "actions": 5,
-              "objects": 7
+              "objects": 6
+            }
+          }
+        },
+        "contestant_solvability": {
+          "check": "contestant_solvability",
+          "passed": true,
+          "reasons": [],
+          "missing_evidence": [],
+          "details": {
+            "predicted_frame": {
+              "agent": "guardian_theta",
+              "action": "harvest",
+              "object": "crystal_core",
+              "tense": "past",
+              "polarity": "affirmative",
+              "resolved_references": {
+                "el": "guardian_theta",
+                "id": "crystal_core"
+              },
+              "drift_attribution": {
+                "agent": "stable",
+                "action": "stable",
+                "object": "stable",
+                "tense": "historical_shift",
+                "polarity": "stable"
+              }
             }
           }
         }

@@ -120,20 +120,47 @@ def compute_all_metrics(
 
             # Counterfactual Pair tracking
             if ep.counterfactual_pair_id:
-                cf_pairs[ep.counterfactual_pair_id][ep_id] = is_exact
+                branch = ep.metadata.get("counterfactual_branch", "A" if ep_id.endswith("_A") else "B")
+                cf_pairs[ep.counterfactual_pair_id][branch] = {
+                    "is_exact": is_exact,
+                    "pred": pred_frame,
+                    "gt": true_frame
+                }
 
     # Slot F1 Scores
     slot_f1_scores = {}
     for slot in ["agent", "action", "object", "tense", "polarity"]:
         slot_f1_scores[slot] = compute_slot_f1(predictions, ground_truth, slot)
 
-    # Counterfactual Consistency
-    cf_consistent = 0
+    # Redesigned Counterfactual Correctness & Consistency Metrics
     total_cf = len(cf_pairs)
+    branch_a_correct_cnt = 0
+    branch_b_correct_cnt = 0
+    joint_correct_cnt = 0
+    sensitive_cnt = 0
+
     for pair_id, branches in cf_pairs.items():
-        if len(branches) == 2 and all(branches.values()):
-            cf_consistent += 1
-    cf_score = round(cf_consistent / total_cf * 100.0, 2) if total_cf else 100.0
+        if "A" in branches and "B" in branches:
+            b_a = branches["A"]
+            b_b = branches["B"]
+            if b_a["is_exact"]: branch_a_correct_cnt += 1
+            if b_b["is_exact"]: branch_b_correct_cnt += 1
+            if b_a["is_exact"] and b_b["is_exact"]:
+                joint_correct_cnt += 1
+
+            # Perturbation sensitivity: if ground truths differ, predictions must differ
+            gt_differ = not b_a["gt"].exact_match(b_b["gt"])
+            pred_differ = not b_a["pred"].exact_match(b_b["pred"]) if (b_a["pred"] and b_b["pred"]) else False
+            if (gt_differ and pred_differ) or (not gt_differ and not pred_differ):
+                sensitive_cnt += 1
+
+    branch_a_acc = round(branch_a_correct_cnt / total_cf * 100.0, 2) if total_cf else 100.0
+    branch_b_acc = round(branch_b_correct_cnt / total_cf * 100.0, 2) if total_cf else 100.0
+    joint_acc = round(joint_correct_cnt / total_cf * 100.0, 2) if total_cf else 100.0
+    sensitivity_acc = round(sensitive_cnt / total_cf * 100.0, 2) if total_cf else 100.0
+
+    # Consistency score combines joint accuracy and sensitivity
+    cf_score = round((joint_acc * 0.7 + sensitivity_acc * 0.3), 2) if total_cf else 100.0
 
     # Progressive Level Scores
     level_scores = {}
@@ -167,7 +194,10 @@ def compute_all_metrics(
         "slot_macro_f1": slot_f1_scores,
         "counterfactual_consistency": {
             "total_pairs": total_cf,
-            "consistent_pairs": cf_consistent,
+            "branch_a_accuracy": branch_a_acc,
+            "branch_b_accuracy": branch_b_acc,
+            "joint_accuracy": joint_acc,
+            "perturbation_sensitivity": sensitivity_acc,
             "consistency_score": cf_score
         },
         "progressive_levels": level_scores,

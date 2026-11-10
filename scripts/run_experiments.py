@@ -18,7 +18,7 @@ from shift.episodes import EpisodeGenerator
 from shift.serialize import load_episodes_jsonl
 from shift.evaluator import Evaluator
 from shift.diagnostics import ModelDiagnostics
-from shift.shortcut_audits import ShortcutAuditor
+from shift.shortcut_audits import ShortcutAuditor, GenuineMetadataAttackBaseline
 from shift.evaluation_report import ReportGenerator
 from baselines.majority import MajorityBaseline
 from baselines.surface_lookup import SurfaceLookupBaseline
@@ -92,8 +92,9 @@ def run_experiments():
         k0_eval = Evaluator.evaluate(k0_preds, gt, ep_dict)
         k0_acc = k0_eval["exact_match_accuracy"]
 
-        # Metadata attack
-        meta_preds = {ep.episode_id: MajorityBaseline().predict_episode(ep) for ep in test_episodes}
+        # Genuine Metadata attack
+        meta_model = GenuineMetadataAttackBaseline(test_episodes)
+        meta_preds = {ep.episode_id: meta_model.predict_episode(ep) for ep in test_episodes}
         meta_eval = Evaluator.evaluate(meta_preds, gt, ep_dict)
         meta_acc = meta_eval["exact_match_accuracy"]
 
@@ -143,25 +144,29 @@ def run_experiments():
         print(f"  * {split_name:<46}: Exact Match = {m['exact_match_accuracy']}% (N={len(sub_eps)})")
         if m.get("counterfactual_consistency", {}).get("total_pairs", 0) > 0:
             cf = m["counterfactual_consistency"]
-            print(f"    --> Counterfactual Consistency: {cf['consistency_score']}% ({cf['consistent_pairs']}/{cf['total_pairs']} pairs)")
+            print(f"    --> Counterfactual Consistency: {cf['consistency_score']}% (Joint={cf.get('joint_accuracy', 0)}%, Sensitivity={cf.get('perturbation_sensitivity', 0)}%, N={cf['total_pairs']} pairs)")
 
-    # 4. Few-Shot Adaptation Curve across Support Sizes k in {0, 4, 8, 16, 32}
-    print("\n--- [Experiment 4] Few-Shot Adaptation Curve (k in {0, 4, 8, 16, 32}) ---")
+    # 4. Few-Shot Adaptation Curve across Support Sizes k in {0, 4, 8, 16, 32} with Multiple Random Seeds
+    print("\n--- [Experiment 4] Few-Shot Adaptation Curve (Multi-Seed: 42, 101, 2024) ---")
     k_values = [0, 4, 8, 16, 32]
+    seeds = [42, 101, 2024]
     adaptation_curve = {}
-    curve_gen = EpisodeGenerator(base_seed=999)
 
     for k in k_values:
-        eval_batch = curve_gen.generate_batch(count=30, k_support=k, id_prefix=f"adapt_k{k}")
-        curve_gt = {ep.episode_id: ep.query_label for ep in eval_batch}
-        curve_dict = {ep.episode_id: ep for ep in eval_batch}
+        seed_runs = {name: [] for name, _ in baselines}
+        for s in seeds:
+            curve_gen = EpisodeGenerator(base_seed=s)
+            eval_batch = curve_gen.generate_batch(count=20, k_support=k, id_prefix=f"adapt_s{s}_k{k}")
+            curve_gt = {ep.episode_id: ep.query_label for ep in eval_batch}
+            curve_dict = {ep.episode_id: ep for ep in eval_batch}
 
-        k_results = {}
-        for name, model in baselines:
-            preds = {ep.episode_id: model.predict_episode(ep) for ep in eval_batch}
-            m = Evaluator.evaluate(preds, curve_gt, curve_dict)
-            k_results[name] = m["exact_match_accuracy"]
+            for name, model in baselines:
+                preds = {ep.episode_id: model.predict_episode(ep) for ep in eval_batch}
+                m = Evaluator.evaluate(preds, curve_gt, curve_dict)
+                seed_runs[name].append(m["exact_match_accuracy"])
 
+        # Compute mean across seeds
+        k_results = {name: round(sum(vals) / len(vals), 2) for name, vals in seed_runs.items()}
         adaptation_curve[f"k={k}"] = k_results
         print(f"  * k={k:2d}: Inductive Learner={k_results['Inductive Rule Learner']:5.1f}%, Naive Bayes={k_results['Statistical Naive Bayes']:5.1f}%, Surface Lookup={k_results['Surface Lookup Baseline']:5.1f}%")
 

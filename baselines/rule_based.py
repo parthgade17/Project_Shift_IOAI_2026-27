@@ -84,8 +84,16 @@ class RuleBasedLearner:
             "tense_map": tense_map,
         }
 
-    def track_dialogue_context(self, context_turns: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Extracts discourse antecedents from conversation history."""
+    def track_dialogue_context(
+        self,
+        context_turns: List[Dict[str, Any]],
+        induced: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """
+        Extracts discourse antecedents from conversation history.
+        Parses turn utterances directly using induced support set mappings
+        when gold event_frame annotations are withheld (contestant evaluation mode).
+        """
         discourse = {
             "masculine_agent": None,
             "feminine_agent": None,
@@ -97,15 +105,35 @@ class RuleBasedLearner:
         }
 
         for turn in context_turns:
-            frame_data = turn.get("event_frame", {})
-            if not frame_data:
-                continue
+            agent = None
+            obj = None
+            action = None
+            tense = None
+            pol = None
 
-            agent = frame_data.get("agent")
-            obj = frame_data.get("object")
-            action = frame_data.get("action")
-            tense = frame_data.get("tense")
-            pol = frame_data.get("polarity")
+            # Path A: Gold event frame present (author reference mode)
+            frame_data = turn.get("event_frame", {})
+            if frame_data:
+                agent = frame_data.get("agent")
+                obj = frame_data.get("object")
+                action = frame_data.get("action")
+                tense = frame_data.get("tense")
+                pol = frame_data.get("polarity")
+            elif induced is not None and "utterance" in turn:
+                # Path B: Contestant mode - parse context turn text from support set grounding
+                turn_toks = clean_tokens(turn["utterance"])
+                for t in turn_toks:
+                    if t in induced.get("agent_map", {}):
+                        agent = induced["agent_map"][t]
+                    if t in induced.get("object_map", {}):
+                        obj = induced["object_map"][t]
+                    stem = t[:3]
+                    if stem in induced.get("action_map", {}):
+                        action = induced["action_map"][t[:3]]
+                    for suf, t_val in induced.get("tense_map", {}).items():
+                        if t.endswith(suf):
+                            tense = t_val
+                pol = Polarity.NEGATIVE.value if any(t in ("non", "ne") or t.startswith("ne") for t in turn_toks) else Polarity.AFFIRMATIVE.value
 
             if agent:
                 discourse["last_agent"] = agent
@@ -131,8 +159,8 @@ class RuleBasedLearner:
         """Parses the target query into a structured EventFrame."""
         wo = episode.word_order or "SOV"
         q_tokens = clean_tokens(episode.query.utterance)
-        discourse = self.track_dialogue_context(episode.query.context)
         induced = self.induce_model_from_support(episode.support_set, wo)
+        discourse = self.track_dialogue_context(episode.query.context, induced=induced)
 
         resolved_refs: Dict[str, str] = {}
 

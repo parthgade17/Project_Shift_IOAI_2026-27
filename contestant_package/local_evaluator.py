@@ -92,12 +92,15 @@ def main():
     parser.add_argument("--data", default="sample_data/sample_dev.jsonl", help="Dataset JSONL file")
     args = parser.parse_args()
 
+    script_dir = Path(__file__).resolve().parent
     data_path = Path(args.data)
     if not data_path.exists():
-        # Fallback to parent datasets if available
-        parent_dev = Path("../datasets/public_dev.jsonl")
-        if parent_dev.exists():
-            data_path = parent_dev
+        if (script_dir / args.data).exists():
+            data_path = script_dir / args.data
+        elif (Path("datasets/public_dev.jsonl")).exists():
+            data_path = Path("datasets/public_dev.jsonl")
+        elif (script_dir.parent / "datasets/public_dev.jsonl").exists():
+            data_path = script_dir.parent / "datasets/public_dev.jsonl"
         else:
             print(f"Dataset {args.data} not found. Please provide a valid JSONL file.")
             sys.exit(1)

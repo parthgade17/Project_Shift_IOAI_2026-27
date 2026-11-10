@@ -13,7 +13,8 @@ from typing import Dict, List, Optional, Tuple, Any
 
 from shift.ontology import (
     EventFrame, AgentEntity, ActionPredicate, ObjectEntity,
-    Tense, Polarity, ReferenceType, AGENT_METADATA
+    Tense, Polarity, ReferenceType, AGENT_METADATA,
+    deterministic_seed, DifficultyLevel
 )
 from shift.lexicon import Lexicon, generate_random_lexicon
 from shift.drift import (
@@ -32,12 +33,24 @@ class SupportExample:
     event_frame: EventFrame
     context: List[Dict[str, Any]] = field(default_factory=list)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self, include_gold_context: bool = True) -> Dict[str, Any]:
+        clean_ctx = []
+        for t in self.context:
+            if isinstance(t, dict):
+                if include_gold_context:
+                    clean_ctx.append(dict(t))
+                else:
+                    clean_ctx.append({k: v for k, v in t.items() if k not in ("event_frame", "reference_type_used")})
+            elif hasattr(t, "to_dict"):
+                clean_ctx.append(t.to_dict(include_gold=include_gold_context))
+            else:
+                clean_ctx.append(t)
+
         return {
             "example_id": self.example_id,
             "utterance": self.utterance,
             "event_frame": self.event_frame.to_dict(),
-            "context": self.context
+            "context": clean_ctx
         }
 
     @classmethod
@@ -57,12 +70,29 @@ class QueryInstance:
     context: List[Dict[str, Any]] = field(default_factory=list)
     phenomenon: str = "direct"
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self, include_gold: bool = True) -> Dict[str, Any]:
+        """Serializes query. If include_gold=False, strips gold event_frame from context turns."""
+        clean_ctx = []
+        for t in self.context:
+            if isinstance(t, dict):
+                if include_gold:
+                    clean_ctx.append(dict(t))
+                else:
+                    clean_ctx.append({k: v for k, v in t.items() if k not in ("event_frame", "reference_type_used")})
+            elif hasattr(t, "to_dict"):
+                clean_ctx.append(t.to_dict(include_gold=include_gold))
+            else:
+                clean_ctx.append(t)
+
         return {
             "utterance": self.utterance,
-            "context": self.context,
+            "context": clean_ctx,
             "phenomenon": self.phenomenon
         }
+
+    def to_public_dict(self) -> Dict[str, Any]:
+        """Contestant-visible view with zero gold annotations in context turns."""
+        return self.to_dict(include_gold=False)
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> QueryInstance:
@@ -91,20 +121,29 @@ class Episode:
     difficulty_level: int = 1
     metadata: Dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self, strip_label: bool = False) -> Dict[str, Any]:
+    def to_reference_dict(self) -> Dict[str, Any]:
+        """Full author/evaluator serialization including ground-truth label and context frames."""
+        return self.to_dict(strip_label=False, contestant_view=False)
+
+    def to_contestant_dict(self) -> Dict[str, Any]:
+        """Strictly sanitized public serialization with ZERO gold query labels and ZERO context event frames."""
+        return self.to_dict(strip_label=True, contestant_view=True)
+
+    def to_dict(self, strip_label: bool = False, contestant_view: bool = False) -> Dict[str, Any]:
+        is_contestant = contestant_view or strip_label
         data: Dict[str, Any] = {
             "episode_id": self.episode_id,
             "community_id": self.community_id,
             "period_id": self.period_id,
             "word_order": self.word_order,
-            "support_set": [s.to_dict() for s in self.support_set],
-            "query": self.query.to_dict(),
+            "support_set": [s.to_dict(include_gold_context=not is_contestant) for s in self.support_set],
+            "query": self.query.to_dict(include_gold=not is_contestant),
             "difficulty_level": self.difficulty_level,
             "metadata": dict(self.metadata)
         }
         if self.counterfactual_pair_id:
             data["counterfactual_pair_id"] = self.counterfactual_pair_id
-        if not strip_label:
+        if not is_contestant:
             if self.query_label is not None:
                 data["query_label"] = self.query_label.to_dict()
             if self.drift_attribution:
@@ -148,7 +187,7 @@ class EpisodeGenerator:
         period_id: str = HistoricalPeriod.CLASSICAL.value
     ) -> GrammarEngine:
         """Derives the exact grammar engine for an episode based on base_seed."""
-        ep_seed = abs(hash(f"{self.base_seed}_{episode_id}_{community_id}_{period_id}")) % (2**31)
+        ep_seed = deterministic_seed(f"{self.base_seed}_{episode_id}_{community_id}_{period_id}")
         base_lex = Lexicon(seed=ep_seed)
         drift = DriftEngine(community_id=community_id, period_id=period_id)
         drifted_lex = drift.transform_lexicon(base_lex)
@@ -166,13 +205,14 @@ class EpisodeGenerator:
         k_support: int = 8,
         phenomenon: str = "coreference",
         forced_action: Optional[str] = None,
-        forced_object: Optional[str] = None
+        forced_object: Optional[str] = None,
+        forced_difficulty_level: Optional[int] = None
     ) -> Episode:
         """
         Builds a single episode with k_support labelled support examples and 1 query.
         Guarantees that query morphemes are present in the support set.
         """
-        ep_seed = abs(hash(f"{self.base_seed}_{episode_id}_{community_id}_{period_id}")) % (2**31)
+        ep_seed = deterministic_seed(f"{self.base_seed}_{episode_id}_{community_id}_{period_id}")
         grammar = self.get_grammar_for_episode(episode_id, community_id, period_id)
         drift = DriftEngine(community_id=community_id, period_id=period_id)
         dialogue_gen = DialogueGenerator(grammar=grammar, seed=ep_seed)
@@ -262,14 +302,24 @@ class EpisodeGenerator:
         drift_attr = drift.get_frame_drift_attribution(target_frame)
         target_frame.drift_attribution = drift_attr
 
-        diff_level = 1
-        if any(v == "interaction_shift" for v in drift_attr.values()):
-            diff_level = 3
-        elif any(v in ("community_shift", "historical_shift") for v in drift_attr.values()):
-            diff_level = 2
-
-        if phenomenon in ("coreference", "ellipsis", "correction"):
-            diff_level = 4
+        # Determine formal IOAI competition difficulty level (Levels 1 to 5)
+        if forced_difficulty_level is not None:
+            diff_level = forced_difficulty_level
+        elif forced_action is not None or forced_object is not None:
+            # Compositional generalization query
+            diff_level = DifficultyLevel.LEVEL_5_COMPOSITIONAL.value
+        elif phenomenon in ("coreference", "ellipsis", "correction"):
+            # Discourse reasoning query
+            diff_level = DifficultyLevel.LEVEL_4_DISCOURSE.value
+        elif target_frame.polarity == Polarity.NEGATIVE.value or any(v == "interaction_shift" for v in drift_attr.values()):
+            # Pragmatic negation / polar inversion
+            diff_level = DifficultyLevel.LEVEL_3_PRAGMATIC.value
+        elif any(v in ("community_shift", "historical_shift") for v in drift_attr.values()) or period_id != HistoricalPeriod.CLASSICAL.value or community_id != CommunityId.CITADEL.value:
+            # Dialectal and historical drift
+            diff_level = DifficultyLevel.LEVEL_2_DRIFT.value
+        else:
+            # Canonical direct foundation
+            diff_level = DifficultyLevel.LEVEL_1_DIRECT.value
 
         ep = Episode(
             episode_id=episode_id,
@@ -312,7 +362,7 @@ class EpisodeGenerator:
         Episode A and Episode B share identical environment metadata, identical support set,
         and identical query utterance U_q, but have different dialogue contexts leading to different EventFrames.
         """
-        ep_seed = abs(hash(f"{self.base_seed}_{pair_id}_{community_id}_{period_id}")) % (2**31)
+        ep_seed = deterministic_seed(f"{self.base_seed}_{pair_id}_{community_id}_{period_id}")
         base_lex = Lexicon(seed=ep_seed)
         drift = DriftEngine(community_id=community_id, period_id=period_id)
         drifted_lex = drift.transform_lexicon(base_lex)
@@ -418,7 +468,9 @@ class EpisodeGenerator:
             )
             episodes.append(ep)
 
-        # Audit and guarantee 100% learnability across the entire batch
-        from shift.learnability_validator import LearnabilityValidator
-        certified_episodes, _ = LearnabilityValidator.audit_and_repair_dataset(episodes, generator=self)
-        return certified_episodes
+        # Audit and guarantee 100% learnability across the entire batch (for k > 0)
+        if k_support > 0:
+            from shift.learnability_validator import LearnabilityValidator
+            certified_episodes, _ = LearnabilityValidator.audit_and_repair_dataset(episodes, generator=self)
+            return certified_episodes
+        return episodes

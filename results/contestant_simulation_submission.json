@@ -1,8 +1,8 @@
 {
   "test_iid_0001": {
-    "agent": "scholar_omega",
-    "action": "inspect",
-    "object": "ancient_relic",
+    "agent": "scout_alpha",
+    "action": "activate",
+    "object": "data_capsule",
     "tense": "present",
     "polarity": "negative",
     "resolved_references": {},
@@ -16,13 +16,103 @@
   },
   "test_iid_0002": {
     "agent": "guardian_sigma",
-    "action": "harvest",
+    "action": "forge",
     "object": "ancient_relic",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0003": {
+    "agent": "scholar_omega",
+    "action": "inspect",
+    "object": "stone_monolith",
+    "tense": "present",
+    "polarity": "negative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0004": {
+    "agent": "guardian_sigma",
+    "action": "activate",
+    "object": "signal_beacon",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0005": {
+    "agent": "guardian_sigma",
+    "action": "forge",
+    "object": "signal_beacon",
     "tense": "present",
     "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0006": {
+    "agent": "artisan_delta",
+    "action": "abandon",
+    "object": "energy_matrix",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0007": {
+    "agent": "scholar_kappa",
+    "action": "harvest",
+    "object": "data_capsule",
+    "tense": "present",
+    "polarity": "negative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0008": {
+    "agent": "scout_alpha",
+    "action": "harvest",
+    "object": "crystal_core",
+    "tense": "future",
+    "polarity": "affirmative",
     "resolved_references": {
-      "la": "guardian_sigma",
-      "id": "ancient_relic"
+      "el": "scout_alpha",
+      "id": "crystal_core"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -32,10 +122,109 @@
       "polarity": "stable"
     }
   },
-  "test_iid_0003": {
+  "test_iid_0009": {
+    "agent": "scholar_omega",
+    "action": "activate",
+    "object": "water_purifier",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0010": {
+    "agent": "guardian_theta",
+    "action": "harvest",
+    "object": "crystal_core",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "guardian_theta",
+      "id": "crystal_core"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0011": {
+    "agent": "scout_alpha",
+    "action": "activate",
+    "object": "energy_matrix",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0012": {
+    "agent": "scholar_omega",
+    "action": "harvest",
+    "object": "data_capsule",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "scholar_omega",
+      "id": "data_capsule"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0013": {
     "agent": "artisan_gamma",
+    "action": "repair",
+    "object": "energy_matrix",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0014": {
+    "agent": "guardian_theta",
+    "action": "forge",
+    "object": "data_capsule",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "guardian_theta",
+      "id": "data_capsule"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_iid_0015": {
+    "agent": "scholar_kappa",
     "action": "relocate",
-    "object": "shelter_dome",
+    "object": "ancient_relic",
     "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
@@ -49,216 +238,14 @@
       "polarity": "stable"
     }
   },
-  "test_iid_0004": {
+  "test_iid_0016": {
     "agent": "artisan_gamma",
-    "action": "relocate",
-    "object": "signal_beacon",
-    "tense": "present",
+    "action": "activate",
+    "object": "ancient_relic",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
       "el": "artisan_gamma",
-      "id": "signal_beacon"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0005": {
-    "agent": "scholar_omega",
-    "action": "repair",
-    "object": "energy_matrix",
-    "tense": "present",
-    "polarity": "negative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0006": {
-    "agent": "artisan_delta",
-    "action": "activate",
-    "object": "ancient_relic",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "artisan_delta",
-      "id": "ancient_relic"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0007": {
-    "agent": "scout_alpha",
-    "action": "inspect",
-    "object": "stone_monolith",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "inspect"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0008": {
-    "agent": "scout_alpha",
-    "action": "forge",
-    "object": "crystal_core",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "el": "scout_alpha",
-      "id": "crystal_core"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0009": {
-    "agent": "guardian_sigma",
-    "action": "forge",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0010": {
-    "agent": "scholar_omega",
-    "action": "relocate",
-    "object": "crystal_core",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "el": "scholar_omega",
-      "id": "crystal_core"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0011": {
-    "agent": "guardian_theta",
-    "action": "relocate",
-    "object": "crystal_core",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0012": {
-    "agent": "artisan_delta",
-    "action": "harvest",
-    "object": "signal_beacon",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "artisan_delta",
-      "id": "signal_beacon"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0013": {
-    "agent": "scholar_kappa",
-    "action": "repair",
-    "object": "energy_matrix",
-    "tense": "future",
-    "polarity": "negative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0014": {
-    "agent": "scout_beta",
-    "action": "forge",
-    "object": "crystal_core",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "scout_beta",
-      "id": "crystal_core"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0015": {
-    "agent": "guardian_theta",
-    "action": "activate",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "activate"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_iid_0016": {
-    "agent": "artisan_delta",
-    "action": "inspect",
-    "object": "ancient_relic",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "artisan_delta",
       "id": "ancient_relic"
     },
     "drift_attribution": {
@@ -270,9 +257,9 @@
     }
   },
   "test_iid_0017": {
-    "agent": "artisan_gamma",
+    "agent": "guardian_theta",
     "action": "harvest",
-    "object": "shelter_dome",
+    "object": "data_capsule",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {},
@@ -287,12 +274,12 @@
   "test_iid_0018": {
     "agent": "guardian_sigma",
     "action": "inspect",
-    "object": "data_capsule",
-    "tense": "past",
+    "object": "water_purifier",
+    "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
       "la": "guardian_sigma",
-      "id": "data_capsule"
+      "id": "water_purifier"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -303,13 +290,13 @@
     }
   },
   "test_iid_0019": {
-    "agent": "guardian_sigma",
-    "action": "relocate",
-    "object": "crystal_core",
+    "agent": "scholar_kappa",
+    "action": "harvest",
+    "object": "water_purifier",
     "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "[elliptic_verb]": "relocate"
+      "[elliptic_verb]": "harvest"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -320,14 +307,14 @@
     }
   },
   "test_iid_0020": {
-    "agent": "scout_beta",
-    "action": "inspect",
-    "object": "crystal_core",
-    "tense": "future",
+    "agent": "artisan_gamma",
+    "action": "abandon",
+    "object": "ancient_relic",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scout_beta",
-      "id": "crystal_core"
+      "el": "artisan_gamma",
+      "id": "ancient_relic"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -338,11 +325,11 @@
     }
   },
   "test_iid_0021": {
-    "agent": "artisan_gamma",
+    "agent": "guardian_sigma",
     "action": "repair",
-    "object": "shelter_dome",
+    "object": "signal_beacon",
     "tense": "future",
-    "polarity": "affirmative",
+    "polarity": "negative",
     "resolved_references": {},
     "drift_attribution": {
       "agent": "stable",
@@ -353,14 +340,14 @@
     }
   },
   "test_iid_0022": {
-    "agent": "guardian_theta",
-    "action": "repair",
-    "object": "shelter_dome",
+    "agent": "artisan_gamma",
+    "action": "activate",
+    "object": "signal_beacon",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "guardian_theta",
-      "id": "shelter_dome"
+      "el": "artisan_gamma",
+      "id": "signal_beacon"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -371,10 +358,10 @@
     }
   },
   "test_iid_0023": {
-    "agent": "scout_beta",
-    "action": "activate",
-    "object": "water_purifier",
-    "tense": "present",
+    "agent": "scholar_omega",
+    "action": "repair",
+    "object": "shelter_dome",
+    "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {},
     "drift_attribution": {
@@ -386,14 +373,14 @@
     }
   },
   "test_iid_0024": {
-    "agent": "scout_beta",
-    "action": "inspect",
-    "object": "stone_monolith",
+    "agent": "scout_alpha",
+    "action": "harvest",
+    "object": "signal_beacon",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scout_beta",
-      "id": "stone_monolith"
+      "el": "scout_alpha",
+      "id": "signal_beacon"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -404,11 +391,11 @@
     }
   },
   "test_iid_0025": {
-    "agent": "scout_alpha",
-    "action": "secure",
-    "object": "crystal_core",
-    "tense": "present",
-    "polarity": "affirmative",
+    "agent": "guardian_theta",
+    "action": "forge",
+    "object": "energy_matrix",
+    "tense": "future",
+    "polarity": "negative",
     "resolved_references": {},
     "drift_attribution": {
       "agent": "stable",
@@ -419,14 +406,14 @@
     }
   },
   "test_iid_0026": {
-    "agent": "artisan_delta",
-    "action": "repair",
-    "object": "energy_matrix",
+    "agent": "guardian_theta",
+    "action": "activate",
+    "object": "crystal_core",
     "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "artisan_delta",
-      "id": "energy_matrix"
+      "el": "guardian_theta",
+      "id": "crystal_core"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -437,10 +424,10 @@
     }
   },
   "test_iid_0027": {
-    "agent": "guardian_theta",
+    "agent": "scholar_omega",
     "action": "activate",
-    "object": "shelter_dome",
-    "tense": "present",
+    "object": "data_capsule",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
       "[elliptic_verb]": "activate"
@@ -454,14 +441,14 @@
     }
   },
   "test_iid_0028": {
-    "agent": "artisan_gamma",
-    "action": "relocate",
-    "object": "energy_matrix",
+    "agent": "scout_beta",
+    "action": "abandon",
+    "object": "stone_monolith",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "artisan_gamma",
-      "id": "energy_matrix"
+      "la": "scout_beta",
+      "id": "stone_monolith"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -472,11 +459,11 @@
     }
   },
   "test_iid_0029": {
-    "agent": "scout_beta",
+    "agent": "guardian_theta",
     "action": "inspect",
-    "object": "crystal_core",
-    "tense": "past",
-    "polarity": "affirmative",
+    "object": "data_capsule",
+    "tense": "future",
+    "polarity": "negative",
     "resolved_references": {},
     "drift_attribution": {
       "agent": "stable",
@@ -487,313 +474,10 @@
     }
   },
   "test_iid_0030": {
-    "agent": "scout_beta",
-    "action": "relocate",
-    "object": "shelter_dome",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "scout_beta",
-      "id": "shelter_dome"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0001": {
     "agent": "scholar_omega",
-    "action": "forge",
-    "object": "ancient_relic",
-    "tense": "present",
-    "polarity": "negative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0002": {
-    "agent": "guardian_sigma",
-    "action": "repair",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "guardian_sigma",
-      "id": "crystal_core"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0003": {
-    "agent": "artisan_delta",
-    "action": "activate",
-    "object": "energy_matrix",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "activate"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0004": {
-    "agent": "scholar_kappa",
-    "action": "harvest",
-    "object": "stone_monolith",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "scholar_kappa",
-      "id": "stone_monolith"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0005": {
-    "agent": "guardian_sigma",
-    "action": "forge",
-    "object": "ancient_relic",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0006": {
-    "agent": "guardian_theta",
-    "action": "repair",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "el": "guardian_theta",
-      "id": "crystal_core"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0007": {
-    "agent": "guardian_sigma",
-    "action": "harvest",
-    "object": "signal_beacon",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "harvest"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0008": {
-    "agent": "guardian_sigma",
-    "action": "harvest",
-    "object": "stone_monolith",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "guardian_sigma",
-      "id": "stone_monolith"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "community_shift",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0009": {
-    "agent": "scout_beta",
-    "action": "forge",
-    "object": "ancient_relic",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0010": {
-    "agent": "scholar_kappa",
-    "action": "repair",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "scholar_kappa",
-      "id": "crystal_core"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0011": {
-    "agent": "artisan_delta",
-    "action": "harvest",
-    "object": "crystal_core",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "community_shift",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0012": {
-    "agent": "scholar_kappa",
-    "action": "harvest",
-    "object": "stone_monolith",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "scholar_kappa",
-      "id": "stone_monolith"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0013": {
-    "agent": "artisan_gamma",
-    "action": "forge",
-    "object": "ancient_relic",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0014": {
-    "agent": "guardian_theta",
-    "action": "repair",
-    "object": "crystal_core",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "el": "guardian_theta",
-      "id": "crystal_core"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0015": {
-    "agent": "scout_beta",
     "action": "secure",
-    "object": "shelter_dome",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "secure"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0016": {
-    "agent": "artisan_gamma",
-    "action": "harvest",
-    "object": "stone_monolith",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "el": "artisan_gamma",
-      "id": "stone_monolith"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0017": {
-    "agent": "scout_beta",
-    "action": "forge",
-    "object": "ancient_relic",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0018": {
-    "agent": "scholar_omega",
-    "action": "repair",
     "object": "crystal_core",
-    "tense": "future",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
       "el": "scholar_omega",
@@ -807,45 +491,10 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0019": {
-    "agent": "scout_beta",
-    "action": "activate",
-    "object": "ancient_relic",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "activate"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0020": {
+  "test_ood_0001": {
     "agent": "scholar_kappa",
-    "action": "harvest",
-    "object": "stone_monolith",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "scholar_kappa",
-      "id": "stone_monolith"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "community_shift",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0021": {
-    "agent": "scholar_omega",
-    "action": "forge",
-    "object": "ancient_relic",
+    "action": "abandon",
+    "object": "energy_matrix",
     "tense": "present",
     "polarity": "negative",
     "resolved_references": {},
@@ -857,15 +506,50 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0022": {
-    "agent": "scout_alpha",
-    "action": "repair",
-    "object": "crystal_core",
+  "test_ood_0002": {
+    "agent": "guardian_theta",
+    "action": "harvest",
+    "object": "stone_monolith",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "guardian_theta",
+      "id": "stone_monolith"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "community_shift",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0003": {
+    "agent": "guardian_theta",
+    "action": "inspect",
+    "object": "water_purifier",
     "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "scout_alpha",
-      "id": "crystal_core"
+      "[elliptic_verb]": "inspect"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0004": {
+    "agent": "scholar_kappa",
+    "action": "forge",
+    "object": "ancient_relic",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "la": "scholar_kappa",
+      "id": "ancient_relic"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -875,12 +559,12 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0023": {
-    "agent": "guardian_theta",
-    "action": "activate",
-    "object": "ancient_relic",
-    "tense": "past",
-    "polarity": "affirmative",
+  "test_ood_0005": {
+    "agent": "artisan_delta",
+    "action": "abandon",
+    "object": "energy_matrix",
+    "tense": "future",
+    "polarity": "negative",
     "resolved_references": {},
     "drift_attribution": {
       "agent": "stable",
@@ -890,14 +574,14 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0024": {
-    "agent": "scholar_kappa",
+  "test_ood_0006": {
+    "agent": "guardian_sigma",
     "action": "harvest",
     "object": "stone_monolith",
-    "tense": "present",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scholar_kappa",
+      "la": "guardian_sigma",
       "id": "stone_monolith"
     },
     "drift_attribution": {
@@ -908,10 +592,111 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0025": {
+  "test_ood_0007": {
+    "agent": "scout_alpha",
+    "action": "abandon",
+    "object": "stone_monolith",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "[elliptic_verb]": "abandon"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0008": {
     "agent": "scholar_omega",
     "action": "forge",
     "object": "ancient_relic",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "scholar_omega",
+      "id": "ancient_relic"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0009": {
+    "agent": "guardian_theta",
+    "action": "abandon",
+    "object": "energy_matrix",
+    "tense": "past",
+    "polarity": "negative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0010": {
+    "agent": "guardian_sigma",
+    "action": "harvest",
+    "object": "stone_monolith",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "la": "guardian_sigma",
+      "id": "stone_monolith"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0011": {
+    "agent": "artisan_gamma",
+    "action": "forge",
+    "object": "water_purifier",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0012": {
+    "agent": "artisan_gamma",
+    "action": "forge",
+    "object": "ancient_relic",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "artisan_gamma",
+      "id": "ancient_relic"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0013": {
+    "agent": "scout_beta",
+    "action": "abandon",
+    "object": "energy_matrix",
     "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {},
@@ -923,15 +708,32 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0026": {
-    "agent": "scout_beta",
-    "action": "repair",
-    "object": "crystal_core",
+  "test_ood_0014": {
+    "agent": "scholar_omega",
+    "action": "harvest",
+    "object": "stone_monolith",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scout_beta",
-      "id": "crystal_core"
+      "el": "scholar_omega",
+      "id": "stone_monolith"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "community_shift",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0015": {
+    "agent": "guardian_sigma",
+    "action": "abandon",
+    "object": "stone_monolith",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "[elliptic_verb]": "abandon"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -941,11 +743,62 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0027": {
-    "agent": "scout_beta",
-    "action": "repair",
+  "test_ood_0016": {
+    "agent": "guardian_theta",
+    "action": "forge",
     "object": "ancient_relic",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "guardian_theta",
+      "id": "ancient_relic"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0017": {
+    "agent": "scout_alpha",
+    "action": "abandon",
+    "object": "energy_matrix",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0018": {
+    "agent": "scout_beta",
+    "action": "harvest",
+    "object": "stone_monolith",
     "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "la": "scout_beta",
+      "id": "stone_monolith"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0019": {
+    "agent": "guardian_sigma",
+    "action": "repair",
+    "object": "crystal_core",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
       "[elliptic_verb]": "repair"
@@ -958,61 +811,28 @@
       "polarity": "stable"
     }
   },
-  "test_ood_0028": {
+  "test_ood_0020": {
     "agent": "scout_alpha",
-    "action": "harvest",
-    "object": "stone_monolith",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "el": "scout_alpha",
-      "id": "stone_monolith"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0029": {
-    "agent": "scholar_omega",
     "action": "forge",
     "object": "ancient_relic",
     "tense": "present",
     "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "historical_shift",
-      "polarity": "stable"
-    }
-  },
-  "test_ood_0030": {
-    "agent": "scout_beta",
-    "action": "repair",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
     "resolved_references": {
-      "la": "scout_beta",
-      "id": "crystal_core"
+      "el": "scout_alpha",
+      "id": "ancient_relic"
     },
     "drift_attribution": {
       "agent": "stable",
       "action": "stable",
       "object": "stable",
-      "tense": "historical_shift",
+      "tense": "stable",
       "polarity": "stable"
     }
   },
-  "test_comm_0001": {
-    "agent": "artisan_gamma",
-    "action": "relocate",
-    "object": "water_purifier",
+  "test_ood_0021": {
+    "agent": "artisan_delta",
+    "action": "abandon",
+    "object": "energy_matrix",
     "tense": "present",
     "polarity": "negative",
     "resolved_references": {},
@@ -1024,61 +844,61 @@
       "polarity": "stable"
     }
   },
-  "test_comm_0002": {
-    "agent": "artisan_gamma",
+  "test_ood_0022": {
+    "agent": "scout_beta",
     "action": "harvest",
-    "object": "ancient_relic",
+    "object": "stone_monolith",
     "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "artisan_gamma"
+      "la": "scout_beta",
+      "id": "stone_monolith"
     },
     "drift_attribution": {
       "agent": "stable",
       "action": "stable",
       "object": "stable",
-      "tense": "stable",
+      "tense": "historical_shift",
       "polarity": "stable"
     }
   },
-  "test_comm_0003": {
-    "agent": "guardian_sigma",
+  "test_ood_0023": {
+    "agent": "scholar_omega",
+    "action": "secure",
+    "object": "shelter_dome",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0024": {
+    "agent": "scout_alpha",
     "action": "forge",
-    "object": "crystal_core",
-    "tense": "past",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "forge"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_comm_0004": {
-    "agent": "guardian_theta",
-    "action": "relocate",
-    "object": "signal_beacon",
+    "object": "ancient_relic",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "guardian_theta"
+      "el": "scout_alpha",
+      "id": "ancient_relic"
     },
     "drift_attribution": {
       "agent": "stable",
       "action": "stable",
       "object": "stable",
-      "tense": "stable",
+      "tense": "historical_shift",
       "polarity": "stable"
     }
   },
-  "test_comm_0005": {
-    "agent": "guardian_theta",
-    "action": "inspect",
-    "object": "signal_beacon",
+  "test_ood_0025": {
+    "agent": "artisan_delta",
+    "action": "abandon",
+    "object": "energy_matrix",
     "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {},
@@ -1090,31 +910,32 @@
       "polarity": "stable"
     }
   },
-  "test_comm_0006": {
-    "agent": "scholar_kappa",
-    "action": "forge",
-    "object": "ancient_relic",
+  "test_ood_0026": {
+    "agent": "artisan_gamma",
+    "action": "harvest",
+    "object": "stone_monolith",
     "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scholar_kappa"
+      "el": "artisan_gamma",
+      "id": "stone_monolith"
     },
     "drift_attribution": {
       "agent": "stable",
-      "action": "stable",
+      "action": "community_shift",
       "object": "stable",
       "tense": "stable",
       "polarity": "stable"
     }
   },
-  "test_comm_0007": {
-    "agent": "scout_alpha",
-    "action": "forge",
-    "object": "signal_beacon",
-    "tense": "future",
+  "test_ood_0027": {
+    "agent": "scholar_kappa",
+    "action": "relocate",
+    "object": "data_capsule",
+    "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "[elliptic_verb]": "forge"
+      "[elliptic_verb]": "relocate"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1124,27 +945,61 @@
       "polarity": "stable"
     }
   },
-  "test_comm_0008": {
-    "agent": "scholar_omega",
-    "action": "secure",
+  "test_ood_0028": {
+    "agent": "scout_alpha",
+    "action": "forge",
+    "object": "ancient_relic",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "scout_alpha",
+      "id": "ancient_relic"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0029": {
+    "agent": "guardian_theta",
+    "action": "abandon",
+    "object": "energy_matrix",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "historical_shift",
+      "polarity": "stable"
+    }
+  },
+  "test_ood_0030": {
+    "agent": "guardian_sigma",
+    "action": "harvest",
     "object": "stone_monolith",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "scholar_omega"
+      "la": "guardian_sigma",
+      "id": "stone_monolith"
     },
     "drift_attribution": {
       "agent": "stable",
       "action": "stable",
       "object": "stable",
-      "tense": "stable",
+      "tense": "historical_shift",
       "polarity": "stable"
     }
   },
-  "test_comm_0009": {
-    "agent": "scholar_kappa",
-    "action": "repair",
-    "object": "signal_beacon",
+  "test_comm_0001": {
+    "agent": "scholar_omega",
+    "action": "abandon",
+    "object": "ancient_relic",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {},
@@ -1156,10 +1011,10 @@
       "polarity": "stable"
     }
   },
-  "test_comm_0010": {
+  "test_comm_0002": {
     "agent": "artisan_delta",
-    "action": "activate",
-    "object": "water_purifier",
+    "action": "relocate",
+    "object": "shelter_dome",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
@@ -1173,14 +1028,146 @@
       "polarity": "stable"
     }
   },
-  "test_comm_0011": {
+  "test_comm_0003": {
+    "agent": "scholar_omega",
+    "action": "secure",
+    "object": "signal_beacon",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "[elliptic_verb]": "secure"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0004": {
     "agent": "scout_beta",
     "action": "forge",
+    "object": "signal_beacon",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "la": "scout_beta"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0005": {
+    "agent": "artisan_delta",
+    "action": "repair",
+    "object": "signal_beacon",
+    "tense": "past",
+    "polarity": "negative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0006": {
+    "agent": "artisan_gamma",
+    "action": "repair",
+    "object": "energy_matrix",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "artisan_gamma"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0007": {
+    "agent": "scout_alpha",
+    "action": "relocate",
     "object": "stone_monolith",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "[elliptic_verb]": "forge"
+      "[elliptic_verb]": "relocate"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0008": {
+    "agent": "guardian_theta",
+    "action": "inspect",
+    "object": "stone_monolith",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "guardian_theta"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0009": {
+    "agent": "scout_alpha",
+    "action": "abandon",
+    "object": "water_purifier",
+    "tense": "present",
+    "polarity": "negative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0010": {
+    "agent": "scholar_omega",
+    "action": "harvest",
+    "object": "ancient_relic",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "scholar_omega"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0011": {
+    "agent": "artisan_gamma",
+    "action": "activate",
+    "object": "data_capsule",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "[elliptic_verb]": "activate"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1192,8 +1179,8 @@
   },
   "test_comm_0012": {
     "agent": "guardian_sigma",
-    "action": "activate",
-    "object": "water_purifier",
+    "action": "secure",
+    "object": "data_capsule",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
@@ -1208,75 +1195,9 @@
     }
   },
   "test_comm_0013": {
-    "agent": "scholar_omega",
-    "action": "activate",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {},
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_comm_0014": {
-    "agent": "guardian_sigma",
-    "action": "forge",
-    "object": "signal_beacon",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "guardian_sigma"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_comm_0015": {
-    "agent": "guardian_sigma",
-    "action": "forge",
-    "object": "water_purifier",
-    "tense": "present",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "[elliptic_verb]": "forge"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_comm_0016": {
-    "agent": "guardian_sigma",
-    "action": "activate",
-    "object": "crystal_core",
-    "tense": "future",
-    "polarity": "affirmative",
-    "resolved_references": {
-      "la": "guardian_sigma"
-    },
-    "drift_attribution": {
-      "agent": "stable",
-      "action": "stable",
-      "object": "stable",
-      "tense": "stable",
-      "polarity": "stable"
-    }
-  },
-  "test_comm_0017": {
     "agent": "artisan_delta",
     "action": "forge",
-    "object": "crystal_core",
+    "object": "energy_matrix",
     "tense": "future",
     "polarity": "negative",
     "resolved_references": {},
@@ -1288,14 +1209,80 @@
       "polarity": "stable"
     }
   },
-  "test_comm_0018": {
-    "agent": "scholar_kappa",
+  "test_comm_0014": {
+    "agent": "scout_alpha",
     "action": "activate",
+    "object": "water_purifier",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "scout_alpha"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0015": {
+    "agent": "artisan_gamma",
+    "action": "relocate",
     "object": "ancient_relic",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scholar_kappa"
+      "[elliptic_verb]": "relocate"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0016": {
+    "agent": "guardian_theta",
+    "action": "harvest",
+    "object": "ancient_relic",
+    "tense": "past",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "el": "guardian_theta"
+    },
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0017": {
+    "agent": "artisan_gamma",
+    "action": "relocate",
+    "object": "shelter_dome",
+    "tense": "present",
+    "polarity": "affirmative",
+    "resolved_references": {},
+    "drift_attribution": {
+      "agent": "stable",
+      "action": "stable",
+      "object": "stable",
+      "tense": "stable",
+      "polarity": "stable"
+    }
+  },
+  "test_comm_0018": {
+    "agent": "guardian_sigma",
+    "action": "harvest",
+    "object": "signal_beacon",
+    "tense": "future",
+    "polarity": "affirmative",
+    "resolved_references": {
+      "la": "guardian_sigma"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1307,12 +1294,12 @@
   },
   "test_comm_0019": {
     "agent": "scholar_kappa",
-    "action": "secure",
-    "object": "water_purifier",
-    "tense": "present",
+    "action": "activate",
+    "object": "signal_beacon",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "[elliptic_verb]": "secure"
+      "[elliptic_verb]": "activate"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1323,13 +1310,13 @@
     }
   },
   "test_comm_0020": {
-    "agent": "scholar_kappa",
-    "action": "forge",
-    "object": "data_capsule",
+    "agent": "artisan_delta",
+    "action": "activate",
+    "object": "signal_beacon",
     "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scholar_kappa"
+      "la": "artisan_delta"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1340,11 +1327,11 @@
     }
   },
   "test_period_0001": {
-    "agent": "scout_alpha",
-    "action": "inspect",
-    "object": "ancient_relic",
+    "agent": "artisan_delta",
+    "action": "secure",
+    "object": "shelter_dome",
     "tense": "present",
-    "polarity": "affirmative",
+    "polarity": "negative",
     "resolved_references": {},
     "drift_attribution": {
       "agent": "stable",
@@ -1355,14 +1342,14 @@
     }
   },
   "test_period_0002": {
-    "agent": "guardian_theta",
-    "action": "secure",
-    "object": "crystal_core",
-    "tense": "future",
+    "agent": "artisan_delta",
+    "action": "abandon",
+    "object": "energy_matrix",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "guardian_theta",
-      "id": "crystal_core"
+      "la": "artisan_delta",
+      "id": "energy_matrix"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1374,12 +1361,12 @@
   },
   "test_period_0003": {
     "agent": "scholar_kappa",
-    "action": "secure",
-    "object": "stone_monolith",
+    "action": "relocate",
+    "object": "data_capsule",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "[elliptic_verb]": "secure"
+      "[elliptic_verb]": "relocate"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1390,14 +1377,14 @@
     }
   },
   "test_period_0004": {
-    "agent": "guardian_theta",
+    "agent": "scholar_kappa",
     "action": "abandon",
-    "object": "stone_monolith",
+    "object": "signal_beacon",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "guardian_theta",
-      "id": "stone_monolith"
+      "la": "scholar_kappa",
+      "id": "signal_beacon"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1408,11 +1395,11 @@
     }
   },
   "test_period_0005": {
-    "agent": "artisan_delta",
-    "action": "relocate",
-    "object": "signal_beacon",
-    "tense": "present",
-    "polarity": "affirmative",
+    "agent": "scholar_kappa",
+    "action": "harvest",
+    "object": "shelter_dome",
+    "tense": "past",
+    "polarity": "negative",
     "resolved_references": {},
     "drift_attribution": {
       "agent": "stable",
@@ -1423,14 +1410,14 @@
     }
   },
   "test_period_0006": {
-    "agent": "artisan_gamma",
-    "action": "forge",
-    "object": "stone_monolith",
+    "agent": "scout_beta",
+    "action": "repair",
+    "object": "crystal_core",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "artisan_gamma",
-      "id": "stone_monolith"
+      "la": "scout_beta",
+      "id": "crystal_core"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1441,13 +1428,13 @@
     }
   },
   "test_period_0007": {
-    "agent": "guardian_theta",
-    "action": "inspect",
-    "object": "energy_matrix",
+    "agent": "scout_alpha",
+    "action": "relocate",
+    "object": "shelter_dome",
     "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "[elliptic_verb]": "inspect"
+      "[elliptic_verb]": "relocate"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1458,14 +1445,14 @@
     }
   },
   "test_period_0008": {
-    "agent": "scout_beta",
-    "action": "repair",
-    "object": "shelter_dome",
+    "agent": "scholar_omega",
+    "action": "relocate",
+    "object": "signal_beacon",
     "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scout_beta",
-      "id": "shelter_dome"
+      "el": "scholar_omega",
+      "id": "signal_beacon"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1478,8 +1465,8 @@
   "test_period_0009": {
     "agent": "artisan_gamma",
     "action": "secure",
-    "object": "shelter_dome",
-    "tense": "present",
+    "object": "water_purifier",
+    "tense": "past",
     "polarity": "negative",
     "resolved_references": {},
     "drift_attribution": {
@@ -1491,14 +1478,14 @@
     }
   },
   "test_period_0010": {
-    "agent": "guardian_sigma",
-    "action": "secure",
-    "object": "stone_monolith",
-    "tense": "past",
+    "agent": "scholar_kappa",
+    "action": "relocate",
+    "object": "data_capsule",
+    "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "guardian_sigma",
-      "id": "stone_monolith"
+      "la": "scholar_kappa",
+      "id": "data_capsule"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1509,10 +1496,10 @@
     }
   },
   "test_period_0011": {
-    "agent": "scholar_kappa",
+    "agent": "artisan_gamma",
     "action": "repair",
     "object": "ancient_relic",
-    "tense": "present",
+    "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {
       "[elliptic_verb]": "repair"
@@ -1526,14 +1513,14 @@
     }
   },
   "test_period_0012": {
-    "agent": "scout_beta",
-    "action": "inspect",
-    "object": "water_purifier",
-    "tense": "future",
+    "agent": "artisan_delta",
+    "action": "secure",
+    "object": "signal_beacon",
+    "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scout_beta",
-      "id": "water_purifier"
+      "la": "artisan_delta",
+      "id": "signal_beacon"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1544,10 +1531,10 @@
     }
   },
   "test_period_0013": {
-    "agent": "artisan_gamma",
-    "action": "relocate",
-    "object": "signal_beacon",
-    "tense": "past",
+    "agent": "guardian_theta",
+    "action": "secure",
+    "object": "data_capsule",
+    "tense": "future",
     "polarity": "affirmative",
     "resolved_references": {},
     "drift_attribution": {
@@ -1559,14 +1546,14 @@
     }
   },
   "test_period_0014": {
-    "agent": "artisan_delta",
-    "action": "repair",
-    "object": "data_capsule",
-    "tense": "future",
+    "agent": "scholar_omega",
+    "action": "forge",
+    "object": "crystal_core",
+    "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "artisan_delta",
-      "id": "data_capsule"
+      "el": "scholar_omega",
+      "id": "crystal_core"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1577,10 +1564,10 @@
     }
   },
   "test_period_0015": {
-    "agent": "scholar_omega",
+    "agent": "artisan_gamma",
     "action": "harvest",
-    "object": "shelter_dome",
-    "tense": "present",
+    "object": "stone_monolith",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
       "[elliptic_verb]": "harvest"
@@ -1594,14 +1581,14 @@
     }
   },
   "test_period_0016": {
-    "agent": "guardian_theta",
-    "action": "activate",
-    "object": "data_capsule",
-    "tense": "future",
+    "agent": "scholar_omega",
+    "action": "abandon",
+    "object": "signal_beacon",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "el": "guardian_theta",
-      "id": "data_capsule"
+      "el": "scholar_omega",
+      "id": "signal_beacon"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1612,11 +1599,11 @@
     }
   },
   "test_period_0017": {
-    "agent": "scout_alpha",
-    "action": "secure",
-    "object": "energy_matrix",
+    "agent": "artisan_gamma",
+    "action": "inspect",
+    "object": "shelter_dome",
     "tense": "present",
-    "polarity": "negative",
+    "polarity": "affirmative",
     "resolved_references": {},
     "drift_attribution": {
       "agent": "stable",
@@ -1629,12 +1616,12 @@
   "test_period_0018": {
     "agent": "scout_alpha",
     "action": "harvest",
-    "object": "data_capsule",
-    "tense": "future",
+    "object": "energy_matrix",
+    "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
       "el": "scout_alpha",
-      "id": "data_capsule"
+      "id": "energy_matrix"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1645,13 +1632,13 @@
     }
   },
   "test_period_0019": {
-    "agent": "guardian_sigma",
-    "action": "inspect",
-    "object": "crystal_core",
+    "agent": "scholar_kappa",
+    "action": "relocate",
+    "object": "data_capsule",
     "tense": "present",
     "polarity": "affirmative",
     "resolved_references": {
-      "[elliptic_verb]": "inspect"
+      "[elliptic_verb]": "relocate"
     },
     "drift_attribution": {
       "agent": "stable",
@@ -1662,14 +1649,14 @@
     }
   },
   "test_period_0020": {
-    "agent": "scout_beta",
-    "action": "inspect",
-    "object": "ancient_relic",
+    "agent": "artisan_delta",
+    "action": "forge",
+    "object": "signal_beacon",
     "tense": "past",
     "polarity": "affirmative",
     "resolved_references": {
-      "la": "scout_beta",
-      "id": "ancient_relic"
+      "la": "artisan_delta",
+      "id": "signal_beacon"
     },
     "drift_attribution": {
       "agent": "stable",

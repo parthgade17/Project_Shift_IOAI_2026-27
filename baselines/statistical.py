@@ -93,6 +93,19 @@ class StatisticalLearner:
                 if f.get("object"): last_object = f["object"]
                 if f.get("action"): last_action = f["action"]
                 if f.get("tense"): last_tense = f["tense"]
+                elif "utterance" in turn:
+                    turn_toks = clean_tokens(turn["utterance"])
+                    for t in turn_toks:
+                        if probs["agent_counts"].get(t):
+                            last_agent = probs["agent_counts"][t].most_common(1)[0][0]
+                        if probs["object_counts"].get(t):
+                            last_object = probs["object_counts"][t].most_common(1)[0][0]
+                        stem = t[:3]
+                        if probs["action_counts"].get(stem):
+                            last_action = probs["action_counts"][stem].most_common(1)[0][0]
+                        for suf in probs["tense_counts"]:
+                            if t.endswith(suf) and probs["tense_counts"][suf]:
+                                last_tense = probs["tense_counts"][suf].most_common(1)[0][0]
 
         resolved_refs: Dict[str, str] = {}
         is_neg = any(t in ("non", "ne") or t.startswith("ne") for t in q_tokens)

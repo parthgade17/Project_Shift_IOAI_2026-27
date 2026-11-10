@@ -80,7 +80,7 @@ class SubmissionModel:
                 if tense_suffix:
                     tense_map[tense_suffix] = f["tense"]
 
-        # Step 2: Track salient antecedents in dialogue context
+        # Step 2: Track salient antecedents in dialogue context from text utterance
         last_agent = None
         last_object = None
         last_action = None
@@ -92,6 +92,15 @@ class SubmissionModel:
             if tf.get("object"): last_object = tf["object"]
             if tf.get("action"): last_action = tf["action"]
             if tf.get("tense"): last_tense = tf["tense"]
+            elif "utterance" in turn:
+                turn_toks = re.findall(r"\b\w+\b", turn["utterance"].lower())
+                for t in turn_toks:
+                    if t in agent_map: last_agent = agent_map[t]
+                    if t in object_map: last_object = object_map[t]
+                    stem = t[:3]
+                    if stem in action_map: last_action = action_map[stem]
+                    for suf, t_val in tense_map.items():
+                        if t.endswith(suf): last_tense = t_val
 
         # Step 3: Parse Query
         is_neg = any(t in ("non", "ne") or t.startswith("ne") for t in tokens)

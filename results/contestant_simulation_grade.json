@@ -1,21 +1,21 @@
 {
   "total_episodes": 100,
   "exact_match_accuracy": 86.0,
-  "composite_competition_score": 89.31,
-  "disentanglement_accuracy": 82.0,
+  "composite_competition_score": 90.28,
+  "disentanglement_accuracy": 88.0,
   "reference_resolution_accuracy": 86.0,
   "slot_accuracies": {
     "agent": 96.0,
     "action": 100.0,
-    "object": 87.0,
-    "tense": 100.0,
+    "object": 90.0,
+    "tense": 97.0,
     "polarity": 100.0
   },
   "slot_macro_f1": {
     "agent": {
-      "macro_precision": 96.09,
-      "macro_recall": 95.74,
-      "macro_f1": 95.78
+      "macro_precision": 96.61,
+      "macro_recall": 95.53,
+      "macro_f1": 95.92
     },
     "action": {
       "macro_precision": 100.0,
@@ -23,14 +23,14 @@
       "macro_f1": 100.0
     },
     "object": {
-      "macro_precision": 85.43,
-      "macro_recall": 84.46,
-      "macro_f1": 84.38
+      "macro_precision": 88.95,
+      "macro_recall": 89.2,
+      "macro_f1": 88.86
     },
     "tense": {
-      "macro_precision": 100.0,
-      "macro_recall": 100.0,
-      "macro_f1": 100.0
+      "macro_precision": 96.67,
+      "macro_recall": 97.18,
+      "macro_f1": 96.8
     },
     "polarity": {
       "macro_precision": 100.0,
@@ -40,39 +40,50 @@
   },
   "counterfactual_consistency": {
     "total_pairs": 0,
-    "consistent_pairs": 0,
+    "branch_a_accuracy": 100.0,
+    "branch_b_accuracy": 100.0,
+    "joint_accuracy": 100.0,
+    "perturbation_sensitivity": 100.0,
     "consistency_score": 100.0
   },
   "progressive_levels": {
     "Level_1": {
-      "total": 12,
+      "total": 7,
       "accuracy": 100.0
     },
     "Level_2": {
-      "total": 14,
+      "total": 12,
+      "accuracy": 91.67
+    },
+    "Level_3": {
+      "total": 13,
       "accuracy": 100.0
     },
     "Level_4": {
-      "total": 74,
-      "accuracy": 81.08
+      "total": 44,
+      "accuracy": 70.45
+    },
+    "Level_5": {
+      "total": 24,
+      "accuracy": 100.0
     }
   },
   "phenomenon_breakdown": {
     "direct": {
-      "total": 26,
+      "total": 31,
       "accuracy": 100.0
     },
-    "coreference": {
-      "total": 26,
-      "accuracy": 80.77
-    },
-    "ellipsis": {
-      "total": 24,
-      "accuracy": 83.33
-    },
     "correction": {
+      "total": 23,
+      "accuracy": 78.26
+    },
+    "coreference": {
       "total": 24,
       "accuracy": 79.17
+    },
+    "ellipsis": {
+      "total": 22,
+      "accuracy": 81.82
     }
   },
   "schema_validation": {

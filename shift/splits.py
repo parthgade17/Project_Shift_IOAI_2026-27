@@ -7,12 +7,13 @@ Provides strict data isolation, zero-leakage guarantees, and duplicate auditing.
 """
 
 from __future__ import annotations
+import json
 import random
 from dataclasses import dataclass, field
 from typing import Dict, List, Set, Tuple, Optional, Any
 from pathlib import Path
 
-from shift.ontology import ActionPredicate, ObjectEntity
+from shift.ontology import ActionPredicate, ObjectEntity, DifficultyLevel
 from shift.episodes import Episode, EpisodeGenerator
 from shift.drift import CommunityId, HistoricalPeriod
 from shift.serialize import export_episodes_jsonl, export_ground_truth_labels
@@ -149,7 +150,7 @@ class SplitManager:
             splits.public_dev.append(ep)
 
         # Helper for test sets avoiding train and dev
-        def make_test_episode(ep_id: str, comm: str, period: str, phenom: str, forced_act=None, forced_obj=None):
+        def make_test_episode(ep_id: str, comm: str, period: str, phenom: str, forced_act=None, forced_obj=None, forced_diff=None):
             salt = 0
             ep = None
             forbidden = train_queries.union(dev_queries)
@@ -162,7 +163,8 @@ class SplitManager:
                     k_support=k_support,
                     phenomenon=phenom,
                     forced_action=forced_act,
-                    forced_object=forced_obj
+                    forced_object=forced_obj,
+                    forced_difficulty_level=forced_diff
                 )
                 if candidate.query.utterance not in forbidden:
                     ep = candidate
@@ -174,16 +176,30 @@ class SplitManager:
                 ep.episode_id = ep_id
             return ep
 
-        # 4. Hidden Test: IID
+        # 4. Hidden Test: IID (Covering Levels 1, 2, 3, 4)
         for i in range(test_iid_count):
             ep_id = f"test_iid_{i+1:04d}"
             comm = std_communities[i % len(std_communities)]
             period = std_periods[(i // len(std_communities)) % len(std_periods)]
             phenom = phenomena[i % len(phenomena)]
-            ep = make_test_episode(ep_id, comm, period, phenom)
+            
+            # Explicit progressive difficulty levels: Level 1, 2, 3, 4
+            if i < 7:
+                lvl = DifficultyLevel.LEVEL_1_DIRECT.value
+                phenom = "direct"
+                comm = CommunityId.CITADEL.value
+                period = HistoricalPeriod.CLASSICAL.value
+            elif i < 15:
+                lvl = DifficultyLevel.LEVEL_2_DRIFT.value
+            elif i < 22:
+                lvl = DifficultyLevel.LEVEL_3_PRAGMATIC.value
+            else:
+                lvl = DifficultyLevel.LEVEL_4_DISCOURSE.value
+
+            ep = make_test_episode(ep_id, comm, period, phenom, forced_diff=lvl)
             splits.test_iid.append(ep)
 
-        # 5. Hidden Test: Compositional OOD (held-out action-object compositions)
+        # 5. Hidden Test: Compositional OOD (Level 5 Generalization)
         ood_combos = list(HELD_OUT_COMPOSITIONS)
         for i in range(test_ood_count):
             ep_id = f"test_ood_{i+1:04d}"
@@ -191,17 +207,21 @@ class SplitManager:
             period = std_periods[(i // len(std_communities)) % len(std_periods)]
             phenom = phenomena[i % len(phenomena)]
             forced_act, forced_obj = ood_combos[i % len(ood_combos)]
-            ep = make_test_episode(ep_id, comm, period, phenom, forced_act=forced_act, forced_obj=forced_obj)
+            ep = make_test_episode(
+                ep_id, comm, period, phenom,
+                forced_act=forced_act, forced_obj=forced_obj,
+                forced_diff=DifficultyLevel.LEVEL_5_COMPOSITIONAL.value
+            )
             splits.test_compositional_ood.append(ep)
 
-        # 6. Hidden Test: Held-out Community
+        # 6. Hidden Test: Held-out Community (Level 2 & 3 Dialect Drift)
         for i in range(test_comm_count):
             ep_id = f"test_comm_{i+1:04d}"
             phenom = phenomena[i % len(phenomena)]
             ep = make_test_episode(ep_id, heldout_community, HistoricalPeriod.CLASSICAL.value, phenom)
             splits.test_heldout_community.append(ep)
 
-        # 7. Hidden Test: Held-out Historical Period
+        # 7. Hidden Test: Held-out Historical Period (Level 2 & 3 Epoch Drift)
         for i in range(test_period_count):
             ep_id = f"test_period_{i+1:04d}"
             phenom = phenomena[i % len(phenomena)]
@@ -297,11 +317,15 @@ class SplitManager:
         export_episodes_jsonl(splits.train, out / "train.jsonl", strip_labels=False)
         export_episodes_jsonl(splits.val, out / "val.jsonl", strip_labels=False)
 
-        # Public Dev: provided to contestants with labels for local debugging
-        export_episodes_jsonl(splits.public_dev, out / "public_dev.jsonl", strip_labels=False)
+        # Public Dev: provided to contestants with query labels for local debugging, but context event_frames sanitized
+        with open(out / "public_dev.jsonl", "w", encoding="utf-8") as f:
+            for ep in splits.public_dev:
+                d = ep.to_dict(strip_label=False)
+                d["query"] = ep.query.to_public_dict()
+                f.write(json.dumps(d, ensure_ascii=False) + "\n")
 
-        # Hidden Test: contestant package has labels STRIPPED
-        export_episodes_jsonl(splits.hidden_test, out / "hidden_test_contestant.jsonl", strip_labels=True)
+        # Hidden Test: contestant package has labels STRIPPED and context event_frames STRIPPED
+        export_episodes_jsonl(splits.hidden_test, out / "hidden_test_contestant.jsonl", strip_labels=True, contestant_view=True)
 
         # Private evaluator ground-truth keys
         export_ground_truth_labels(splits.hidden_test, out / "hidden_test_labels.json")

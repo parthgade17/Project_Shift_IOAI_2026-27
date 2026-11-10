@@ -26,14 +26,25 @@ def load_episodes(file_path: str) -> List[Dict[str, Any]]:
     return episodes
 
 
-def stream_episodes(file_path: str) -> Iterator[Dict[str, Any]]:
-    """Iterates through episodes one-by-one to conserve memory."""
-    path = Path(file_path)
-    with open(path, "r", encoding="utf-8-sig") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                yield json.loads(line)
+def assert_zero_leakage(episodes: List[Dict[str, Any]]) -> bool:
+    """
+    Rigorously verifies that contestant-facing episodes contain zero answer leakage:
+    1. No top-level query_label or drift_attribution.
+    2. No gold event_frame or reference_type_used inside dialogue context turns.
+    """
+    for ep in episodes:
+        if "query_label" in ep:
+            raise ValueError(f"Security Alert: query_label detected in contestant episode {ep.get('episode_id')}")
+        if "drift_attribution" in ep:
+            raise ValueError(f"Security Alert: drift_attribution detected in contestant episode {ep.get('episode_id')}")
+
+        q_ctx = ep.get("query", {}).get("context", [])
+        for t in q_ctx:
+            if "event_frame" in t:
+                raise ValueError(f"Security Alert: gold event_frame detected in context turn of episode {ep.get('episode_id')}")
+            if "reference_type_used" in t:
+                raise ValueError(f"Security Alert: reference_type_used detected in context turn of episode {ep.get('episode_id')}")
+    return True
 
 
 if __name__ == "__main__":

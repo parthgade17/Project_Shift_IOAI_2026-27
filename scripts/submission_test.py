@@ -22,7 +22,7 @@ project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(project_root))
 sys.path.insert(0, str(project_root / "contestant_package"))
 
-from contestant_package.loader import load_episodes
+from contestant_package.loader import load_episodes, assert_zero_leakage
 from contestant_package.submission_template import SubmissionModel
 from shift.evaluator import Evaluator
 
@@ -39,7 +39,8 @@ def simulate_contestant_workflow(
     # Step 1: Contestant loads competition test data
     print("\n[Step 1/4] Contestant loads test dataset...")
     episodes = load_episodes(test_data_path)
-    print(f"  [OK] Successfully loaded {len(episodes)} test episodes via contestant_package.loader.")
+    assert_zero_leakage(episodes)
+    print(f"  [OK] Successfully loaded {len(episodes)} test episodes via contestant_package.loader (Zero-Leakage Verified).")
 
     # Step 2: Contestant runs model inference
     print("\n[Step 2/4] Generating predictions via SubmissionModel...")

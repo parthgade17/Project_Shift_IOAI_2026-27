@@ -3,78 +3,89 @@
   "models": {
     "Majority Baseline": {
       "total_episodes": 100,
-      "exact_match_accuracy": 1.0,
-      "composite_competition_score": 24.84,
+      "exact_match_accuracy": 2.0,
+      "composite_competition_score": 25.28,
       "disentanglement_accuracy": 0.0,
-      "reference_resolution_accuracy": 26.0,
+      "reference_resolution_accuracy": 31.0,
       "slot_accuracies": {
-        "agent": 59.0,
-        "action": 35.0,
-        "object": 25.0,
-        "tense": 79.0,
-        "polarity": 91.0
+        "agent": 40.0,
+        "action": 36.0,
+        "object": 33.0,
+        "tense": 69.0,
+        "polarity": 85.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 61.03,
-          "macro_recall": 58.5,
-          "macro_f1": 58.38
+          "macro_precision": 41.44,
+          "macro_recall": 39.67,
+          "macro_f1": 39.71
         },
         "action": {
-          "macro_precision": 34.84,
-          "macro_recall": 32.23,
-          "macro_f1": 32.34
+          "macro_precision": 36.93,
+          "macro_recall": 35.15,
+          "macro_f1": 34.18
         },
         "object": {
-          "macro_precision": 22.43,
-          "macro_recall": 22.64,
-          "macro_f1": 21.24
+          "macro_precision": 37.35,
+          "macro_recall": 34.41,
+          "macro_f1": 33.58
         },
         "tense": {
-          "macro_precision": 76.8,
-          "macro_recall": 77.86,
-          "macro_f1": 77.13
+          "macro_precision": 68.51,
+          "macro_recall": 68.57,
+          "macro_f1": 68.35
         },
         "polarity": {
-          "macro_precision": 45.5,
-          "macro_recall": 50.0,
-          "macro_f1": 47.64
+          "macro_precision": 92.42,
+          "macro_recall": 53.12,
+          "macro_f1": 51.78
         }
       },
       "counterfactual_consistency": {
         "total_pairs": 0,
-        "consistent_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
         "consistency_score": 100.0
       },
       "progressive_levels": {
         "Level_1": {
+          "total": 7,
+          "accuracy": 14.29
+        },
+        "Level_2": {
           "total": 12,
           "accuracy": 8.33
         },
-        "Level_2": {
-          "total": 14,
+        "Level_3": {
+          "total": 13,
           "accuracy": 0.0
         },
         "Level_4": {
-          "total": 74,
+          "total": 44,
+          "accuracy": 0.0
+        },
+        "Level_5": {
+          "total": 24,
           "accuracy": 0.0
         }
       },
       "phenomenon_breakdown": {
         "direct": {
-          "total": 26,
-          "accuracy": 3.85
+          "total": 31,
+          "accuracy": 6.45
+        },
+        "correction": {
+          "total": 23,
+          "accuracy": 0.0
         },
         "coreference": {
-          "total": 26,
+          "total": 24,
           "accuracy": 0.0
         },
         "ellipsis": {
-          "total": 24,
-          "accuracy": 0.0
-        },
-        "correction": {
-          "total": 24,
+          "total": 22,
           "accuracy": 0.0
         }
       },
@@ -85,82 +96,93 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.049
+      "avg_latency_ms": 0.034
     },
     "Surface Lookup Baseline": {
       "total_episodes": 100,
-      "exact_match_accuracy": 1.0,
-      "composite_competition_score": 24.45,
+      "exact_match_accuracy": 0.0,
+      "composite_competition_score": 24.46,
       "disentanglement_accuracy": 0.0,
-      "reference_resolution_accuracy": 27.0,
+      "reference_resolution_accuracy": 33.0,
       "slot_accuracies": {
-        "agent": 65.0,
-        "action": 27.0,
+        "agent": 62.0,
+        "action": 25.0,
         "object": 25.0,
-        "tense": 58.0,
-        "polarity": 92.0
+        "tense": 66.0,
+        "polarity": 84.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 65.59,
-          "macro_recall": 65.61,
-          "macro_f1": 64.87
+          "macro_precision": 63.42,
+          "macro_recall": 60.79,
+          "macro_f1": 61.3
         },
         "action": {
-          "macro_precision": 26.61,
-          "macro_recall": 24.0,
-          "macro_f1": 24.75
+          "macro_precision": 24.66,
+          "macro_recall": 21.78,
+          "macro_f1": 22.02
         },
         "object": {
-          "macro_precision": 23.82,
-          "macro_recall": 23.69,
-          "macro_f1": 22.48
+          "macro_precision": 23.93,
+          "macro_recall": 25.52,
+          "macro_f1": 23.53
         },
         "tense": {
-          "macro_precision": 57.61,
-          "macro_recall": 59.79,
-          "macro_f1": 56.93
+          "macro_precision": 65.17,
+          "macro_recall": 65.25,
+          "macro_f1": 65.2
         },
         "polarity": {
-          "macro_precision": 95.96,
-          "macro_recall": 55.56,
-          "macro_f1": 57.89
+          "macro_precision": 67.35,
+          "macro_recall": 52.53,
+          "macro_f1": 51.16
         }
       },
       "counterfactual_consistency": {
         "total_pairs": 0,
-        "consistent_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
         "consistency_score": 100.0
       },
       "progressive_levels": {
         "Level_1": {
-          "total": 12,
-          "accuracy": 8.33
+          "total": 7,
+          "accuracy": 0.0
         },
         "Level_2": {
-          "total": 14,
+          "total": 12,
+          "accuracy": 0.0
+        },
+        "Level_3": {
+          "total": 13,
           "accuracy": 0.0
         },
         "Level_4": {
-          "total": 74,
+          "total": 44,
+          "accuracy": 0.0
+        },
+        "Level_5": {
+          "total": 24,
           "accuracy": 0.0
         }
       },
       "phenomenon_breakdown": {
         "direct": {
-          "total": 26,
-          "accuracy": 3.85
-        },
-        "coreference": {
-          "total": 26,
-          "accuracy": 0.0
-        },
-        "ellipsis": {
-          "total": 24,
+          "total": 31,
           "accuracy": 0.0
         },
         "correction": {
+          "total": 23,
+          "accuracy": 0.0
+        },
+        "coreference": {
           "total": 24,
+          "accuracy": 0.0
+        },
+        "ellipsis": {
+          "total": 22,
           "accuracy": 0.0
         }
       },
@@ -171,26 +193,26 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.046
+      "avg_latency_ms": 0.025
     },
     "Statistical Naive Bayes": {
       "total_episodes": 100,
       "exact_match_accuracy": 86.0,
-      "composite_competition_score": 77.41,
+      "composite_competition_score": 77.64,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 90.0,
       "slot_accuracies": {
         "agent": 96.0,
         "action": 100.0,
-        "object": 87.0,
+        "object": 90.0,
         "tense": 100.0,
         "polarity": 100.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 96.09,
-          "macro_recall": 95.74,
-          "macro_f1": 95.78
+          "macro_precision": 96.61,
+          "macro_recall": 95.53,
+          "macro_f1": 95.92
         },
         "action": {
           "macro_precision": 100.0,
@@ -198,9 +220,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 85.43,
-          "macro_recall": 84.46,
-          "macro_f1": 84.38
+          "macro_precision": 88.94,
+          "macro_recall": 89.2,
+          "macro_f1": 88.88
         },
         "tense": {
           "macro_precision": 100.0,
@@ -215,39 +237,50 @@
       },
       "counterfactual_consistency": {
         "total_pairs": 0,
-        "consistent_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
         "consistency_score": 100.0
       },
       "progressive_levels": {
         "Level_1": {
-          "total": 12,
+          "total": 7,
           "accuracy": 100.0
         },
         "Level_2": {
-          "total": 14,
+          "total": 12,
+          "accuracy": 91.67
+        },
+        "Level_3": {
+          "total": 13,
           "accuracy": 100.0
         },
         "Level_4": {
-          "total": 74,
-          "accuracy": 81.08
+          "total": 44,
+          "accuracy": 70.45
+        },
+        "Level_5": {
+          "total": 24,
+          "accuracy": 100.0
         }
       },
       "phenomenon_breakdown": {
         "direct": {
-          "total": 26,
+          "total": 31,
           "accuracy": 100.0
         },
-        "coreference": {
-          "total": 26,
-          "accuracy": 80.77
-        },
-        "ellipsis": {
-          "total": 24,
-          "accuracy": 83.33
-        },
         "correction": {
+          "total": 23,
+          "accuracy": 78.26
+        },
+        "coreference": {
           "total": 24,
           "accuracy": 79.17
+        },
+        "ellipsis": {
+          "total": 22,
+          "accuracy": 81.82
         }
       },
       "schema_validation": {
@@ -257,26 +290,26 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.135
+      "avg_latency_ms": 0.056
     },
     "Inductive Rule Learner": {
       "total_episodes": 100,
       "exact_match_accuracy": 86.0,
-      "composite_competition_score": 91.96,
+      "composite_competition_score": 92.19,
       "disentanglement_accuracy": 97.0,
       "reference_resolution_accuracy": 90.0,
       "slot_accuracies": {
         "agent": 96.0,
         "action": 100.0,
-        "object": 87.0,
+        "object": 90.0,
         "tense": 100.0,
         "polarity": 100.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 96.09,
-          "macro_recall": 95.74,
-          "macro_f1": 95.78
+          "macro_precision": 96.61,
+          "macro_recall": 95.53,
+          "macro_f1": 95.92
         },
         "action": {
           "macro_precision": 100.0,
@@ -284,9 +317,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 85.43,
-          "macro_recall": 84.46,
-          "macro_f1": 84.38
+          "macro_precision": 88.94,
+          "macro_recall": 89.2,
+          "macro_f1": 88.88
         },
         "tense": {
           "macro_precision": 100.0,
@@ -301,39 +334,50 @@
       },
       "counterfactual_consistency": {
         "total_pairs": 0,
-        "consistent_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
         "consistency_score": 100.0
       },
       "progressive_levels": {
         "Level_1": {
-          "total": 12,
+          "total": 7,
           "accuracy": 100.0
         },
         "Level_2": {
-          "total": 14,
+          "total": 12,
+          "accuracy": 91.67
+        },
+        "Level_3": {
+          "total": 13,
           "accuracy": 100.0
         },
         "Level_4": {
-          "total": 74,
-          "accuracy": 81.08
+          "total": 44,
+          "accuracy": 70.45
+        },
+        "Level_5": {
+          "total": 24,
+          "accuracy": 100.0
         }
       },
       "phenomenon_breakdown": {
         "direct": {
-          "total": 26,
+          "total": 31,
           "accuracy": 100.0
         },
-        "coreference": {
-          "total": 26,
-          "accuracy": 80.77
-        },
-        "ellipsis": {
-          "total": 24,
-          "accuracy": 83.33
-        },
         "correction": {
+          "total": 23,
+          "accuracy": 78.26
+        },
+        "coreference": {
           "total": 24,
           "accuracy": 79.17
+        },
+        "ellipsis": {
+          "total": 22,
+          "accuracy": 81.82
         }
       },
       "schema_validation": {
@@ -343,37 +387,37 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.086
+      "avg_latency_ms": 0.025
     }
   },
   "audits": {
     "Majority Baseline": {
-      "clean_accuracy": 1.0,
+      "clean_accuracy": 2.0,
       "support_ablation_accuracy": 0.0,
       "context_ablation_accuracy": 0.0,
-      "metadata_only_accuracy": 1.0,
-      "permutation_drop": 1.0
+      "metadata_only_accuracy": 10.0,
+      "permutation_drop": 2.0
     },
     "Surface Lookup Baseline": {
-      "clean_accuracy": 1.0,
+      "clean_accuracy": 0.0,
       "support_ablation_accuracy": 0.0,
       "context_ablation_accuracy": 0.0,
-      "metadata_only_accuracy": 1.0,
-      "permutation_drop": 1.0
+      "metadata_only_accuracy": 10.0,
+      "permutation_drop": 0.0
     },
     "Statistical Naive Bayes": {
       "clean_accuracy": 86.0,
-      "support_ablation_accuracy": 17.0,
-      "context_ablation_accuracy": 6.0,
-      "metadata_only_accuracy": 1.0,
-      "permutation_drop": 69.0
+      "support_ablation_accuracy": 19.0,
+      "context_ablation_accuracy": 0.0,
+      "metadata_only_accuracy": 10.0,
+      "permutation_drop": 67.0
     },
     "Inductive Rule Learner": {
       "clean_accuracy": 86.0,
-      "support_ablation_accuracy": 17.0,
-      "context_ablation_accuracy": 12.0,
-      "metadata_only_accuracy": 1.0,
-      "permutation_drop": 69.0
+      "support_ablation_accuracy": 19.0,
+      "context_ablation_accuracy": 2.17,
+      "metadata_only_accuracy": 10.0,
+      "permutation_drop": 67.0
     }
   },
   "diagnostics": {
@@ -383,22 +427,22 @@
       "exact_match_accuracy": 0.0,
       "failure_counts": {
         "LexicalInductionFailure": 95,
-        "MorphosyntacticFailure": 28,
-        "DiscourseTrackingFailure": 74,
-        "DisentanglementFailure": 1
+        "MorphosyntacticFailure": 40,
+        "DisentanglementFailure": 2,
+        "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
         "LexicalInductionFailure": 95.0,
-        "MorphosyntacticFailure": 28.0,
-        "DiscourseTrackingFailure": 74.0,
-        "DisentanglementFailure": 1.0
+        "MorphosyntacticFailure": 40.0,
+        "DisentanglementFailure": 2.0,
+        "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
-        "object": 75,
-        "polarity": 9,
-        "agent": 41,
-        "action": 65,
-        "tense": 21
+        "action": 64,
+        "object": 67,
+        "polarity": 15,
+        "agent": 60,
+        "tense": 31
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -409,7 +453,9 @@
       "level_error_rates": {
         "Level_1": 100.0,
         "Level_2": 100.0,
-        "Level_4": 100.0
+        "Level_3": 100.0,
+        "Level_4": 100.0,
+        "Level_5": 100.0
       },
       "recommendations": [
         "High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.",
@@ -428,13 +474,14 @@
             "MorphosyntacticFailure"
           ],
           "slot_errors": [
+            "action",
             "object",
             "polarity"
           ],
-          "explanation": "Lexical induction failure on object: expected (ancient_relic) but predicted (energy_matrix). Morphosyntactic inflection failure on polarity: failed to parse tense affix or polarity marker.",
+          "explanation": "Lexical induction failure on action, object: expected (activate, data_capsule) but predicted (forge, energy_matrix). Morphosyntactic inflection failure on polarity: failed to parse tense affix or polarity marker.",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "inspect",
+            "agent": "scout_alpha",
+            "action": "forge",
             "object": "energy_matrix",
             "tense": "present",
             "polarity": "affirmative",
@@ -442,9 +489,9 @@
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "inspect",
-            "object": "ancient_relic",
+            "agent": "scout_alpha",
+            "action": "activate",
+            "object": "data_capsule",
             "tense": "present",
             "polarity": "negative",
             "resolved_references": {},
@@ -459,39 +506,36 @@
         },
         {
           "episode_id": "test_iid_0002",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
-            "LexicalInductionFailure",
-            "DiscourseTrackingFailure"
+            "LexicalInductionFailure"
           ],
           "slot_errors": [
+            "agent",
             "object"
           ],
-          "explanation": "Lexical induction failure on object: expected (ancient_relic) but predicted (stone_monolith). Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
+          "explanation": "Lexical induction failure on agent, object: expected (guardian_sigma, ancient_relic) but predicted (scout_beta, stone_monolith).",
           "predicted_frame": {
-            "agent": "guardian_sigma",
-            "action": "harvest",
+            "agent": "scout_beta",
+            "action": "forge",
             "object": "stone_monolith",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
             "agent": "guardian_sigma",
-            "action": "harvest",
+            "action": "forge",
             "object": "ancient_relic",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
-            "resolved_references": {
-              "la": "guardian_sigma",
-              "id": "ancient_relic"
-            },
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
-              "action": "community_shift",
+              "action": "stable",
               "object": "stable",
               "tense": "stable",
               "polarity": "stable"
@@ -500,36 +544,36 @@
         },
         {
           "episode_id": "test_iid_0003",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
             "LexicalInductionFailure",
-            "DiscourseTrackingFailure"
+            "MorphosyntacticFailure"
           ],
           "slot_errors": [
             "agent",
-            "object"
+            "action",
+            "object",
+            "polarity"
           ],
-          "explanation": "Lexical induction failure on agent, object: expected (artisan_gamma, shelter_dome) but predicted (scholar_omega, energy_matrix). Discourse tracking failure in 'ellipsis': failed to resolve antecedent across conversational turns.",
+          "explanation": "Lexical induction failure on agent, action, object: expected (scholar_omega, inspect, stone_monolith) but predicted (guardian_sigma, forge, energy_matrix). Morphosyntactic inflection failure on polarity: failed to parse tense affix or polarity marker.",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "relocate",
+            "agent": "guardian_sigma",
+            "action": "forge",
             "object": "energy_matrix",
-            "tense": "past",
+            "tense": "present",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "shelter_dome",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "relocate"
-            },
+            "agent": "scholar_omega",
+            "action": "inspect",
+            "object": "stone_monolith",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -541,20 +585,57 @@
         },
         {
           "episode_id": "test_iid_0004",
-          "difficulty_level": 4,
-          "phenomenon": "correction",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
-            "LexicalInductionFailure",
-            "DiscourseTrackingFailure"
+            "LexicalInductionFailure"
+          ],
+          "slot_errors": [
+            "agent",
+            "action"
+          ],
+          "explanation": "Lexical induction failure on agent, action: expected (guardian_sigma, activate) but predicted (scholar_omega, relocate).",
+          "predicted_frame": {
+            "agent": "scholar_omega",
+            "action": "relocate",
+            "object": "signal_beacon",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "guardian_sigma",
+            "action": "activate",
+            "object": "signal_beacon",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0005",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "LexicalInductionFailure"
           ],
           "slot_errors": [
             "action",
             "object"
           ],
-          "explanation": "Lexical induction failure on action, object: expected (relocate, signal_beacon) but predicted (harvest, energy_matrix). Discourse tracking failure in 'correction': failed to resolve antecedent across conversational turns.",
+          "explanation": "Lexical induction failure on action, object: expected (forge, signal_beacon) but predicted (harvest, energy_matrix).",
           "predicted_frame": {
-            "agent": "artisan_gamma",
+            "agent": "guardian_sigma",
             "action": "harvest",
             "object": "energy_matrix",
             "tense": "present",
@@ -563,27 +644,24 @@
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
+            "agent": "guardian_sigma",
+            "action": "forge",
             "object": "signal_beacon",
             "tense": "present",
             "polarity": "affirmative",
-            "resolved_references": {
-              "el": "artisan_gamma",
-              "id": "signal_beacon"
-            },
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
               "object": "stable",
-              "tense": "historical_shift",
+              "tense": "stable",
               "polarity": "stable"
             }
           }
         },
         {
-          "episode_id": "test_iid_0005",
-          "difficulty_level": 2,
+          "episode_id": "test_iid_0006",
+          "difficulty_level": 1,
           "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
@@ -591,13 +669,11 @@
             "MorphosyntacticFailure"
           ],
           "slot_errors": [
-            "agent",
             "action",
             "object",
-            "tense",
-            "polarity"
+            "tense"
           ],
-          "explanation": "Lexical induction failure on agent, action, object: expected (scholar_omega, repair, energy_matrix) but predicted (artisan_delta, activate, crystal_core). Morphosyntactic inflection failure on tense, polarity: failed to parse tense affix or polarity marker.",
+          "explanation": "Lexical induction failure on action, object: expected (abandon, energy_matrix) but predicted (activate, crystal_core). Morphosyntactic inflection failure on tense: failed to parse tense affix or polarity marker.",
           "predicted_frame": {
             "agent": "artisan_delta",
             "action": "activate",
@@ -608,96 +684,47 @@
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "repair",
+            "agent": "artisan_delta",
+            "action": "abandon",
             "object": "energy_matrix",
-            "tense": "present",
-            "polarity": "negative",
+            "tense": "past",
+            "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
               "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0006",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
-          "is_exact_match": false,
-          "failure_modes": [
-            "LexicalInductionFailure",
-            "DiscourseTrackingFailure"
-          ],
-          "slot_errors": [
-            "object"
-          ],
-          "explanation": "Lexical induction failure on object: expected (ancient_relic) but predicted (data_capsule). Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
-          "predicted_frame": {
-            "agent": "artisan_delta",
-            "action": "activate",
-            "object": "data_capsule",
-            "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {},
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "artisan_delta",
-            "action": "activate",
-            "object": "ancient_relic",
-            "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "artisan_delta",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
+              "tense": "stable",
               "polarity": "stable"
             }
           }
         },
         {
           "episode_id": "test_iid_0007",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
-            "LexicalInductionFailure",
-            "MorphosyntacticFailure",
-            "DiscourseTrackingFailure"
+            "DisentanglementFailure"
           ],
-          "slot_errors": [
-            "action",
-            "object",
-            "tense"
-          ],
-          "explanation": "Lexical induction failure on action, object: expected (inspect, stone_monolith) but predicted (activate, ancient_relic). Morphosyntactic inflection failure on tense: failed to parse tense affix or polarity marker. Discourse tracking failure in 'ellipsis': failed to resolve antecedent across conversational turns.",
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
           "predicted_frame": {
-            "agent": "scout_alpha",
-            "action": "activate",
-            "object": "ancient_relic",
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "data_capsule",
             "tense": "present",
-            "polarity": "affirmative",
+            "polarity": "negative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scout_alpha",
-            "action": "inspect",
-            "object": "stone_monolith",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "inspect"
-            },
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "data_capsule",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -709,7 +736,7 @@
         },
         {
           "episode_id": "test_iid_0008",
-          "difficulty_level": 4,
+          "difficulty_level": 2,
           "phenomenon": "correction",
           "is_exact_match": false,
           "failure_modes": [
@@ -720,26 +747,61 @@
             "action",
             "object"
           ],
-          "explanation": "Lexical induction failure on action, object: expected (forge, crystal_core) but predicted (secure, shelter_dome). Discourse tracking failure in 'correction': failed to resolve antecedent across conversational turns.",
+          "explanation": "Lexical induction failure on action, object: expected (harvest, crystal_core) but predicted (secure, shelter_dome). Discourse tracking failure in 'correction': failed to resolve antecedent across conversational turns.",
           "predicted_frame": {
             "agent": "scout_alpha",
             "action": "secure",
             "object": "shelter_dome",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
             "agent": "scout_alpha",
-            "action": "forge",
+            "action": "harvest",
             "object": "crystal_core",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {
               "el": "scout_alpha",
               "id": "crystal_core"
             },
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "community_shift",
+              "object": "community_shift",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0009",
+          "difficulty_level": 2,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'community_shift', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "scholar_omega",
+            "action": "activate",
+            "object": "water_purifier",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scholar_omega",
+            "action": "activate",
+            "object": "water_purifier",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -750,43 +812,8 @@
           }
         },
         {
-          "episode_id": "test_iid_0009",
-          "difficulty_level": 1,
-          "phenomenon": "direct",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "guardian_sigma",
-            "action": "forge",
-            "object": "crystal_core",
-            "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {},
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "guardian_sigma",
-            "action": "forge",
-            "object": "crystal_core",
-            "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {},
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
           "episode_id": "test_iid_0010",
-          "difficulty_level": 4,
+          "difficulty_level": 2,
           "phenomenon": "coreference",
           "is_exact_match": false,
           "failure_modes": [
@@ -794,12 +821,12 @@
             "DiscourseTrackingFailure"
           ],
           "slot_errors": [
-            "action",
+            "agent",
             "object"
           ],
-          "explanation": "Lexical induction failure on action, object: expected (relocate, crystal_core) but predicted (harvest, data_capsule). Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
+          "explanation": "Lexical induction failure on agent, object: expected (guardian_theta, crystal_core) but predicted (artisan_gamma, data_capsule). Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
           "predicted_frame": {
-            "agent": "scholar_omega",
+            "agent": "artisan_gamma",
             "action": "harvest",
             "object": "data_capsule",
             "tense": "past",
@@ -808,13 +835,13 @@
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "relocate",
+            "agent": "guardian_theta",
+            "action": "harvest",
             "object": "crystal_core",
             "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {
-              "el": "scholar_omega",
+              "el": "guardian_theta",
               "id": "crystal_core"
             },
             "drift_attribution": {
@@ -833,23 +860,21 @@
       "total_errors": 100,
       "exact_match_accuracy": 0.0,
       "failure_counts": {
-        "LexicalInductionFailure": 95,
-        "MorphosyntacticFailure": 47,
-        "DiscourseTrackingFailure": 73,
-        "DisentanglementFailure": 1
+        "LexicalInductionFailure": 98,
+        "MorphosyntacticFailure": 46,
+        "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
-        "LexicalInductionFailure": 95.0,
-        "MorphosyntacticFailure": 47.0,
-        "DiscourseTrackingFailure": 73.0,
-        "DisentanglementFailure": 1.0
+        "LexicalInductionFailure": 98.0,
+        "MorphosyntacticFailure": 46.0,
+        "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
-        "action": 73,
-        "tense": 42,
-        "polarity": 8,
+        "action": 75,
         "object": 75,
-        "agent": 35
+        "polarity": 16,
+        "tense": 34,
+        "agent": 38
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -860,13 +885,14 @@
       "level_error_rates": {
         "Level_1": 100.0,
         "Level_2": 100.0,
-        "Level_4": 100.0
+        "Level_3": 100.0,
+        "Level_4": 100.0,
+        "Level_5": 100.0
       },
       "recommendations": [
         "High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.",
         "Significant Morphosyntactic Failure: Check your affix segmentation module. Historical time periods introduce phonological lenitions and suffix overrides for tense (-il, -en, -or) and negation prefixes (no-).",
-        "Discourse Tracking Vulnerability: The model is struggling with coreference and conversational repair. Track speaker discourse state across turns and update salience when a speaker corrects an earlier assertion.",
-        "Disentanglement Gap: The model recognizes semantic meaning but cannot infer causal origin. Compare the query against the support set baseline: if the lexical mapping differs from the root language, check whether that divergence occurs in other historical periods of that community vs across all communities."
+        "Discourse Tracking Vulnerability: The model is struggling with coreference and conversational repair. Track speaker discourse state across turns and update salience when a speaker corrects an earlier assertion."
       ],
       "sample_diagnostics": [
         {
@@ -880,23 +906,23 @@
           ],
           "slot_errors": [
             "action",
-            "tense",
+            "object",
             "polarity"
           ],
-          "explanation": "Lexical induction failure on action: expected (inspect) but predicted (abandon). Morphosyntactic inflection failure on tense, polarity: failed to parse tense affix or polarity marker.",
+          "explanation": "Lexical induction failure on action, object: expected (activate, data_capsule) but predicted (harvest, energy_matrix). Morphosyntactic inflection failure on polarity: failed to parse tense affix or polarity marker.",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "abandon",
-            "object": "ancient_relic",
-            "tense": "past",
+            "agent": "scout_alpha",
+            "action": "harvest",
+            "object": "energy_matrix",
+            "tense": "present",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "inspect",
-            "object": "ancient_relic",
+            "agent": "scout_alpha",
+            "action": "activate",
+            "object": "data_capsule",
             "tense": "present",
             "polarity": "negative",
             "resolved_references": {},
@@ -911,36 +937,36 @@
         },
         {
           "episode_id": "test_iid_0002",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
-            "DiscourseTrackingFailure"
+            "LexicalInductionFailure"
           ],
-          "slot_errors": [],
-          "explanation": "Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
+          "slot_errors": [
+            "action",
+            "object"
+          ],
+          "explanation": "Lexical induction failure on action, object: expected (forge, ancient_relic) but predicted (secure, energy_matrix).",
           "predicted_frame": {
             "agent": "guardian_sigma",
-            "action": "harvest",
-            "object": "ancient_relic",
-            "tense": "present",
+            "action": "secure",
+            "object": "energy_matrix",
+            "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
             "agent": "guardian_sigma",
-            "action": "harvest",
+            "action": "forge",
             "object": "ancient_relic",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
-            "resolved_references": {
-              "la": "guardian_sigma",
-              "id": "ancient_relic"
-            },
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
-              "action": "community_shift",
+              "action": "stable",
               "object": "stable",
               "tense": "stable",
               "polarity": "stable"
@@ -949,94 +975,7 @@
         },
         {
           "episode_id": "test_iid_0003",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
-          "is_exact_match": false,
-          "failure_modes": [
-            "LexicalInductionFailure",
-            "DiscourseTrackingFailure"
-          ],
-          "slot_errors": [
-            "action",
-            "object"
-          ],
-          "explanation": "Lexical induction failure on action, object: expected (relocate, shelter_dome) but predicted (forge, signal_beacon). Discourse tracking failure in 'ellipsis': failed to resolve antecedent across conversational turns.",
-          "predicted_frame": {
-            "agent": "artisan_gamma",
-            "action": "forge",
-            "object": "signal_beacon",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {},
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "shelter_dome",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "relocate"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0004",
-          "difficulty_level": 4,
-          "phenomenon": "correction",
-          "is_exact_match": false,
-          "failure_modes": [
-            "LexicalInductionFailure",
-            "DiscourseTrackingFailure"
-          ],
-          "slot_errors": [
-            "agent",
-            "action",
-            "object"
-          ],
-          "explanation": "Lexical induction failure on agent, action, object: expected (artisan_gamma, relocate, signal_beacon) but predicted (scholar_omega, repair, data_capsule). Discourse tracking failure in 'correction': failed to resolve antecedent across conversational turns.",
-          "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "repair",
-            "object": "data_capsule",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "scholar_omega",
-              "id": "data_capsule"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "signal_beacon",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "artisan_gamma",
-              "id": "signal_beacon"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0005",
-          "difficulty_level": 2,
+          "difficulty_level": 1,
           "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
@@ -1048,11 +987,11 @@
             "object",
             "polarity"
           ],
-          "explanation": "Lexical induction failure on action, object: expected (repair, energy_matrix) but predicted (secure, data_capsule). Morphosyntactic inflection failure on polarity: failed to parse tense affix or polarity marker.",
+          "explanation": "Lexical induction failure on action, object: expected (inspect, stone_monolith) but predicted (forge, shelter_dome). Morphosyntactic inflection failure on polarity: failed to parse tense affix or polarity marker.",
           "predicted_frame": {
             "agent": "scholar_omega",
-            "action": "secure",
-            "object": "data_capsule",
+            "action": "forge",
+            "object": "shelter_dome",
             "tense": "present",
             "polarity": "affirmative",
             "resolved_references": {},
@@ -1060,8 +999,8 @@
           },
           "target_frame": {
             "agent": "scholar_omega",
-            "action": "repair",
-            "object": "energy_matrix",
+            "action": "inspect",
+            "object": "stone_monolith",
             "tense": "present",
             "polarity": "negative",
             "resolved_references": {},
@@ -1069,92 +1008,39 @@
               "agent": "stable",
               "action": "stable",
               "object": "stable",
-              "tense": "historical_shift",
+              "tense": "stable",
               "polarity": "stable"
             }
           }
         },
         {
-          "episode_id": "test_iid_0006",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
+          "episode_id": "test_iid_0004",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
           "is_exact_match": false,
           "failure_modes": [
-            "LexicalInductionFailure",
-            "MorphosyntacticFailure",
-            "DiscourseTrackingFailure"
+            "LexicalInductionFailure"
           ],
           "slot_errors": [
-            "agent",
-            "action",
-            "object",
-            "tense"
+            "action"
           ],
-          "explanation": "Lexical induction failure on agent, action, object: expected (artisan_delta, activate, ancient_relic) but predicted (guardian_theta, secure, data_capsule). Morphosyntactic inflection failure on tense: failed to parse tense affix or polarity marker. Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
+          "explanation": "Lexical induction failure on action: expected (activate) but predicted (forge).",
           "predicted_frame": {
-            "agent": "guardian_theta",
-            "action": "secure",
-            "object": "data_capsule",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "guardian_theta",
-              "id": "data_capsule"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "artisan_delta",
-            "action": "activate",
-            "object": "ancient_relic",
+            "agent": "guardian_sigma",
+            "action": "forge",
+            "object": "signal_beacon",
             "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "artisan_delta",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0007",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
-          "is_exact_match": false,
-          "failure_modes": [
-            "LexicalInductionFailure",
-            "MorphosyntacticFailure",
-            "DiscourseTrackingFailure"
-          ],
-          "slot_errors": [
-            "action",
-            "tense"
-          ],
-          "explanation": "Lexical induction failure on action: expected (inspect) but predicted (activate). Morphosyntactic inflection failure on tense: failed to parse tense affix or polarity marker. Discourse tracking failure in 'ellipsis': failed to resolve antecedent across conversational turns.",
-          "predicted_frame": {
-            "agent": "scout_alpha",
-            "action": "activate",
-            "object": "stone_monolith",
-            "tense": "present",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scout_alpha",
-            "action": "inspect",
-            "object": "stone_monolith",
-            "tense": "past",
+            "agent": "guardian_sigma",
+            "action": "activate",
+            "object": "signal_beacon",
+            "tense": "future",
             "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "inspect"
-            },
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -1165,52 +1051,7 @@
           }
         },
         {
-          "episode_id": "test_iid_0008",
-          "difficulty_level": 4,
-          "phenomenon": "correction",
-          "is_exact_match": false,
-          "failure_modes": [
-            "LexicalInductionFailure",
-            "DiscourseTrackingFailure"
-          ],
-          "slot_errors": [
-            "action",
-            "object"
-          ],
-          "explanation": "Lexical induction failure on action, object: expected (forge, crystal_core) but predicted (abandon, energy_matrix). Discourse tracking failure in 'correction': failed to resolve antecedent across conversational turns.",
-          "predicted_frame": {
-            "agent": "scout_alpha",
-            "action": "abandon",
-            "object": "energy_matrix",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "scout_alpha",
-              "id": "energy_matrix"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "scout_alpha",
-            "action": "forge",
-            "object": "crystal_core",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "scout_alpha",
-              "id": "crystal_core"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "community_shift",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0009",
+          "episode_id": "test_iid_0005",
           "difficulty_level": 1,
           "phenomenon": "direct",
           "is_exact_match": false,
@@ -1226,8 +1067,8 @@
           "predicted_frame": {
             "agent": "guardian_sigma",
             "action": "harvest",
-            "object": "crystal_core",
-            "tense": "present",
+            "object": "signal_beacon",
+            "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {}
@@ -1235,8 +1076,8 @@
           "target_frame": {
             "agent": "guardian_sigma",
             "action": "forge",
-            "object": "crystal_core",
-            "tense": "future",
+            "object": "signal_beacon",
+            "tense": "present",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {
@@ -1249,8 +1090,162 @@
           }
         },
         {
+          "episode_id": "test_iid_0006",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "LexicalInductionFailure"
+          ],
+          "slot_errors": [
+            "action"
+          ],
+          "explanation": "Lexical induction failure on action: expected (abandon) but predicted (secure).",
+          "predicted_frame": {
+            "agent": "artisan_delta",
+            "action": "secure",
+            "object": "energy_matrix",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "artisan_delta",
+            "action": "abandon",
+            "object": "energy_matrix",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0007",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "LexicalInductionFailure",
+            "MorphosyntacticFailure"
+          ],
+          "slot_errors": [
+            "object",
+            "polarity"
+          ],
+          "explanation": "Lexical induction failure on object: expected (data_capsule) but predicted (shelter_dome). Morphosyntactic inflection failure on polarity: failed to parse tense affix or polarity marker.",
+          "predicted_frame": {
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "shelter_dome",
+            "tense": "present",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "data_capsule",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0008",
+          "difficulty_level": 2,
+          "phenomenon": "correction",
+          "is_exact_match": false,
+          "failure_modes": [
+            "LexicalInductionFailure",
+            "DiscourseTrackingFailure"
+          ],
+          "slot_errors": [
+            "object"
+          ],
+          "explanation": "Lexical induction failure on object: expected (crystal_core) but predicted (shelter_dome). Discourse tracking failure in 'correction': failed to resolve antecedent across conversational turns.",
+          "predicted_frame": {
+            "agent": "scout_alpha",
+            "action": "harvest",
+            "object": "shelter_dome",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scout_alpha",
+            "action": "harvest",
+            "object": "crystal_core",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {
+              "el": "scout_alpha",
+              "id": "crystal_core"
+            },
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "community_shift",
+              "object": "community_shift",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0009",
+          "difficulty_level": 2,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "LexicalInductionFailure"
+          ],
+          "slot_errors": [
+            "action"
+          ],
+          "explanation": "Lexical induction failure on action: expected (activate) but predicted (inspect).",
+          "predicted_frame": {
+            "agent": "scholar_omega",
+            "action": "inspect",
+            "object": "water_purifier",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scholar_omega",
+            "action": "activate",
+            "object": "water_purifier",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "community_shift",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
           "episode_id": "test_iid_0010",
-          "difficulty_level": 4,
+          "difficulty_level": 2,
           "phenomenon": "coreference",
           "is_exact_match": false,
           "failure_modes": [
@@ -1259,26 +1254,30 @@
           ],
           "slot_errors": [
             "agent",
+            "action",
             "object"
           ],
-          "explanation": "Lexical induction failure on agent, object: expected (scholar_omega, crystal_core) but predicted (scholar_kappa, data_capsule). Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
+          "explanation": "Lexical induction failure on agent, action, object: expected (guardian_theta, harvest, crystal_core) but predicted (artisan_gamma, secure, shelter_dome). Discourse tracking failure in 'coreference': failed to resolve antecedent across conversational turns.",
           "predicted_frame": {
-            "agent": "scholar_kappa",
-            "action": "relocate",
-            "object": "data_capsule",
+            "agent": "artisan_gamma",
+            "action": "secure",
+            "object": "shelter_dome",
             "tense": "past",
             "polarity": "affirmative",
-            "resolved_references": {},
+            "resolved_references": {
+              "el": "artisan_gamma",
+              "id": "shelter_dome"
+            },
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "relocate",
+            "agent": "guardian_theta",
+            "action": "harvest",
             "object": "crystal_core",
             "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {
-              "el": "scholar_omega",
+              "el": "guardian_theta",
               "id": "crystal_core"
             },
             "drift_attribution": {
@@ -1298,17 +1297,17 @@
       "exact_match_accuracy": 0.0,
       "failure_counts": {
         "DisentanglementFailure": 86,
-        "LexicalInductionFailure": 13,
+        "LexicalInductionFailure": 10,
         "DiscourseTrackingFailure": 14
       },
       "failure_percentages": {
         "DisentanglementFailure": 86.0,
-        "LexicalInductionFailure": 13.0,
+        "LexicalInductionFailure": 10.0,
         "DiscourseTrackingFailure": 14.0
       },
       "slot_error_counts": {
         "agent": 4,
-        "object": 13
+        "object": 10
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -1319,7 +1318,9 @@
       "level_error_rates": {
         "Level_1": 100.0,
         "Level_2": 100.0,
-        "Level_4": 100.0
+        "Level_3": 100.0,
+        "Level_4": 100.0,
+        "Level_5": 100.0
       },
       "recommendations": [
         "Disentanglement Gap: The model recognizes semantic meaning but cannot infer causal origin. Compare the query against the support set baseline: if the lexical mapping differs from the root language, check whether that divergence occurs in other historical periods of that community vs across all communities."
@@ -1336,18 +1337,18 @@
           "slot_errors": [],
           "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "inspect",
-            "object": "ancient_relic",
+            "agent": "scout_alpha",
+            "action": "activate",
+            "object": "data_capsule",
             "tense": "present",
             "polarity": "negative",
             "resolved_references": {},
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "inspect",
-            "object": "ancient_relic",
+            "agent": "scout_alpha",
+            "action": "activate",
+            "object": "data_capsule",
             "tense": "present",
             "polarity": "negative",
             "resolved_references": {},
@@ -1362,283 +1363,6 @@
         },
         {
           "episode_id": "test_iid_0002",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'community_shift', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "guardian_sigma",
-            "action": "harvest",
-            "object": "ancient_relic",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "guardian_sigma",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "guardian_sigma",
-            "action": "harvest",
-            "object": "ancient_relic",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "guardian_sigma",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "community_shift",
-              "object": "stable",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0003",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "shelter_dome",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "relocate"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "shelter_dome",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "relocate"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0004",
-          "difficulty_level": 4,
-          "phenomenon": "correction",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'historical_shift', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "signal_beacon",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "artisan_gamma",
-              "id": "signal_beacon"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "signal_beacon",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "artisan_gamma",
-              "id": "signal_beacon"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0005",
-          "difficulty_level": 2,
-          "phenomenon": "direct",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'historical_shift', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "repair",
-            "object": "energy_matrix",
-            "tense": "present",
-            "polarity": "negative",
-            "resolved_references": {},
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "scholar_omega",
-            "action": "repair",
-            "object": "energy_matrix",
-            "tense": "present",
-            "polarity": "negative",
-            "resolved_references": {},
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0006",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'historical_shift', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "artisan_delta",
-            "action": "activate",
-            "object": "ancient_relic",
-            "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "artisan_delta",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "artisan_delta",
-            "action": "activate",
-            "object": "ancient_relic",
-            "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "artisan_delta",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0007",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "scout_alpha",
-            "action": "inspect",
-            "object": "stone_monolith",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "inspect"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "scout_alpha",
-            "action": "inspect",
-            "object": "stone_monolith",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "inspect"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0008",
-          "difficulty_level": 4,
-          "phenomenon": "correction",
-          "is_exact_match": false,
-          "failure_modes": [
-            "DisentanglementFailure"
-          ],
-          "slot_errors": [],
-          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'community_shift', 'tense': 'stable', 'polarity': 'stable'}).",
-          "predicted_frame": {
-            "agent": "scout_alpha",
-            "action": "forge",
-            "object": "crystal_core",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "scout_alpha",
-              "id": "crystal_core"
-            },
-            "drift_attribution": {}
-          },
-          "target_frame": {
-            "agent": "scout_alpha",
-            "action": "forge",
-            "object": "crystal_core",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "scout_alpha",
-              "id": "crystal_core"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "community_shift",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0009",
           "difficulty_level": 1,
           "phenomenon": "direct",
           "is_exact_match": false,
@@ -1650,7 +1374,7 @@
           "predicted_frame": {
             "agent": "guardian_sigma",
             "action": "forge",
-            "object": "crystal_core",
+            "object": "ancient_relic",
             "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {},
@@ -1659,7 +1383,7 @@
           "target_frame": {
             "agent": "guardian_sigma",
             "action": "forge",
-            "object": "crystal_core",
+            "object": "ancient_relic",
             "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {},
@@ -1673,8 +1397,259 @@
           }
         },
         {
+          "episode_id": "test_iid_0003",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "scholar_omega",
+            "action": "inspect",
+            "object": "stone_monolith",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scholar_omega",
+            "action": "inspect",
+            "object": "stone_monolith",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0004",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "guardian_sigma",
+            "action": "activate",
+            "object": "signal_beacon",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "guardian_sigma",
+            "action": "activate",
+            "object": "signal_beacon",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0005",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "guardian_sigma",
+            "action": "forge",
+            "object": "signal_beacon",
+            "tense": "present",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "guardian_sigma",
+            "action": "forge",
+            "object": "signal_beacon",
+            "tense": "present",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0006",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "artisan_delta",
+            "action": "abandon",
+            "object": "energy_matrix",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "artisan_delta",
+            "action": "abandon",
+            "object": "energy_matrix",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0007",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "data_capsule",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "data_capsule",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0008",
+          "difficulty_level": 2,
+          "phenomenon": "correction",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'community_shift', 'object': 'community_shift', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "scout_alpha",
+            "action": "harvest",
+            "object": "crystal_core",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {
+              "el": "scout_alpha",
+              "id": "crystal_core"
+            },
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scout_alpha",
+            "action": "harvest",
+            "object": "crystal_core",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {
+              "el": "scout_alpha",
+              "id": "crystal_core"
+            },
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "community_shift",
+              "object": "community_shift",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0009",
+          "difficulty_level": 2,
+          "phenomenon": "direct",
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
+          "slot_errors": [],
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'community_shift', 'tense': 'stable', 'polarity': 'stable'}).",
+          "predicted_frame": {
+            "agent": "scholar_omega",
+            "action": "activate",
+            "object": "water_purifier",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {}
+          },
+          "target_frame": {
+            "agent": "scholar_omega",
+            "action": "activate",
+            "object": "water_purifier",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "community_shift",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
           "episode_id": "test_iid_0010",
-          "difficulty_level": 4,
+          "difficulty_level": 2,
           "phenomenon": "coreference",
           "is_exact_match": false,
           "failure_modes": [
@@ -1683,25 +1658,25 @@
           "slot_errors": [],
           "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {}, expected {'agent': 'stable', 'action': 'stable', 'object': 'stable', 'tense': 'historical_shift', 'polarity': 'stable'}).",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "relocate",
+            "agent": "guardian_theta",
+            "action": "harvest",
             "object": "crystal_core",
             "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {
-              "el": "scholar_omega",
+              "el": "guardian_theta",
               "id": "crystal_core"
             },
             "drift_attribution": {}
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "relocate",
+            "agent": "guardian_theta",
+            "action": "harvest",
             "object": "crystal_core",
             "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {
-              "el": "scholar_omega",
+              "el": "guardian_theta",
               "id": "crystal_core"
             },
             "drift_attribution": {
@@ -1720,29 +1695,31 @@
       "total_errors": 15,
       "exact_match_accuracy": 85.0,
       "failure_counts": {
-        "LexicalInductionFailure": 13,
-        "DiscourseTrackingFailure": 14,
-        "DisentanglementFailure": 1
+        "DisentanglementFailure": 1,
+        "LexicalInductionFailure": 10,
+        "DiscourseTrackingFailure": 14
       },
       "failure_percentages": {
-        "LexicalInductionFailure": 86.67,
-        "DiscourseTrackingFailure": 93.33,
-        "DisentanglementFailure": 6.67
+        "DisentanglementFailure": 6.67,
+        "LexicalInductionFailure": 66.67,
+        "DiscourseTrackingFailure": 93.33
       },
       "slot_error_counts": {
         "agent": 4,
-        "object": 13
+        "object": 10
       },
       "phenomenon_error_rates": {
-        "coreference": 19.23,
-        "correction": 20.83,
+        "coreference": 20.83,
+        "correction": 26.09,
         "direct": 0.0,
-        "ellipsis": 20.83
+        "ellipsis": 18.18
       },
       "level_error_rates": {
         "Level_1": 0.0,
-        "Level_2": 0.0,
-        "Level_4": 20.27
+        "Level_2": 16.67,
+        "Level_3": 0.0,
+        "Level_4": 29.55,
+        "Level_5": 0.0
       },
       "recommendations": [
         "High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.",
@@ -1759,9 +1736,9 @@
           "slot_errors": [],
           "explanation": "All event slots and attributions matched perfectly.",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "inspect",
-            "object": "ancient_relic",
+            "agent": "scout_alpha",
+            "action": "activate",
+            "object": "data_capsule",
             "tense": "present",
             "polarity": "negative",
             "resolved_references": {},
@@ -1774,9 +1751,9 @@
             }
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "inspect",
-            "object": "ancient_relic",
+            "agent": "scout_alpha",
+            "action": "activate",
+            "object": "data_capsule",
             "tense": "present",
             "polarity": "negative",
             "resolved_references": {},
@@ -1791,66 +1768,19 @@
         },
         {
           "episode_id": "test_iid_0002",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
           "is_exact_match": true,
           "failure_modes": [],
           "slot_errors": [],
           "explanation": "All event slots and attributions matched perfectly.",
           "predicted_frame": {
             "agent": "guardian_sigma",
-            "action": "harvest",
+            "action": "forge",
             "object": "ancient_relic",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
-            "resolved_references": {
-              "la": "guardian_sigma",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "community_shift",
-              "object": "stable",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          },
-          "target_frame": {
-            "agent": "guardian_sigma",
-            "action": "harvest",
-            "object": "ancient_relic",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "guardian_sigma",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "community_shift",
-              "object": "stable",
-              "tense": "stable",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0003",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
-          "is_exact_match": true,
-          "failure_modes": [],
-          "slot_errors": [],
-          "explanation": "All event slots and attributions matched perfectly.",
-          "predicted_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "shelter_dome",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "relocate"
-            },
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -1860,14 +1790,51 @@
             }
           },
           "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "shelter_dome",
-            "tense": "past",
+            "agent": "guardian_sigma",
+            "action": "forge",
+            "object": "ancient_relic",
+            "tense": "future",
             "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "relocate"
-            },
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0003",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": true,
+          "failure_modes": [],
+          "slot_errors": [],
+          "explanation": "All event slots and attributions matched perfectly.",
+          "predicted_frame": {
+            "agent": "scholar_omega",
+            "action": "inspect",
+            "object": "stone_monolith",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          },
+          "target_frame": {
+            "agent": "scholar_omega",
+            "action": "inspect",
+            "object": "stone_monolith",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -1879,150 +1846,19 @@
         },
         {
           "episode_id": "test_iid_0004",
-          "difficulty_level": 4,
-          "phenomenon": "correction",
-          "is_exact_match": true,
-          "failure_modes": [],
-          "slot_errors": [],
-          "explanation": "All event slots and attributions matched perfectly.",
-          "predicted_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "signal_beacon",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "artisan_gamma",
-              "id": "signal_beacon"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          },
-          "target_frame": {
-            "agent": "artisan_gamma",
-            "action": "relocate",
-            "object": "signal_beacon",
-            "tense": "present",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "el": "artisan_gamma",
-              "id": "signal_beacon"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0005",
-          "difficulty_level": 2,
+          "difficulty_level": 1,
           "phenomenon": "direct",
           "is_exact_match": true,
           "failure_modes": [],
           "slot_errors": [],
           "explanation": "All event slots and attributions matched perfectly.",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "repair",
-            "object": "energy_matrix",
-            "tense": "present",
-            "polarity": "negative",
-            "resolved_references": {},
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          },
-          "target_frame": {
-            "agent": "scholar_omega",
-            "action": "repair",
-            "object": "energy_matrix",
-            "tense": "present",
-            "polarity": "negative",
-            "resolved_references": {},
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0006",
-          "difficulty_level": 4,
-          "phenomenon": "coreference",
-          "is_exact_match": true,
-          "failure_modes": [],
-          "slot_errors": [],
-          "explanation": "All event slots and attributions matched perfectly.",
-          "predicted_frame": {
-            "agent": "artisan_delta",
+            "agent": "guardian_sigma",
             "action": "activate",
-            "object": "ancient_relic",
+            "object": "signal_beacon",
             "tense": "future",
             "polarity": "affirmative",
-            "resolved_references": {
-              "la": "artisan_delta",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          },
-          "target_frame": {
-            "agent": "artisan_delta",
-            "action": "activate",
-            "object": "ancient_relic",
-            "tense": "future",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "la": "artisan_delta",
-              "id": "ancient_relic"
-            },
-            "drift_attribution": {
-              "agent": "stable",
-              "action": "stable",
-              "object": "stable",
-              "tense": "historical_shift",
-              "polarity": "stable"
-            }
-          }
-        },
-        {
-          "episode_id": "test_iid_0007",
-          "difficulty_level": 4,
-          "phenomenon": "ellipsis",
-          "is_exact_match": true,
-          "failure_modes": [],
-          "slot_errors": [],
-          "explanation": "All event slots and attributions matched perfectly.",
-          "predicted_frame": {
-            "agent": "scout_alpha",
-            "action": "inspect",
-            "object": "stone_monolith",
-            "tense": "past",
-            "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "inspect"
-            },
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -2032,14 +1868,129 @@
             }
           },
           "target_frame": {
-            "agent": "scout_alpha",
-            "action": "inspect",
-            "object": "stone_monolith",
+            "agent": "guardian_sigma",
+            "action": "activate",
+            "object": "signal_beacon",
+            "tense": "future",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0005",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": true,
+          "failure_modes": [],
+          "slot_errors": [],
+          "explanation": "All event slots and attributions matched perfectly.",
+          "predicted_frame": {
+            "agent": "guardian_sigma",
+            "action": "forge",
+            "object": "signal_beacon",
+            "tense": "present",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          },
+          "target_frame": {
+            "agent": "guardian_sigma",
+            "action": "forge",
+            "object": "signal_beacon",
+            "tense": "present",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0006",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": true,
+          "failure_modes": [],
+          "slot_errors": [],
+          "explanation": "All event slots and attributions matched perfectly.",
+          "predicted_frame": {
+            "agent": "artisan_delta",
+            "action": "abandon",
+            "object": "energy_matrix",
             "tense": "past",
             "polarity": "affirmative",
-            "resolved_references": {
-              "[elliptic_verb]": "inspect"
-            },
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          },
+          "target_frame": {
+            "agent": "artisan_delta",
+            "action": "abandon",
+            "object": "energy_matrix",
+            "tense": "past",
+            "polarity": "affirmative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          }
+        },
+        {
+          "episode_id": "test_iid_0007",
+          "difficulty_level": 1,
+          "phenomenon": "direct",
+          "is_exact_match": true,
+          "failure_modes": [],
+          "slot_errors": [],
+          "explanation": "All event slots and attributions matched perfectly.",
+          "predicted_frame": {
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "data_capsule",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
+            "drift_attribution": {
+              "agent": "stable",
+              "action": "stable",
+              "object": "stable",
+              "tense": "stable",
+              "polarity": "stable"
+            }
+          },
+          "target_frame": {
+            "agent": "scholar_kappa",
+            "action": "harvest",
+            "object": "data_capsule",
+            "tense": "present",
+            "polarity": "negative",
+            "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
@@ -2051,17 +2002,19 @@
         },
         {
           "episode_id": "test_iid_0008",
-          "difficulty_level": 4,
+          "difficulty_level": 2,
           "phenomenon": "correction",
-          "is_exact_match": true,
-          "failure_modes": [],
+          "is_exact_match": false,
+          "failure_modes": [
+            "DisentanglementFailure"
+          ],
           "slot_errors": [],
-          "explanation": "All event slots and attributions matched perfectly.",
+          "explanation": "Disentanglement failure: correctly parsed event frame but misattributed causal drift factors (got {'agent': 'stable', 'action': 'community_shift', 'object': 'stable', 'tense': 'stable', 'polarity': 'stable'}, expected {'agent': 'stable', 'action': 'community_shift', 'object': 'community_shift', 'tense': 'stable', 'polarity': 'stable'}).",
           "predicted_frame": {
             "agent": "scout_alpha",
-            "action": "forge",
+            "action": "harvest",
             "object": "crystal_core",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {
               "el": "scout_alpha",
@@ -2069,17 +2022,17 @@
             },
             "drift_attribution": {
               "agent": "stable",
-              "action": "stable",
-              "object": "community_shift",
+              "action": "community_shift",
+              "object": "stable",
               "tense": "stable",
               "polarity": "stable"
             }
           },
           "target_frame": {
             "agent": "scout_alpha",
-            "action": "forge",
+            "action": "harvest",
             "object": "crystal_core",
-            "tense": "present",
+            "tense": "future",
             "polarity": "affirmative",
             "resolved_references": {
               "el": "scout_alpha",
@@ -2087,7 +2040,7 @@
             },
             "drift_attribution": {
               "agent": "stable",
-              "action": "stable",
+              "action": "community_shift",
               "object": "community_shift",
               "tense": "stable",
               "polarity": "stable"
@@ -2096,38 +2049,38 @@
         },
         {
           "episode_id": "test_iid_0009",
-          "difficulty_level": 1,
+          "difficulty_level": 2,
           "phenomenon": "direct",
           "is_exact_match": true,
           "failure_modes": [],
           "slot_errors": [],
           "explanation": "All event slots and attributions matched perfectly.",
           "predicted_frame": {
-            "agent": "guardian_sigma",
-            "action": "forge",
-            "object": "crystal_core",
-            "tense": "future",
+            "agent": "scholar_omega",
+            "action": "activate",
+            "object": "water_purifier",
+            "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
-              "object": "stable",
+              "object": "community_shift",
               "tense": "stable",
               "polarity": "stable"
             }
           },
           "target_frame": {
-            "agent": "guardian_sigma",
-            "action": "forge",
-            "object": "crystal_core",
-            "tense": "future",
+            "agent": "scholar_omega",
+            "action": "activate",
+            "object": "water_purifier",
+            "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {},
             "drift_attribution": {
               "agent": "stable",
               "action": "stable",
-              "object": "stable",
+              "object": "community_shift",
               "tense": "stable",
               "polarity": "stable"
             }
@@ -2135,20 +2088,20 @@
         },
         {
           "episode_id": "test_iid_0010",
-          "difficulty_level": 4,
+          "difficulty_level": 2,
           "phenomenon": "coreference",
           "is_exact_match": true,
           "failure_modes": [],
           "slot_errors": [],
           "explanation": "All event slots and attributions matched perfectly.",
           "predicted_frame": {
-            "agent": "scholar_omega",
-            "action": "relocate",
+            "agent": "guardian_theta",
+            "action": "harvest",
             "object": "crystal_core",
             "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {
-              "el": "scholar_omega",
+              "el": "guardian_theta",
               "id": "crystal_core"
             },
             "drift_attribution": {
@@ -2160,13 +2113,13 @@
             }
           },
           "target_frame": {
-            "agent": "scholar_omega",
-            "action": "relocate",
+            "agent": "guardian_theta",
+            "action": "harvest",
             "object": "crystal_core",
             "tense": "past",
             "polarity": "affirmative",
             "resolved_references": {
-              "el": "scholar_omega",
+              "el": "guardian_theta",
               "id": "crystal_core"
             },
             "drift_attribution": {

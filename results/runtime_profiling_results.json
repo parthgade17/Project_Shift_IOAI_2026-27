@@ -1,10 +1,10 @@
 {
   "dataset_size": 100,
-  "loading_time_ms": 149.26,
-  "total_inference_time_ms": 31.46,
-  "latency_ms_per_episode": 0.315,
-  "throughput_episodes_per_sec": 3178.6,
-  "memory_peak_mb": 1.16,
+  "loading_time_ms": 60.51,
+  "total_inference_time_ms": 13.44,
+  "latency_ms_per_episode": 0.134,
+  "throughput_episodes_per_sec": 7438.9,
+  "memory_peak_mb": 1.15,
   "ioai_limits": {
     "max_memory_mb": 2048.0,
     "max_latency_ms": 100.0,

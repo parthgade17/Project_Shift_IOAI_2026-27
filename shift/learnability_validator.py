@@ -30,19 +30,20 @@ from collections import defaultdict, Counter
 
 from shift.ontology import (
     AgentEntity, ActionPredicate, ObjectEntity, Tense, Polarity, EventFrame,
-    AGENT_METADATA, OBJECT_METADATA
+    AGENT_METADATA, OBJECT_METADATA, deterministic_seed
 )
 from shift.episodes import Episode, SupportExample, QueryInstance
 
 
 class CheckType(str, Enum):
-    """The six foundational learnability checks for Project SHIFT."""
+    """The formal learnability and solvability checks for Project SHIFT."""
     LEXICAL_INFERABILITY = "lexical_inferability"
     GRAMMAR_INFERABILITY = "grammar_inferability"
     SEMANTIC_DRIFT_INFERABILITY = "semantic_drift_inferability"
     CONTEXT_SUFFICIENCY = "context_sufficiency"
     UNIQUE_INTERPRETATION = "unique_interpretation"
     COMPOSITIONAL_LEARNABILITY = "compositional_learnability"
+    CONTESTANT_SOLVABILITY = "contestant_solvability"
 
 
 @dataclass
@@ -76,13 +77,15 @@ class LearnabilityAuditResult:
     morphological_grounding: bool
     discourse_determinacy: bool
     ambiguity_free: bool
-    # Six explicit checks
+    # Six explicit author checks
     lexical_inferability: bool = True
     grammar_inferability: bool = True
     semantic_drift_inferability: bool = True
     context_sufficiency: bool = True
     unique_interpretation: bool = True
     compositional_learnability: bool = True
+    # Contestant inference test
+    contestant_solvability: bool = True
     # Repair details
     was_repaired: bool = False
     repair_actions: List[str] = field(default_factory=list)
@@ -97,13 +100,14 @@ class LearnabilityAuditResult:
             "is_solvable": self.is_solvable,
             "was_repaired": self.was_repaired,
             "repair_actions": self.repair_actions,
-            "six_checks": {
+            "checks": {
                 CheckType.LEXICAL_INFERABILITY.value: self.lexical_inferability,
                 CheckType.GRAMMAR_INFERABILITY.value: self.grammar_inferability,
                 CheckType.SEMANTIC_DRIFT_INFERABILITY.value: self.semantic_drift_inferability,
                 CheckType.CONTEXT_SUFFICIENCY.value: self.context_sufficiency,
                 CheckType.UNIQUE_INTERPRETATION.value: self.unique_interpretation,
                 CheckType.COMPOSITIONAL_LEARNABILITY.value: self.compositional_learnability,
+                CheckType.CONTESTANT_SOLVABILITY.value: self.contestant_solvability,
             },
             "missing_evidence": self.missing_evidence,
             "ambiguities": self.ambiguities,
@@ -293,16 +297,39 @@ class LearnabilityValidator:
         supp_tenses = {f.tense for f in supp_frames}
         supp_polarities = {f.polarity for f in supp_frames}
 
-        # Check support set sample size for syntax induction (k >= 2 needed to deduce SOV/SVO/VSO)
-        if len(episode.support_set) >= 2:
-            transitive_count = 0
-            for s in episode.support_set:
-                toks = s.utterance.strip(".").split()
-                if len(toks) >= 3:
-                    transitive_count += 1
-            if transitive_count < 1 and len(episode.support_set) >= 4:
-                reasons.append(f"Insufficient transitive sentences in support set to deduce word order '{episode.word_order}'.")
-                missing.append("support:syntax:transitive_order")
+        # Check actual syntactic word order inferability across support set
+        wo = episode.word_order or "SOV"
+        transitive_examples = [
+            s for s in episode.support_set
+            if len([t for t in re.findall(r"\b\w+\b", s.utterance.lower()) if t not in ("non", "sed", "et", "te")]) >= 3
+        ]
+        if len(transitive_examples) < 1 and len(episode.support_set) >= 3:
+            reasons.append(f"Insufficient transitive sentences in support set to induce word order '{wo}'.")
+            missing.append("support:syntax:transitive_order")
+        elif len(transitive_examples) >= 2:
+            # Verify that hypothesized word order maintains consistent token-to-role mappings without role collisions
+            hyp_roles: Dict[str, Set[str]] = defaultdict(set)
+            for s in transitive_examples:
+                toks = [t for t in re.findall(r"\b\w+\b", s.utterance.lower()) if t not in ("non", "sed", "et", "te")]
+                if len(toks) < 3: continue
+                if wo == "SOV":
+                    s_tok, o_tok, v_tok = toks[0], toks[1], toks[2]
+                elif wo == "SVO":
+                    s_tok, v_tok, o_tok = toks[0], toks[1], toks[2]
+                elif wo == "VSO":
+                    v_tok, s_tok, o_tok = toks[0], toks[1], toks[2]
+                else:
+                    s_tok, o_tok, v_tok = toks[0], toks[1], toks[2]
+
+                hyp_roles[s_tok].add("agent")
+                hyp_roles[o_tok].add("object")
+                hyp_roles[v_tok[:3]].add("action")
+
+            for tok, roles in hyp_roles.items():
+                if len(roles) > 1 and "action" in roles:
+                    reasons.append(f"Word order '{wo}' causes semantic role collision for token '{tok}': {roles}.")
+                    missing.append(f"support:syntax:role_collision:{tok}")
+                    break
 
         # Tense check
         if target.tense not in supp_tenses:
@@ -357,7 +384,26 @@ class LearnabilityValidator:
                 reasons.append(f"Drifted object '{target.object}' ({drift_attr.get('object')}) missing from support set.")
                 missing.append(f"drift:object:{target.object}")
 
+        # Check historical case marking inferability
+        q_tokens = re.findall(r"\b\w+\b", episode.query.utterance.lower())
+        has_case_marking_query = any(tok.endswith("a") and len(tok) > 3 for tok in q_tokens)
+        if has_case_marking_query:
+            supp_case_marking = any(
+                any(tok.endswith("a") and len(tok) > 3 for tok in re.findall(r"\b\w+\b", s.utterance.lower()))
+                for s in episode.support_set
+            )
+            if not supp_case_marking:
+                reasons.append("Historical case marking '-a' in query is unexemplified in support set.")
+                missing.append("support:drift:historical_case_marking")
+
         passed = len(reasons) == 0
+        return CheckResult(
+            check_type=CheckType.SEMANTIC_DRIFT_INFERABILITY,
+            passed=passed,
+            reasons=reasons,
+            missing_evidence=missing,
+            details={"drift_attribution": drift_attr}
+        )
         return CheckResult(
             check_type=CheckType.SEMANTIC_DRIFT_INFERABILITY,
             passed=passed,
@@ -513,17 +559,61 @@ class LearnabilityValidator:
         )
 
     # -------------------------------------------------------------
+    # Contestant-Only Inference Test (Simulation)
+    # -------------------------------------------------------------
+    @classmethod
+    def check_contestant_solvability(cls, episode: Episode) -> CheckResult:
+        """
+        Contestant-Only Inference Test.
+        Tests whether an inductive contestant solver (with zero access to gold query_label
+        and zero access to gold context event_frame annotations) can deterministically
+        infer the true EventFrame from support examples and dialogue context alone.
+        """
+        from baselines.rule_based import RuleBasedLearner
+        learner = RuleBasedLearner()
+        test_ep = Episode.from_dict(episode.to_contestant_dict())
+        try:
+            pred = learner.predict_episode(test_ep)
+            if episode.query_label is None:
+                return CheckResult(CheckType.CONTESTANT_SOLVABILITY, True)
+            is_match = episode.query_label.exact_match(pred)
+            if is_match:
+                return CheckResult(
+                    check_type=CheckType.CONTESTANT_SOLVABILITY,
+                    passed=True,
+                    details={"predicted_frame": pred.to_dict()}
+                )
+            else:
+                mismatches = []
+                for slot in ["agent", "action", "object", "tense", "polarity"]:
+                    if getattr(episode.query_label, slot) != getattr(pred, slot):
+                        mismatches.append(f"{slot}: expected '{getattr(episode.query_label, slot)}', predicted '{getattr(pred, slot)}'")
+                return CheckResult(
+                    check_type=CheckType.CONTESTANT_SOLVABILITY,
+                    passed=False,
+                    reasons=[f"Contestant inductive solver mismatch: {', '.join(mismatches)}"],
+                    details={"mismatches": mismatches, "predicted": pred.to_dict()}
+                )
+        except Exception as e:
+            return CheckResult(
+                check_type=CheckType.CONTESTANT_SOLVABILITY,
+                passed=False,
+                reasons=[f"Contestant solver error: {str(e)}"]
+            )
+
+    # -------------------------------------------------------------
     # Master Episode Audit Method
     # -------------------------------------------------------------
     @classmethod
     def audit_episode(cls, episode: Episode) -> LearnabilityAuditResult:
-        """Executes all six checks on an episode and returns comprehensive audit result."""
+        """Executes all checks on an episode and returns comprehensive audit result."""
         res_lex = cls.check_lexical_inferability(episode)
         res_gram = cls.check_grammar_inferability(episode)
         res_drift = cls.check_semantic_drift_inferability(episode)
         res_ctx = cls.check_context_sufficiency(episode)
         res_uniq = cls.check_unique_interpretation(episode)
         res_comp = cls.check_compositional_learnability(episode)
+        res_solv = cls.check_contestant_solvability(episode)
 
         all_checks = {
             CheckType.LEXICAL_INFERABILITY.value: res_lex,
@@ -532,12 +622,17 @@ class LearnabilityValidator:
             CheckType.CONTEXT_SUFFICIENCY.value: res_ctx,
             CheckType.UNIQUE_INTERPRETATION.value: res_uniq,
             CheckType.COMPOSITIONAL_LEARNABILITY.value: res_comp,
+            CheckType.CONTESTANT_SOLVABILITY.value: res_solv,
         }
 
-        all_passed = (
+        # 1. Author Gold-Assisted Learnability Proofs (Six Checks)
+        six_checks_passed = (
             res_lex.passed and res_gram.passed and res_drift.passed and
             res_ctx.passed and res_uniq.passed and res_comp.passed
         )
+
+        # 2. Separate Contestant Inference Test
+        contestant_test_passed = res_solv.passed
 
         all_reasons = []
         all_missing = []
@@ -549,21 +644,26 @@ class LearnabilityValidator:
             if "ambiguities" in chk.details:
                 all_ambiguities.extend(chk.details["ambiguities"])
 
+        if not contestant_test_passed and six_checks_passed:
+            # Note contestant solver divergence in diagnostics without failing author mathematical proof
+            pass
+
         return LearnabilityAuditResult(
             episode_id=episode.episode_id,
-            is_solvable=all_passed,
+            is_solvable=six_checks_passed,
             # Backward-compatible flags
             lexical_grounding=res_lex.passed,
             morphological_grounding=res_gram.passed,
             discourse_determinacy=res_ctx.passed,
             ambiguity_free=res_uniq.passed,
-            # Six formal check flags
+            # Formal check flags
             lexical_inferability=res_lex.passed,
             grammar_inferability=res_gram.passed,
             semantic_drift_inferability=res_drift.passed,
             context_sufficiency=res_ctx.passed,
             unique_interpretation=res_uniq.passed,
             compositional_learnability=res_comp.passed,
+            contestant_solvability=contestant_test_passed,
             missing_evidence=all_missing,
             ambiguities=all_ambiguities,
             failure_reasons=all_reasons,
@@ -606,7 +706,7 @@ class LearnabilityValidator:
             grammar = generator.get_grammar_for_episode(repaired_ep.episode_id, repaired_ep.community_id, repaired_ep.period_id)
         else:
             base_seed = getattr(generator, "base_seed", 42)
-            ep_seed = abs(hash(f"{base_seed}_{repaired_ep.episode_id}_{repaired_ep.community_id}_{repaired_ep.period_id}")) % (2**31)
+            ep_seed = deterministic_seed(f"{base_seed}_{repaired_ep.episode_id}_{repaired_ep.community_id}_{repaired_ep.period_id}")
             base_lex = Lexicon(seed=ep_seed)
             drift = DriftEngine(community_id=repaired_ep.community_id, period_id=repaired_ep.period_id)
             drifted_lex = drift.transform_lexicon(base_lex)
@@ -869,12 +969,10 @@ class LearnabilityValidator:
                         for chk in CheckType:
                             check_pass_counts[chk.value] += 1
                     else:
-                        # Fallback to candidate if regeneration fails
-                        accepted_episodes.append(repaired_ep)
-                        audit_results.append(initial_audit)
+                        # Reject failing episode explicitly: never silently accept invalid episodes
+                        raise ValueError(f"UnsolvableEpisodeError: Episode '{ep.episode_id}' failed learnability audit and could not be repaired: {initial_audit.failure_reasons}")
                 else:
-                    accepted_episodes.append(ep)
-                    audit_results.append(initial_audit)
+                    raise ValueError(f"UnsolvableEpisodeError: Episode '{ep.episode_id}' failed learnability audit and no generator was provided: {initial_audit.failure_reasons}")
 
         learnable_count = sum(1 for a in audit_results if a.is_solvable)
         pass_rate = round(learnable_count / total * 100.0, 2) if total else 0.0

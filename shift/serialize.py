@@ -19,14 +19,23 @@ from shift.episodes import Episode
 def export_episodes_jsonl(
     episodes: List[Episode],
     file_path: str | Path,
-    strip_labels: bool = False
+    strip_labels: bool = False,
+    contestant_view: bool = False
 ) -> None:
-    """Exports list of episodes to a JSONL file."""
+    """
+    Exports list of episodes to a JSONL file.
+    If strip_labels or contestant_view is True, strictly serializes using to_contestant_dict()
+    with ZERO query labels, ZERO drift attribution, and ZERO context event_frame annotations.
+    """
     path = Path(file_path)
     path.parent.mkdir(parents=True, exist_ok=True)
+    is_contestant = contestant_view or strip_labels
     with open(path, "w", encoding="utf-8") as f:
         for ep in episodes:
-            data = ep.to_dict(strip_label=strip_labels)
+            if is_contestant:
+                data = ep.to_contestant_dict()
+            else:
+                data = ep.to_reference_dict()
             f.write(json.dumps(data, ensure_ascii=False) + "\n")
 
 

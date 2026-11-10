@@ -7,9 +7,29 @@ polarity, reference types, and the strict EventFrame schema with validation.
 """
 
 from __future__ import annotations
+import hashlib
 from dataclasses import dataclass, field, asdict
 from enum import Enum
 from typing import Dict, List, Set, Optional, Any, Tuple
+
+
+def deterministic_seed(key: str) -> int:
+    """
+    Derives a cross-platform, deterministic 31-bit positive integer seed from a string.
+    Replaces Python's randomized hash() to ensure 100% scientific reproducibility across
+    operating systems and Python interpreter runs.
+    """
+    h = hashlib.sha256(key.encode("utf-8")).digest()
+    return int.from_bytes(h[:4], byteorder="big") & 0x7FFFFFFF
+
+
+class DifficultyLevel(int, Enum):
+    """The five progressive competition evaluation levels for Project SHIFT (IOAI 2027)."""
+    LEVEL_1_DIRECT = 1          # Direct, canonical syntax and vocabulary
+    LEVEL_2_DRIFT = 2           # Dialectal vocabulary and historical phonological drift
+    LEVEL_3_PRAGMATIC = 3       # Pragmatic negation, interaction shifts, syntactic inversion
+    LEVEL_4_DISCOURSE = 4       # Multi-turn discourse context (coreference, ellipsis, correction)
+    LEVEL_5_COMPOSITIONAL = 5   # Systematic compositional OOD and counterfactual reasoning
 
 
 class AgentRole(str, Enum):
