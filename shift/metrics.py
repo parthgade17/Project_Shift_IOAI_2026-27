@@ -187,6 +187,7 @@ def compute_all_metrics(
     return {
         "total_episodes": total,
         "exact_match_accuracy": em_acc,
+        "macro_slot_f1": round(mean_slot_f1, 2),
         "composite_competition_score": composite_score,
         "disentanglement_accuracy": dis_acc,
         "reference_resolution_accuracy": ref_acc,

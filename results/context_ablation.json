@@ -1,0 +1,104 @@
+{
+  "experiment_id": "EXP-02",
+  "description": "Conversational Context Ablation (Full vs No-Context vs Shuffled)",
+  "num_dialogue_episodes": 100,
+  "timestamp": "2026-11-14 19:43:06",
+  "results_by_model": {
+    "Statistical Naive Bayes": {
+      "Full Context": {
+        "exact_match_accuracy": 86.0,
+        "macro_slot_f1": 96.96,
+        "reference_resolution_accuracy": 90.0
+      },
+      "No Context (c=0)": {
+        "exact_match_accuracy": 32.0,
+        "macro_slot_f1": 76.33,
+        "reference_resolution_accuracy": 33.0
+      },
+      "Shuffled Context (Reversed)": {
+        "exact_match_accuracy": 75.0,
+        "macro_slot_f1": 94.75,
+        "reference_resolution_accuracy": 79.0
+      },
+      "ablation_drop_no_context": 54.0,
+      "ablation_drop_shuffled": 11.0
+    },
+    "Inductive Rule Learner": {
+      "Full Context": {
+        "exact_match_accuracy": 86.0,
+        "macro_slot_f1": 96.96,
+        "reference_resolution_accuracy": 90.0
+      },
+      "No Context (c=0)": {
+        "exact_match_accuracy": 33.0,
+        "macro_slot_f1": 77.19,
+        "reference_resolution_accuracy": 34.0
+      },
+      "Shuffled Context (Reversed)": {
+        "exact_match_accuracy": 75.0,
+        "macro_slot_f1": 94.75,
+        "reference_resolution_accuracy": 79.0
+      },
+      "ablation_drop_no_context": 53.0,
+      "ablation_drop_shuffled": 11.0
+    },
+    "Surface Lookup Baseline": {
+      "Full Context": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 44.64,
+        "reference_resolution_accuracy": 33.0
+      },
+      "No Context (c=0)": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 44.64,
+        "reference_resolution_accuracy": 33.0
+      },
+      "Shuffled Context (Reversed)": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 44.64,
+        "reference_resolution_accuracy": 33.0
+      },
+      "ablation_drop_no_context": 0.0,
+      "ablation_drop_shuffled": 0.0
+    },
+    "Majority Baseline": {
+      "Full Context": {
+        "exact_match_accuracy": 2.0,
+        "macro_slot_f1": 45.52,
+        "reference_resolution_accuracy": 31.0
+      },
+      "No Context (c=0)": {
+        "exact_match_accuracy": 2.0,
+        "macro_slot_f1": 45.52,
+        "reference_resolution_accuracy": 31.0
+      },
+      "Shuffled Context (Reversed)": {
+        "exact_match_accuracy": 2.0,
+        "macro_slot_f1": 45.52,
+        "reference_resolution_accuracy": 31.0
+      },
+      "ablation_drop_no_context": 0.0,
+      "ablation_drop_shuffled": 0.0
+    }
+  },
+  "phenomena_breakdown_rule_learner": {
+    "coreference": {
+      "count": 24,
+      "full_context_accuracy": 79.17,
+      "no_context_accuracy": 4.17,
+      "drop": 75.0
+    },
+    "ellipsis": {
+      "count": 22,
+      "full_context_accuracy": 81.82,
+      "no_context_accuracy": 0.0,
+      "drop": 81.82
+    },
+    "correction": {
+      "count": 23,
+      "full_context_accuracy": 78.26,
+      "no_context_accuracy": 4.35,
+      "drop": 73.91
+    }
+  }
+}

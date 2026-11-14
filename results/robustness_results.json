@@ -1,0 +1,180 @@
+{
+  "experiment_id": "EXP-07",
+  "description": "Syntactic, Morphological, and Pragmatic Robustness Evaluation",
+  "num_episodes": 100,
+  "timestamp": "2026-11-14 19:44:44",
+  "results": {
+    "Majority Baseline": {
+      "word_order_breakdown": {
+        "SOV": {
+          "count": 62,
+          "exact_match_accuracy": 1.61,
+          "macro_slot_f1": 43.25
+        },
+        "SVO": {
+          "count": 18,
+          "exact_match_accuracy": 5.56,
+          "macro_slot_f1": 52.94
+        },
+        "VSO": {
+          "count": 20,
+          "exact_match_accuracy": 0.0,
+          "macro_slot_f1": 41.61
+        }
+      },
+      "polarity_breakdown": {
+        "affirmative": {
+          "count": 84,
+          "exact_match_accuracy": 1.19,
+          "polarity_accuracy": 100.0
+        },
+        "negative": {
+          "count": 16,
+          "exact_match_accuracy": 6.25,
+          "polarity_accuracy": 6.25
+        }
+      },
+      "morphological_case_breakdown": {
+        "archaic_case_inflected": {
+          "count": 27,
+          "exact_match_accuracy": 0.0,
+          "patient_object_accuracy": 25.93
+        },
+        "analytic_periods": {
+          "count": 73,
+          "exact_match_accuracy": 2.74,
+          "patient_object_accuracy": 35.62
+        }
+      }
+    },
+    "Surface Lookup Baseline": {
+      "word_order_breakdown": {
+        "SOV": {
+          "count": 62,
+          "exact_match_accuracy": 0.0,
+          "macro_slot_f1": 44.21
+        },
+        "SVO": {
+          "count": 18,
+          "exact_match_accuracy": 0.0,
+          "macro_slot_f1": 45.66
+        },
+        "VSO": {
+          "count": 20,
+          "exact_match_accuracy": 0.0,
+          "macro_slot_f1": 43.34
+        }
+      },
+      "polarity_breakdown": {
+        "affirmative": {
+          "count": 84,
+          "exact_match_accuracy": 0.0,
+          "polarity_accuracy": 98.81
+        },
+        "negative": {
+          "count": 16,
+          "exact_match_accuracy": 0.0,
+          "polarity_accuracy": 6.25
+        }
+      },
+      "morphological_case_breakdown": {
+        "archaic_case_inflected": {
+          "count": 27,
+          "exact_match_accuracy": 0.0,
+          "patient_object_accuracy": 7.41
+        },
+        "analytic_periods": {
+          "count": 73,
+          "exact_match_accuracy": 0.0,
+          "patient_object_accuracy": 31.51
+        }
+      }
+    },
+    "Statistical Naive Bayes": {
+      "word_order_breakdown": {
+        "SOV": {
+          "count": 62,
+          "exact_match_accuracy": 93.55,
+          "macro_slot_f1": 96.76
+        },
+        "SVO": {
+          "count": 18,
+          "exact_match_accuracy": 100.0,
+          "macro_slot_f1": 100.0
+        },
+        "VSO": {
+          "count": 20,
+          "exact_match_accuracy": 50.0,
+          "macro_slot_f1": 93.78
+        }
+      },
+      "polarity_breakdown": {
+        "affirmative": {
+          "count": 84,
+          "exact_match_accuracy": 83.33,
+          "polarity_accuracy": 100.0
+        },
+        "negative": {
+          "count": 16,
+          "exact_match_accuracy": 100.0,
+          "polarity_accuracy": 100.0
+        }
+      },
+      "morphological_case_breakdown": {
+        "archaic_case_inflected": {
+          "count": 27,
+          "exact_match_accuracy": 85.19,
+          "patient_object_accuracy": 85.19
+        },
+        "analytic_periods": {
+          "count": 73,
+          "exact_match_accuracy": 86.3,
+          "patient_object_accuracy": 91.78
+        }
+      }
+    },
+    "Inductive Rule Learner": {
+      "word_order_breakdown": {
+        "SOV": {
+          "count": 62,
+          "exact_match_accuracy": 93.55,
+          "macro_slot_f1": 96.76
+        },
+        "SVO": {
+          "count": 18,
+          "exact_match_accuracy": 100.0,
+          "macro_slot_f1": 100.0
+        },
+        "VSO": {
+          "count": 20,
+          "exact_match_accuracy": 50.0,
+          "macro_slot_f1": 93.78
+        }
+      },
+      "polarity_breakdown": {
+        "affirmative": {
+          "count": 84,
+          "exact_match_accuracy": 83.33,
+          "polarity_accuracy": 100.0
+        },
+        "negative": {
+          "count": 16,
+          "exact_match_accuracy": 100.0,
+          "polarity_accuracy": 100.0
+        }
+      },
+      "morphological_case_breakdown": {
+        "archaic_case_inflected": {
+          "count": 27,
+          "exact_match_accuracy": 85.19,
+          "patient_object_accuracy": 85.19
+        },
+        "analytic_periods": {
+          "count": 73,
+          "exact_match_accuracy": 86.3,
+          "patient_object_accuracy": 91.78
+        }
+      }
+    }
+  }
+}

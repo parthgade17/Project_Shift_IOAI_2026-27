@@ -1,0 +1,18 @@
+{
+  "version": "v1.0",
+  "timestamp": "b4b51852",
+  "packages": {
+    "contestant_package": {
+      "filename": "contestant_package_v1.0.zip",
+      "size_kb": 33.53,
+      "sha256": "342485f3884acb6fed7d7371beeeec2f19a2a068f17ef219e8511457ca44d6a2",
+      "leakage_audited": true
+    },
+    "author_package": {
+      "filename": "author_package_v1.0.zip",
+      "size_kb": 110.65,
+      "sha256": "4e32450c5bbfa163b56a0d74b9b6f1644db1da30e32151194858d7a4526f43d0",
+      "includes_private_keys": true
+    }
+  }
+}

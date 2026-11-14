@@ -13,8 +13,8 @@ The table below compares baseline models on exact event-frame accuracy, the offi
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Inductive Rule Learner** | 86.00% | **92.19** | 97.00% | 90.00% | 100.00% |
 | **Statistical Naive Bayes** | 86.00% | **77.64** | 0.00% | 90.00% | 100.00% |
-| **Majority Baseline** | 2.00% | **25.28** | 0.00% | 31.00% | 100.00% |
-| **Surface Lookup Baseline** | 0.00% | **24.46** | 0.00% | 33.00% | 100.00% |
+| **Majority Baseline** | 2.00% | **26.05** | 0.00% | 31.00% | 100.00% |
+| **Surface Lookup Baseline** | 0.00% | **24.60** | 0.00% | 33.00% | 100.00% |
 
 ## 2. Slot-Level Macro F1 Breakdown
 
@@ -22,10 +22,10 @@ Macro F1 scores across individual semantic frame slots:
 
 | Model Architecture | Agent F1 | Action F1 | Object F1 | Tense F1 | Polarity F1 | Mean Slot F1 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| Inductive Rule Learner | 95.92 | 100.00 | 88.88 | 100.00 | 100.00 | **96.96** |
-| Statistical Naive Bayes | 95.92 | 100.00 | 88.88 | 100.00 | 100.00 | **96.96** |
-| Majority Baseline | 39.71 | 34.18 | 33.58 | 68.35 | 51.78 | **45.52** |
-| Surface Lookup Baseline | 61.30 | 22.02 | 23.53 | 65.20 | 51.16 | **44.64** |
+| Inductive Rule Learner | 95.93 | 100.00 | 88.90 | 100.00 | 100.00 | **96.97** |
+| Statistical Naive Bayes | 95.93 | 100.00 | 88.90 | 100.00 | 100.00 | **96.97** |
+| Majority Baseline | 52.48 | 36.46 | 25.71 | 76.62 | 51.78 | **48.61** |
+| Surface Lookup Baseline | 58.17 | 22.30 | 23.31 | 65.90 | 56.38 | **45.21** |
 
 ## 3. Progressive Difficulty Levels (Curriculum Evaluation)
 
@@ -50,8 +50,8 @@ Evaluation of model degradation under adversarial ablations to confirm genuine i
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Majority Baseline | 2.0% | 0.0% | 0.0% | 10.0% | 2.0% | **Robust (Adapting)** |
 | Surface Lookup Baseline | 0.0% | 0.0% | 0.0% | 10.0% | 0.0% | **Robust (Adapting)** |
-| Statistical Naive Bayes | 86.0% | 19.0% | 0.0% | 10.0% | 67.0% | **Robust (Adapting)** |
-| Inductive Rule Learner | 86.0% | 19.0% | 2.2% | 10.0% | 67.0% | **Robust (Adapting)** |
+| Statistical Naive Bayes | 86.0% | 15.0% | 0.0% | 10.0% | 71.0% | **Robust (Adapting)** |
+| Inductive Rule Learner | 86.0% | 15.0% | 2.2% | 10.0% | 71.0% | **Robust (Adapting)** |
 
 ## 5. Model Diagnostics & Error Taxonomy
 
@@ -60,7 +60,7 @@ Evaluation of model degradation under adversarial ablations to confirm genuine i
 - **Primary Failure Modes**:
   - `LexicalInductionFailure`: 95 (95.0% of errors)
   - `DiscourseTrackingFailure`: 69 (69.0% of errors)
-  - `MorphosyntacticFailure`: 40 (40.0% of errors)
+  - `MorphosyntacticFailure`: 32 (32.0% of errors)
   - `DisentanglementFailure`: 2 (2.0% of errors)
 - **Recommendations for Improvement**:
   - High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.
@@ -71,9 +71,9 @@ Evaluation of model degradation under adversarial ablations to confirm genuine i
 ### Diagnostic Profile: Surface Lookup Baseline
 - **Total Errors**: 100 / 100 (100.0% error rate)
 - **Primary Failure Modes**:
-  - `LexicalInductionFailure`: 98 (98.0% of errors)
+  - `LexicalInductionFailure`: 99 (99.0% of errors)
   - `DiscourseTrackingFailure`: 69 (69.0% of errors)
-  - `MorphosyntacticFailure`: 46 (46.0% of errors)
+  - `MorphosyntacticFailure`: 47 (47.0% of errors)
 - **Recommendations for Improvement**:
   - High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.
   - Significant Morphosyntactic Failure: Check your affix segmentation module. Historical time periods introduce phonological lenitions and suffix overrides for tense (-il, -en, -or) and negation prefixes (no-).

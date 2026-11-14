@@ -1,0 +1,250 @@
+{
+  "experiment_id": "EXP-01",
+  "description": "Few-Shot Adaptation Curve across Support Sizes k in {0, 4, 8, 16, 32}",
+  "k_values": [
+    0,
+    4,
+    8,
+    16,
+    32
+  ],
+  "seeds": [
+    42,
+    101,
+    2024
+  ],
+  "count_per_seed": 20,
+  "timestamp": "2026-11-14 19:43:00",
+  "results": {
+    "k_0": {
+      "Majority Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 14.49,
+        "slot_f1_std": 0.41,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Surface Lookup Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 14.49,
+        "slot_f1_std": 0.41,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Statistical Naive Bayes": {
+        "exact_match_mean": 25.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 68.6,
+        "slot_f1_std": 0.81,
+        "seed_runs": [
+          25.0,
+          25.0,
+          25.0
+        ]
+      },
+      "Inductive Rule Learner": {
+        "exact_match_mean": 25.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 68.6,
+        "slot_f1_std": 0.81,
+        "seed_runs": [
+          25.0,
+          25.0,
+          25.0
+        ]
+      }
+    },
+    "k_4": {
+      "Majority Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 54.86,
+        "slot_f1_std": 4.51,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Surface Lookup Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 54.37,
+        "slot_f1_std": 2.09,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Statistical Naive Bayes": {
+        "exact_match_mean": 98.33,
+        "exact_match_std": 2.89,
+        "slot_f1_mean": 99.55,
+        "slot_f1_std": 0.77,
+        "seed_runs": [
+          100.0,
+          95.0,
+          100.0
+        ]
+      },
+      "Inductive Rule Learner": {
+        "exact_match_mean": 98.33,
+        "exact_match_std": 2.89,
+        "slot_f1_mean": 99.55,
+        "slot_f1_std": 0.77,
+        "seed_runs": [
+          100.0,
+          95.0,
+          100.0
+        ]
+      }
+    },
+    "k_8": {
+      "Majority Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 52.71,
+        "slot_f1_std": 7.54,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Surface Lookup Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 50.72,
+        "slot_f1_std": 7.32,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Statistical Naive Bayes": {
+        "exact_match_mean": 100.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 100.0,
+        "slot_f1_std": 0.0,
+        "seed_runs": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "Inductive Rule Learner": {
+        "exact_match_mean": 100.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 100.0,
+        "slot_f1_std": 0.0,
+        "seed_runs": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      }
+    },
+    "k_16": {
+      "Majority Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 39.14,
+        "slot_f1_std": 4.46,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Surface Lookup Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 37.8,
+        "slot_f1_std": 1.08,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Statistical Naive Bayes": {
+        "exact_match_mean": 100.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 100.0,
+        "slot_f1_std": 0.0,
+        "seed_runs": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "Inductive Rule Learner": {
+        "exact_match_mean": 100.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 100.0,
+        "slot_f1_std": 0.0,
+        "seed_runs": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      }
+    },
+    "k_32": {
+      "Majority Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 40.53,
+        "slot_f1_std": 4.82,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Surface Lookup Baseline": {
+        "exact_match_mean": 0.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 50.15,
+        "slot_f1_std": 0.78,
+        "seed_runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Statistical Naive Bayes": {
+        "exact_match_mean": 100.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 100.0,
+        "slot_f1_std": 0.0,
+        "seed_runs": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "Inductive Rule Learner": {
+        "exact_match_mean": 100.0,
+        "exact_match_std": 0.0,
+        "slot_f1_mean": 100.0,
+        "slot_f1_std": 0.0,
+        "seed_runs": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      }
+    }
+  }
+}

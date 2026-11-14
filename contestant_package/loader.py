@@ -26,17 +26,20 @@ def load_episodes(file_path: str) -> List[Dict[str, Any]]:
     return episodes
 
 
-def assert_zero_leakage(episodes: List[Dict[str, Any]]) -> bool:
+def assert_zero_leakage(episodes: Any, check_query_labels: bool = True) -> bool:
     """
     Rigorously verifies that contestant-facing episodes contain zero answer leakage:
-    1. No top-level query_label or drift_attribution.
+    1. No top-level query_label or drift_attribution (when check_query_labels is True).
     2. No gold event_frame or reference_type_used inside dialogue context turns.
     """
+    if isinstance(episodes, (str, Path)):
+        episodes = load_episodes(episodes)
     for ep in episodes:
-        if "query_label" in ep:
-            raise ValueError(f"Security Alert: query_label detected in contestant episode {ep.get('episode_id')}")
-        if "drift_attribution" in ep:
-            raise ValueError(f"Security Alert: drift_attribution detected in contestant episode {ep.get('episode_id')}")
+        if check_query_labels:
+            if "query_label" in ep:
+                raise ValueError(f"Security Alert: query_label detected in contestant episode {ep.get('episode_id')}")
+            if "drift_attribution" in ep:
+                raise ValueError(f"Security Alert: drift_attribution detected in contestant episode {ep.get('episode_id')}")
 
         q_ctx = ep.get("query", {}).get("context", [])
         for t in q_ctx:

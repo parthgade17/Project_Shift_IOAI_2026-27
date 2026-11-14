@@ -1,0 +1,73 @@
+{
+  "experiment_id": "EXP-05",
+  "description": "Systematic Compositional Generalization on Held-out Action-Object Combinations",
+  "num_iid_episodes": 30,
+  "num_ood_episodes": 30,
+  "timestamp": "2026-11-14 19:44:10",
+  "results": {
+    "Majority Baseline": {
+      "iid": {
+        "exact_match_accuracy": 6.67,
+        "macro_slot_f1": 46.41,
+        "action_accuracy": 33.33,
+        "object_accuracy": 26.67
+      },
+      "ood_compositional": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 46.08,
+        "action_accuracy": 46.67,
+        "object_accuracy": 26.67,
+        "action_object_compound_accuracy": 10.0
+      },
+      "compositional_gap": 6.67
+    },
+    "Surface Lookup Baseline": {
+      "iid": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 49.13,
+        "action_accuracy": 30.0,
+        "object_accuracy": 30.0
+      },
+      "ood_compositional": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 41.48,
+        "action_accuracy": 23.33,
+        "object_accuracy": 10.0,
+        "action_object_compound_accuracy": 3.33
+      },
+      "compositional_gap": 0.0
+    },
+    "Statistical Naive Bayes": {
+      "iid": {
+        "exact_match_accuracy": 93.33,
+        "macro_slot_f1": 97.32,
+        "action_accuracy": 100.0,
+        "object_accuracy": 93.33
+      },
+      "ood_compositional": {
+        "exact_match_accuracy": 93.33,
+        "macro_slot_f1": 94.57,
+        "action_accuracy": 100.0,
+        "object_accuracy": 93.33,
+        "action_object_compound_accuracy": 93.33
+      },
+      "compositional_gap": 0.0
+    },
+    "Inductive Rule Learner": {
+      "iid": {
+        "exact_match_accuracy": 93.33,
+        "macro_slot_f1": 97.32,
+        "action_accuracy": 100.0,
+        "object_accuracy": 93.33
+      },
+      "ood_compositional": {
+        "exact_match_accuracy": 93.33,
+        "macro_slot_f1": 94.57,
+        "action_accuracy": 100.0,
+        "object_accuracy": 93.33,
+        "action_object_compound_accuracy": 93.33
+      },
+      "compositional_gap": 0.0
+    }
+  }
+}

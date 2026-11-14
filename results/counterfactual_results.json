@@ -1,0 +1,44 @@
+{
+  "experiment_id": "EXP-06",
+  "description": "Counterfactual Context Sensitivity and Joint Pair Consistency Evaluation",
+  "num_episodes": 20,
+  "timestamp": "2026-11-14 19:44:14",
+  "results": {
+    "Majority Baseline": {
+      "exact_match_accuracy": 0.0,
+      "total_pairs": 10,
+      "branch_a_accuracy": 0.0,
+      "branch_b_accuracy": 0.0,
+      "joint_accuracy": 0.0,
+      "perturbation_sensitivity": 0.0,
+      "composite_consistency_score": 0.0
+    },
+    "Surface Lookup Baseline": {
+      "exact_match_accuracy": 0.0,
+      "total_pairs": 10,
+      "branch_a_accuracy": 0.0,
+      "branch_b_accuracy": 0.0,
+      "joint_accuracy": 0.0,
+      "perturbation_sensitivity": 0.0,
+      "composite_consistency_score": 0.0
+    },
+    "Statistical Naive Bayes": {
+      "exact_match_accuracy": 100.0,
+      "total_pairs": 10,
+      "branch_a_accuracy": 100.0,
+      "branch_b_accuracy": 100.0,
+      "joint_accuracy": 100.0,
+      "perturbation_sensitivity": 100.0,
+      "composite_consistency_score": 100.0
+    },
+    "Inductive Rule Learner": {
+      "exact_match_accuracy": 100.0,
+      "total_pairs": 10,
+      "branch_a_accuracy": 100.0,
+      "branch_b_accuracy": 100.0,
+      "joint_accuracy": 100.0,
+      "perturbation_sensitivity": 100.0,
+      "composite_consistency_score": 100.0
+    }
+  }
+}

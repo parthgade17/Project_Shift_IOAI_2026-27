@@ -1,0 +1,402 @@
+{
+  "analysis_type": "cross_model_comparison",
+  "benchmark": "Project SHIFT (IOAI 2027)",
+  "num_episodes": 100,
+  "timestamp": "2026-11-14 19:49:21",
+  "models": {
+    "Majority Baseline": {
+      "total_episodes": 100,
+      "exact_match_accuracy": 2.0,
+      "macro_slot_f1": 48.61,
+      "composite_competition_score": 26.05,
+      "disentanglement_accuracy": 0.0,
+      "reference_resolution_accuracy": 31.0,
+      "slot_accuracies": {
+        "agent": 53.0,
+        "action": 38.0,
+        "object": 28.0,
+        "tense": 77.0,
+        "polarity": 85.0
+      },
+      "slot_macro_f1": {
+        "agent": {
+          "macro_precision": 53.54,
+          "macro_recall": 52.28,
+          "macro_f1": 52.48
+        },
+        "action": {
+          "macro_precision": 37.78,
+          "macro_recall": 37.44,
+          "macro_f1": 36.46
+        },
+        "object": {
+          "macro_precision": 26.97,
+          "macro_recall": 26.56,
+          "macro_f1": 25.71
+        },
+        "tense": {
+          "macro_precision": 76.83,
+          "macro_recall": 77.57,
+          "macro_f1": 76.62
+        },
+        "polarity": {
+          "macro_precision": 92.42,
+          "macro_recall": 53.12,
+          "macro_f1": 51.78
+        }
+      },
+      "counterfactual_consistency": {
+        "total_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
+        "consistency_score": 100.0
+      },
+      "progressive_levels": {
+        "Level_1": {
+          "total": 7,
+          "accuracy": 14.29
+        },
+        "Level_2": {
+          "total": 12,
+          "accuracy": 8.33
+        },
+        "Level_3": {
+          "total": 13,
+          "accuracy": 0.0
+        },
+        "Level_4": {
+          "total": 44,
+          "accuracy": 0.0
+        },
+        "Level_5": {
+          "total": 24,
+          "accuracy": 0.0
+        }
+      },
+      "phenomenon_breakdown": {
+        "direct": {
+          "total": 31,
+          "accuracy": 6.45
+        },
+        "correction": {
+          "total": 23,
+          "accuracy": 0.0
+        },
+        "coreference": {
+          "total": 24,
+          "accuracy": 0.0
+        },
+        "ellipsis": {
+          "total": 22,
+          "accuracy": 0.0
+        }
+      },
+      "schema_validation": {
+        "total_submitted": 100,
+        "valid_submissions": 100,
+        "invalid_submissions": 0,
+        "is_perfectly_formed": true,
+        "errors": {}
+      },
+      "avg_latency_ms": 0.015
+    },
+    "Surface Lookup Baseline": {
+      "total_episodes": 100,
+      "exact_match_accuracy": 0.0,
+      "macro_slot_f1": 45.21,
+      "composite_competition_score": 24.6,
+      "disentanglement_accuracy": 0.0,
+      "reference_resolution_accuracy": 33.0,
+      "slot_accuracies": {
+        "agent": 60.0,
+        "action": 25.0,
+        "object": 24.0,
+        "tense": 66.0,
+        "polarity": 85.0
+      },
+      "slot_macro_f1": {
+        "agent": {
+          "macro_precision": 59.81,
+          "macro_recall": 57.76,
+          "macro_f1": 58.17
+        },
+        "action": {
+          "macro_precision": 24.52,
+          "macro_recall": 23.27,
+          "macro_f1": 22.3
+        },
+        "object": {
+          "macro_precision": 27.82,
+          "macro_recall": 23.68,
+          "macro_f1": 23.31
+        },
+        "tense": {
+          "macro_precision": 65.71,
+          "macro_recall": 66.59,
+          "macro_f1": 65.9
+        },
+        "polarity": {
+          "macro_precision": 76.12,
+          "macro_recall": 55.65,
+          "macro_f1": 56.38
+        }
+      },
+      "counterfactual_consistency": {
+        "total_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
+        "consistency_score": 100.0
+      },
+      "progressive_levels": {
+        "Level_1": {
+          "total": 7,
+          "accuracy": 0.0
+        },
+        "Level_2": {
+          "total": 12,
+          "accuracy": 0.0
+        },
+        "Level_3": {
+          "total": 13,
+          "accuracy": 0.0
+        },
+        "Level_4": {
+          "total": 44,
+          "accuracy": 0.0
+        },
+        "Level_5": {
+          "total": 24,
+          "accuracy": 0.0
+        }
+      },
+      "phenomenon_breakdown": {
+        "direct": {
+          "total": 31,
+          "accuracy": 0.0
+        },
+        "correction": {
+          "total": 23,
+          "accuracy": 0.0
+        },
+        "coreference": {
+          "total": 24,
+          "accuracy": 0.0
+        },
+        "ellipsis": {
+          "total": 22,
+          "accuracy": 0.0
+        }
+      },
+      "schema_validation": {
+        "total_submitted": 100,
+        "valid_submissions": 100,
+        "invalid_submissions": 0,
+        "is_perfectly_formed": true,
+        "errors": {}
+      },
+      "avg_latency_ms": 0.019
+    },
+    "Statistical Naive Bayes": {
+      "total_episodes": 100,
+      "exact_match_accuracy": 86.0,
+      "macro_slot_f1": 96.97,
+      "composite_competition_score": 77.64,
+      "disentanglement_accuracy": 0.0,
+      "reference_resolution_accuracy": 90.0,
+      "slot_accuracies": {
+        "agent": 96.0,
+        "action": 100.0,
+        "object": 90.0,
+        "tense": 100.0,
+        "polarity": 100.0
+      },
+      "slot_macro_f1": {
+        "agent": {
+          "macro_precision": 96.28,
+          "macro_recall": 95.85,
+          "macro_f1": 95.93
+        },
+        "action": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        },
+        "object": {
+          "macro_precision": 88.99,
+          "macro_recall": 89.19,
+          "macro_f1": 88.9
+        },
+        "tense": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        },
+        "polarity": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        }
+      },
+      "counterfactual_consistency": {
+        "total_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
+        "consistency_score": 100.0
+      },
+      "progressive_levels": {
+        "Level_1": {
+          "total": 7,
+          "accuracy": 100.0
+        },
+        "Level_2": {
+          "total": 12,
+          "accuracy": 91.67
+        },
+        "Level_3": {
+          "total": 13,
+          "accuracy": 100.0
+        },
+        "Level_4": {
+          "total": 44,
+          "accuracy": 70.45
+        },
+        "Level_5": {
+          "total": 24,
+          "accuracy": 100.0
+        }
+      },
+      "phenomenon_breakdown": {
+        "direct": {
+          "total": 31,
+          "accuracy": 100.0
+        },
+        "correction": {
+          "total": 23,
+          "accuracy": 78.26
+        },
+        "coreference": {
+          "total": 24,
+          "accuracy": 79.17
+        },
+        "ellipsis": {
+          "total": 22,
+          "accuracy": 81.82
+        }
+      },
+      "schema_validation": {
+        "total_submitted": 100,
+        "valid_submissions": 100,
+        "invalid_submissions": 0,
+        "is_perfectly_formed": true,
+        "errors": {}
+      },
+      "avg_latency_ms": 0.042
+    },
+    "Inductive Rule Learner": {
+      "total_episodes": 100,
+      "exact_match_accuracy": 86.0,
+      "macro_slot_f1": 96.97,
+      "composite_competition_score": 92.19,
+      "disentanglement_accuracy": 97.0,
+      "reference_resolution_accuracy": 90.0,
+      "slot_accuracies": {
+        "agent": 96.0,
+        "action": 100.0,
+        "object": 90.0,
+        "tense": 100.0,
+        "polarity": 100.0
+      },
+      "slot_macro_f1": {
+        "agent": {
+          "macro_precision": 96.28,
+          "macro_recall": 95.85,
+          "macro_f1": 95.93
+        },
+        "action": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        },
+        "object": {
+          "macro_precision": 88.99,
+          "macro_recall": 89.19,
+          "macro_f1": 88.9
+        },
+        "tense": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        },
+        "polarity": {
+          "macro_precision": 100.0,
+          "macro_recall": 100.0,
+          "macro_f1": 100.0
+        }
+      },
+      "counterfactual_consistency": {
+        "total_pairs": 0,
+        "branch_a_accuracy": 100.0,
+        "branch_b_accuracy": 100.0,
+        "joint_accuracy": 100.0,
+        "perturbation_sensitivity": 100.0,
+        "consistency_score": 100.0
+      },
+      "progressive_levels": {
+        "Level_1": {
+          "total": 7,
+          "accuracy": 100.0
+        },
+        "Level_2": {
+          "total": 12,
+          "accuracy": 91.67
+        },
+        "Level_3": {
+          "total": 13,
+          "accuracy": 100.0
+        },
+        "Level_4": {
+          "total": 44,
+          "accuracy": 70.45
+        },
+        "Level_5": {
+          "total": 24,
+          "accuracy": 100.0
+        }
+      },
+      "phenomenon_breakdown": {
+        "direct": {
+          "total": 31,
+          "accuracy": 100.0
+        },
+        "correction": {
+          "total": 23,
+          "accuracy": 78.26
+        },
+        "coreference": {
+          "total": 24,
+          "accuracy": 79.17
+        },
+        "ellipsis": {
+          "total": 22,
+          "accuracy": 81.82
+        }
+      },
+      "schema_validation": {
+        "total_submitted": 100,
+        "valid_submissions": 100,
+        "invalid_submissions": 0,
+        "is_perfectly_formed": true,
+        "errors": {}
+      },
+      "avg_latency_ms": 0.024
+    }
+  },
+  "markdown_table": "# Project SHIFT: Comparative Benchmark Results\n\n| Model Architecture | Exact Match (%) | Macro Slot F1 (%) | Disentanglement (%) | Reference Res (%) | Counterfactual (%) | Composite Score (/100) | Latency (ms/ep) |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n| **Majority Baseline** | 2.0% | 48.6% | 0.0% | 31.0% | 100.0% | **26.1** | 0.015 |\n| **Surface Lookup Baseline** | 0.0% | 45.2% | 0.0% | 33.0% | 100.0% | **24.6** | 0.019 |\n| **Statistical Naive Bayes** | 86.0% | 97.0% | 0.0% | 90.0% | 100.0% | **77.6** | 0.042 |\n| **Inductive Rule Learner** | 86.0% | 97.0% | 97.0% | 90.0% | 100.0% | **92.2** | 0.024 |",
+  "latex_table": "\\begin{table*}[t]\n\\centering\n\\small\n\\caption{Official Benchmark Evaluation on Project SHIFT Hidden Test Set (IOAI 2027 Singapore).}\n\\label{tab:shift_benchmark_results}\n\\begin{tabular}{lccccccr}\n\\toprule\n\\textbf{Model Paradigm} & \\textbf{Exact Match} & \\textbf{Slot F1} & \\textbf{Disentangle} & \\textbf{Ref.~Res.} & \\textbf{Counterfac.} & \\textbf{Composite} & \\textbf{Latency} \\\\\n\\midrule\nMajority Baseline & 2.0\\% & 48.6\\% & 0.0\\% & 31.0\\% & 100.0\\% & 26.1 & 0.015ms \\\\\nSurface Lookup Baseline & 0.0\\% & 45.2\\% & 0.0\\% & 33.0\\% & 100.0\\% & 24.6 & 0.019ms \\\\\nStatistical Naive Bayes & 86.0\\% & 97.0\\% & 0.0\\% & 90.0\\% & 100.0\\% & 77.6 & 0.042ms \\\\\n\\textbf{Inductive Rule Learner} & 86.0\\% & 97.0\\% & 97.0\\% & 90.0\\% & 100.0\\% & \\textbf{92.2} & 0.024ms \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table*}"
+}

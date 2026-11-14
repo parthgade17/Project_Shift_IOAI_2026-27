@@ -4,36 +4,37 @@
     "Majority Baseline": {
       "total_episodes": 100,
       "exact_match_accuracy": 2.0,
-      "composite_competition_score": 25.28,
+      "macro_slot_f1": 48.61,
+      "composite_competition_score": 26.05,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 31.0,
       "slot_accuracies": {
-        "agent": 40.0,
-        "action": 36.0,
-        "object": 33.0,
-        "tense": 69.0,
+        "agent": 53.0,
+        "action": 38.0,
+        "object": 28.0,
+        "tense": 77.0,
         "polarity": 85.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 41.44,
-          "macro_recall": 39.67,
-          "macro_f1": 39.71
+          "macro_precision": 53.54,
+          "macro_recall": 52.28,
+          "macro_f1": 52.48
         },
         "action": {
-          "macro_precision": 36.93,
-          "macro_recall": 35.15,
-          "macro_f1": 34.18
+          "macro_precision": 37.78,
+          "macro_recall": 37.44,
+          "macro_f1": 36.46
         },
         "object": {
-          "macro_precision": 37.35,
-          "macro_recall": 34.41,
-          "macro_f1": 33.58
+          "macro_precision": 26.97,
+          "macro_recall": 26.56,
+          "macro_f1": 25.71
         },
         "tense": {
-          "macro_precision": 68.51,
-          "macro_recall": 68.57,
-          "macro_f1": 68.35
+          "macro_precision": 76.83,
+          "macro_recall": 77.57,
+          "macro_f1": 76.62
         },
         "polarity": {
           "macro_precision": 92.42,
@@ -96,46 +97,47 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.034
+      "avg_latency_ms": 0.017
     },
     "Surface Lookup Baseline": {
       "total_episodes": 100,
       "exact_match_accuracy": 0.0,
-      "composite_competition_score": 24.46,
+      "macro_slot_f1": 45.21,
+      "composite_competition_score": 24.6,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 33.0,
       "slot_accuracies": {
-        "agent": 62.0,
+        "agent": 60.0,
         "action": 25.0,
-        "object": 25.0,
+        "object": 24.0,
         "tense": 66.0,
-        "polarity": 84.0
+        "polarity": 85.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 63.42,
-          "macro_recall": 60.79,
-          "macro_f1": 61.3
+          "macro_precision": 59.81,
+          "macro_recall": 57.76,
+          "macro_f1": 58.17
         },
         "action": {
-          "macro_precision": 24.66,
-          "macro_recall": 21.78,
-          "macro_f1": 22.02
+          "macro_precision": 24.52,
+          "macro_recall": 23.27,
+          "macro_f1": 22.3
         },
         "object": {
-          "macro_precision": 23.93,
-          "macro_recall": 25.52,
-          "macro_f1": 23.53
+          "macro_precision": 27.82,
+          "macro_recall": 23.68,
+          "macro_f1": 23.31
         },
         "tense": {
-          "macro_precision": 65.17,
-          "macro_recall": 65.25,
-          "macro_f1": 65.2
+          "macro_precision": 65.71,
+          "macro_recall": 66.59,
+          "macro_f1": 65.9
         },
         "polarity": {
-          "macro_precision": 67.35,
-          "macro_recall": 52.53,
-          "macro_f1": 51.16
+          "macro_precision": 76.12,
+          "macro_recall": 55.65,
+          "macro_f1": 56.38
         }
       },
       "counterfactual_consistency": {
@@ -193,11 +195,12 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.025
+      "avg_latency_ms": 0.02
     },
     "Statistical Naive Bayes": {
       "total_episodes": 100,
       "exact_match_accuracy": 86.0,
+      "macro_slot_f1": 96.97,
       "composite_competition_score": 77.64,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 90.0,
@@ -210,9 +213,9 @@
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 96.61,
-          "macro_recall": 95.53,
-          "macro_f1": 95.92
+          "macro_precision": 96.28,
+          "macro_recall": 95.85,
+          "macro_f1": 95.93
         },
         "action": {
           "macro_precision": 100.0,
@@ -220,9 +223,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 88.94,
-          "macro_recall": 89.2,
-          "macro_f1": 88.88
+          "macro_precision": 88.99,
+          "macro_recall": 89.19,
+          "macro_f1": 88.9
         },
         "tense": {
           "macro_precision": 100.0,
@@ -290,11 +293,12 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.056
+      "avg_latency_ms": 0.046
     },
     "Inductive Rule Learner": {
       "total_episodes": 100,
       "exact_match_accuracy": 86.0,
+      "macro_slot_f1": 96.97,
       "composite_competition_score": 92.19,
       "disentanglement_accuracy": 97.0,
       "reference_resolution_accuracy": 90.0,
@@ -307,9 +311,9 @@
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 96.61,
-          "macro_recall": 95.53,
-          "macro_f1": 95.92
+          "macro_precision": 96.28,
+          "macro_recall": 95.85,
+          "macro_f1": 95.93
         },
         "action": {
           "macro_precision": 100.0,
@@ -317,9 +321,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 88.94,
-          "macro_recall": 89.2,
-          "macro_f1": 88.88
+          "macro_precision": 88.99,
+          "macro_recall": 89.19,
+          "macro_f1": 88.9
         },
         "tense": {
           "macro_precision": 100.0,
@@ -387,7 +391,7 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.025
+      "avg_latency_ms": 0.024
     }
   },
   "audits": {
@@ -407,17 +411,17 @@
     },
     "Statistical Naive Bayes": {
       "clean_accuracy": 86.0,
-      "support_ablation_accuracy": 19.0,
+      "support_ablation_accuracy": 15.0,
       "context_ablation_accuracy": 0.0,
       "metadata_only_accuracy": 10.0,
-      "permutation_drop": 67.0
+      "permutation_drop": 71.0
     },
     "Inductive Rule Learner": {
       "clean_accuracy": 86.0,
-      "support_ablation_accuracy": 19.0,
+      "support_ablation_accuracy": 15.0,
       "context_ablation_accuracy": 2.17,
       "metadata_only_accuracy": 10.0,
-      "permutation_drop": 67.0
+      "permutation_drop": 71.0
     }
   },
   "diagnostics": {
@@ -427,22 +431,22 @@
       "exact_match_accuracy": 0.0,
       "failure_counts": {
         "LexicalInductionFailure": 95,
-        "MorphosyntacticFailure": 40,
+        "MorphosyntacticFailure": 32,
         "DisentanglementFailure": 2,
         "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
         "LexicalInductionFailure": 95.0,
-        "MorphosyntacticFailure": 40.0,
+        "MorphosyntacticFailure": 32.0,
         "DisentanglementFailure": 2.0,
         "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
-        "action": 64,
-        "object": 67,
+        "action": 62,
+        "object": 72,
         "polarity": 15,
-        "agent": 60,
-        "tense": 31
+        "agent": 47,
+        "tense": 23
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -860,21 +864,21 @@
       "total_errors": 100,
       "exact_match_accuracy": 0.0,
       "failure_counts": {
-        "LexicalInductionFailure": 98,
-        "MorphosyntacticFailure": 46,
+        "LexicalInductionFailure": 99,
+        "MorphosyntacticFailure": 47,
         "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
-        "LexicalInductionFailure": 98.0,
-        "MorphosyntacticFailure": 46.0,
+        "LexicalInductionFailure": 99.0,
+        "MorphosyntacticFailure": 47.0,
         "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
         "action": 75,
-        "object": 75,
-        "polarity": 16,
+        "object": 76,
+        "polarity": 15,
         "tense": 34,
-        "agent": 38
+        "agent": 40
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,

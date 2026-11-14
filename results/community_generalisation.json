@@ -1,0 +1,61 @@
+{
+  "experiment_id": "EXP-03",
+  "description": "Generalization to Unseen Community Dialects (Seen vs Held-out)",
+  "num_iid_episodes": 30,
+  "num_heldout_episodes": 20,
+  "timestamp": "2026-11-14 19:44:00",
+  "results": {
+    "Majority Baseline": {
+      "seen_iid": {
+        "exact_match_accuracy": 6.67,
+        "macro_slot_f1": 46.41,
+        "disentanglement_accuracy": 0.0
+      },
+      "unseen_heldout_community": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 41.61,
+        "disentanglement_accuracy": 0.0
+      },
+      "generalization_gap": 6.67
+    },
+    "Surface Lookup Baseline": {
+      "seen_iid": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 49.13,
+        "disentanglement_accuracy": 0.0
+      },
+      "unseen_heldout_community": {
+        "exact_match_accuracy": 0.0,
+        "macro_slot_f1": 43.34,
+        "disentanglement_accuracy": 0.0
+      },
+      "generalization_gap": 0.0
+    },
+    "Statistical Naive Bayes": {
+      "seen_iid": {
+        "exact_match_accuracy": 93.33,
+        "macro_slot_f1": 97.32,
+        "disentanglement_accuracy": 0.0
+      },
+      "unseen_heldout_community": {
+        "exact_match_accuracy": 50.0,
+        "macro_slot_f1": 93.78,
+        "disentanglement_accuracy": 0.0
+      },
+      "generalization_gap": 43.33
+    },
+    "Inductive Rule Learner": {
+      "seen_iid": {
+        "exact_match_accuracy": 93.33,
+        "macro_slot_f1": 97.32,
+        "disentanglement_accuracy": 96.67
+      },
+      "unseen_heldout_community": {
+        "exact_match_accuracy": 50.0,
+        "macro_slot_f1": 93.78,
+        "disentanglement_accuracy": 90.0
+      },
+      "generalization_gap": 43.33
+    }
+  }
+}

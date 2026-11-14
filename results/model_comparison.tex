@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Official Benchmark Evaluation on Project SHIFT Hidden Test Set (IOAI 2027 Singapore).}
+\label{tab:shift_benchmark_results}
+\begin{tabular}{lccccccr}
+\toprule
+\textbf{Model Paradigm} & \textbf{Exact Match} & \textbf{Slot F1} & \textbf{Disentangle} & \textbf{Ref.~Res.} & \textbf{Counterfac.} & \textbf{Composite} & \textbf{Latency} \\
+\midrule
+Majority Baseline & 2.0\% & 48.6\% & 0.0\% & 31.0\% & 100.0\% & 26.1 & 0.015ms \\
+Surface Lookup Baseline & 0.0\% & 45.2\% & 0.0\% & 33.0\% & 100.0\% & 24.6 & 0.019ms \\
+Statistical Naive Bayes & 86.0\% & 97.0\% & 0.0\% & 90.0\% & 100.0\% & 77.6 & 0.042ms \\
+\textbf{Inductive Rule Learner} & 86.0\% & 97.0\% & 97.0\% & 90.0\% & 100.0\% & \textbf{92.2} & 0.024ms \\
+\bottomrule
+\end{tabular}
+\end{table*}
