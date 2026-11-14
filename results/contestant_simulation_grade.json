@@ -1,22 +1,22 @@
 {
   "total_episodes": 100,
   "exact_match_accuracy": 86.0,
-  "macro_slot_f1": 96.24,
-  "composite_competition_score": 90.26,
-  "disentanglement_accuracy": 88.0,
+  "macro_slot_f1": 96.54,
+  "composite_competition_score": 90.18,
+  "disentanglement_accuracy": 87.0,
   "reference_resolution_accuracy": 86.0,
   "slot_accuracies": {
     "agent": 96.0,
     "action": 100.0,
-    "object": 90.0,
+    "object": 91.0,
     "tense": 97.0,
     "polarity": 100.0
   },
   "slot_macro_f1": {
     "agent": {
-      "macro_precision": 96.28,
-      "macro_recall": 95.85,
-      "macro_f1": 95.93
+      "macro_precision": 96.4,
+      "macro_recall": 95.57,
+      "macro_f1": 95.87
     },
     "action": {
       "macro_precision": 100.0,
@@ -24,14 +24,14 @@
       "macro_f1": 100.0
     },
     "object": {
-      "macro_precision": 88.73,
-      "macro_recall": 89.19,
-      "macro_f1": 88.51
+      "macro_precision": 90.44,
+      "macro_recall": 89.95,
+      "macro_f1": 89.97
     },
     "tense": {
-      "macro_precision": 96.43,
-      "macro_recall": 97.36,
-      "macro_f1": 96.77
+      "macro_precision": 96.8,
+      "macro_recall": 96.96,
+      "macro_f1": 96.86
     },
     "polarity": {
       "macro_precision": 100.0,
@@ -61,12 +61,12 @@
       "accuracy": 100.0
     },
     "Level_4": {
-      "total": 44,
-      "accuracy": 70.45
+      "total": 43,
+      "accuracy": 72.09
     },
     "Level_5": {
-      "total": 24,
-      "accuracy": 100.0
+      "total": 25,
+      "accuracy": 96.0
     }
   },
   "phenomenon_breakdown": {

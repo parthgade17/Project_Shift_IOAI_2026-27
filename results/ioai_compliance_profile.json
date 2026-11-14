@@ -1,43 +1,43 @@
 {
-  "timestamp": "2026-11-14 19:49:22",
+  "timestamp": "2026-11-14 19:50:47",
   "platform": "win32",
   "python_version": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
   "num_episodes": 100,
   "model_profiles": {
     "Majority Baseline": {
-      "total_runtime_sec": 0.0058,
-      "latency_ms_per_episode": 0.058,
-      "throughput_eps_per_sec": 17166.2,
+      "total_runtime_sec": 0.0101,
+      "latency_ms_per_episode": 0.101,
+      "throughput_eps_per_sec": 9859.6,
       "peak_memory_mb": 1.122
     },
     "Surface Lookup Baseline": {
-      "total_runtime_sec": 0.0079,
-      "latency_ms_per_episode": 0.079,
-      "throughput_eps_per_sec": 12590.8,
+      "total_runtime_sec": 0.0139,
+      "latency_ms_per_episode": 0.139,
+      "throughput_eps_per_sec": 7212.0,
       "peak_memory_mb": 1.156
     },
     "Statistical Naive Bayes": {
-      "total_runtime_sec": 0.0228,
-      "latency_ms_per_episode": 0.228,
-      "throughput_eps_per_sec": 4394.7,
+      "total_runtime_sec": 0.026,
+      "latency_ms_per_episode": 0.26,
+      "throughput_eps_per_sec": 3840.6,
       "peak_memory_mb": 1.171
     },
     "Inductive Rule Learner": {
-      "total_runtime_sec": 0.0121,
-      "latency_ms_per_episode": 0.121,
-      "throughput_eps_per_sec": 8234.7,
+      "total_runtime_sec": 0.0128,
+      "latency_ms_per_episode": 0.128,
+      "throughput_eps_per_sec": 7822.2,
       "peak_memory_mb": 1.186
     }
   },
   "total_dataset_mb": 1.871,
   "verdicts": {
     "runtime_compliance": {
-      "measured": "0.228 ms/ep",
+      "measured": "0.260 ms/ep",
       "ioai_limit": "< 2000 ms/ep",
       "passed": true
     },
     "total_time_compliance": {
-      "measured": "0.05 s",
+      "measured": "0.06 s",
       "ioai_limit": "< 600 s (10 min)",
       "passed": true
     },

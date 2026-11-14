@@ -4,8 +4,8 @@
   "packages": {
     "contestant_package": {
       "filename": "contestant_package_v1.0.zip",
-      "size_kb": 33.53,
-      "sha256": "342485f3884acb6fed7d7371beeeec2f19a2a068f17ef219e8511457ca44d6a2",
+      "size_kb": 33.58,
+      "sha256": "5f782c9b0aeb189e715933106ef37790e8f57d80693ba90bde0883e28a1419d8",
       "leakage_audited": true
     },
     "author_package": {

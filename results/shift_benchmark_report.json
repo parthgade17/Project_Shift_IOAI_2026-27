@@ -4,42 +4,42 @@
     "Majority Baseline": {
       "total_episodes": 100,
       "exact_match_accuracy": 2.0,
-      "macro_slot_f1": 48.61,
-      "composite_competition_score": 26.05,
+      "macro_slot_f1": 48.38,
+      "composite_competition_score": 26.0,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 31.0,
       "slot_accuracies": {
-        "agent": 53.0,
-        "action": 38.0,
-        "object": 28.0,
-        "tense": 77.0,
-        "polarity": 85.0
+        "agent": 47.0,
+        "action": 30.0,
+        "object": 29.0,
+        "tense": 75.0,
+        "polarity": 87.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 53.54,
-          "macro_recall": 52.28,
-          "macro_f1": 52.48
+          "macro_precision": 47.65,
+          "macro_recall": 47.69,
+          "macro_f1": 47.25
         },
         "action": {
-          "macro_precision": 37.78,
-          "macro_recall": 37.44,
-          "macro_f1": 36.46
+          "macro_precision": 30.42,
+          "macro_recall": 28.95,
+          "macro_f1": 28.51
         },
         "object": {
-          "macro_precision": 26.97,
-          "macro_recall": 26.56,
-          "macro_f1": 25.71
+          "macro_precision": 30.52,
+          "macro_recall": 28.4,
+          "macro_f1": 29.16
         },
         "tense": {
-          "macro_precision": 76.83,
-          "macro_recall": 77.57,
-          "macro_f1": 76.62
+          "macro_precision": 76.18,
+          "macro_recall": 75.72,
+          "macro_f1": 74.8
         },
         "polarity": {
-          "macro_precision": 92.42,
-          "macro_recall": 53.12,
-          "macro_f1": 51.78
+          "macro_precision": 93.3,
+          "macro_recall": 59.38,
+          "macro_f1": 62.2
         }
       },
       "counterfactual_consistency": {
@@ -64,11 +64,11 @@
           "accuracy": 0.0
         },
         "Level_4": {
-          "total": 44,
+          "total": 43,
           "accuracy": 0.0
         },
         "Level_5": {
-          "total": 24,
+          "total": 25,
           "accuracy": 0.0
         }
       },
@@ -97,47 +97,47 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.017
+      "avg_latency_ms": 0.016
     },
     "Surface Lookup Baseline": {
       "total_episodes": 100,
       "exact_match_accuracy": 0.0,
-      "macro_slot_f1": 45.21,
-      "composite_competition_score": 24.6,
+      "macro_slot_f1": 45.08,
+      "composite_competition_score": 24.57,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 33.0,
       "slot_accuracies": {
         "agent": 60.0,
-        "action": 25.0,
+        "action": 24.0,
         "object": 24.0,
-        "tense": 66.0,
-        "polarity": 85.0
+        "tense": 71.0,
+        "polarity": 84.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 59.81,
-          "macro_recall": 57.76,
-          "macro_f1": 58.17
+          "macro_precision": 59.76,
+          "macro_recall": 57.86,
+          "macro_f1": 58.04
         },
         "action": {
-          "macro_precision": 24.52,
-          "macro_recall": 23.27,
-          "macro_f1": 22.3
+          "macro_precision": 25.67,
+          "macro_recall": 23.85,
+          "macro_f1": 21.7
         },
         "object": {
-          "macro_precision": 27.82,
-          "macro_recall": 23.68,
-          "macro_f1": 23.31
+          "macro_precision": 25.11,
+          "macro_recall": 23.45,
+          "macro_f1": 23.41
         },
         "tense": {
-          "macro_precision": 65.71,
-          "macro_recall": 66.59,
-          "macro_f1": 65.9
+          "macro_precision": 70.98,
+          "macro_recall": 71.33,
+          "macro_f1": 71.07
         },
         "polarity": {
-          "macro_precision": 76.12,
-          "macro_recall": 55.65,
-          "macro_f1": 56.38
+          "macro_precision": 67.35,
+          "macro_recall": 52.53,
+          "macro_f1": 51.16
         }
       },
       "counterfactual_consistency": {
@@ -162,11 +162,11 @@
           "accuracy": 0.0
         },
         "Level_4": {
-          "total": 44,
+          "total": 43,
           "accuracy": 0.0
         },
         "Level_5": {
-          "total": 24,
+          "total": 25,
           "accuracy": 0.0
         }
       },
@@ -195,27 +195,27 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.02
+      "avg_latency_ms": 0.022
     },
     "Statistical Naive Bayes": {
       "total_episodes": 100,
       "exact_match_accuracy": 86.0,
-      "macro_slot_f1": 96.97,
-      "composite_competition_score": 77.64,
+      "macro_slot_f1": 97.15,
+      "composite_competition_score": 77.69,
       "disentanglement_accuracy": 0.0,
       "reference_resolution_accuracy": 90.0,
       "slot_accuracies": {
         "agent": 96.0,
         "action": 100.0,
-        "object": 90.0,
+        "object": 91.0,
         "tense": 100.0,
         "polarity": 100.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 96.28,
-          "macro_recall": 95.85,
-          "macro_f1": 95.93
+          "macro_precision": 96.4,
+          "macro_recall": 95.57,
+          "macro_f1": 95.87
         },
         "action": {
           "macro_precision": 100.0,
@@ -223,9 +223,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 88.99,
-          "macro_recall": 89.19,
-          "macro_f1": 88.9
+          "macro_precision": 90.13,
+          "macro_recall": 89.95,
+          "macro_f1": 89.88
         },
         "tense": {
           "macro_precision": 100.0,
@@ -260,12 +260,12 @@
           "accuracy": 100.0
         },
         "Level_4": {
-          "total": 44,
-          "accuracy": 70.45
+          "total": 43,
+          "accuracy": 72.09
         },
         "Level_5": {
-          "total": 24,
-          "accuracy": 100.0
+          "total": 25,
+          "accuracy": 96.0
         }
       },
       "phenomenon_breakdown": {
@@ -293,27 +293,27 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.046
+      "avg_latency_ms": 0.042
     },
     "Inductive Rule Learner": {
       "total_episodes": 100,
       "exact_match_accuracy": 86.0,
-      "macro_slot_f1": 96.97,
-      "composite_competition_score": 92.19,
+      "macro_slot_f1": 97.15,
+      "composite_competition_score": 92.24,
       "disentanglement_accuracy": 97.0,
       "reference_resolution_accuracy": 90.0,
       "slot_accuracies": {
         "agent": 96.0,
         "action": 100.0,
-        "object": 90.0,
+        "object": 91.0,
         "tense": 100.0,
         "polarity": 100.0
       },
       "slot_macro_f1": {
         "agent": {
-          "macro_precision": 96.28,
-          "macro_recall": 95.85,
-          "macro_f1": 95.93
+          "macro_precision": 96.4,
+          "macro_recall": 95.57,
+          "macro_f1": 95.87
         },
         "action": {
           "macro_precision": 100.0,
@@ -321,9 +321,9 @@
           "macro_f1": 100.0
         },
         "object": {
-          "macro_precision": 88.99,
-          "macro_recall": 89.19,
-          "macro_f1": 88.9
+          "macro_precision": 90.13,
+          "macro_recall": 89.95,
+          "macro_f1": 89.88
         },
         "tense": {
           "macro_precision": 100.0,
@@ -358,12 +358,12 @@
           "accuracy": 100.0
         },
         "Level_4": {
-          "total": 44,
-          "accuracy": 70.45
+          "total": 43,
+          "accuracy": 72.09
         },
         "Level_5": {
-          "total": 24,
-          "accuracy": 100.0
+          "total": 25,
+          "accuracy": 96.0
         }
       },
       "phenomenon_breakdown": {
@@ -391,7 +391,7 @@
         "is_perfectly_formed": true,
         "errors": {}
       },
-      "avg_latency_ms": 0.024
+      "avg_latency_ms": 0.026
     }
   },
   "audits": {
@@ -411,17 +411,17 @@
     },
     "Statistical Naive Bayes": {
       "clean_accuracy": 86.0,
-      "support_ablation_accuracy": 15.0,
+      "support_ablation_accuracy": 19.0,
       "context_ablation_accuracy": 0.0,
       "metadata_only_accuracy": 10.0,
-      "permutation_drop": 71.0
+      "permutation_drop": 67.0
     },
     "Inductive Rule Learner": {
       "clean_accuracy": 86.0,
-      "support_ablation_accuracy": 15.0,
+      "support_ablation_accuracy": 19.0,
       "context_ablation_accuracy": 2.17,
       "metadata_only_accuracy": 10.0,
-      "permutation_drop": 71.0
+      "permutation_drop": 67.0
     }
   },
   "diagnostics": {
@@ -430,23 +430,23 @@
       "total_errors": 100,
       "exact_match_accuracy": 0.0,
       "failure_counts": {
-        "LexicalInductionFailure": 95,
-        "MorphosyntacticFailure": 32,
+        "LexicalInductionFailure": 93,
+        "MorphosyntacticFailure": 35,
         "DisentanglementFailure": 2,
         "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
-        "LexicalInductionFailure": 95.0,
-        "MorphosyntacticFailure": 32.0,
+        "LexicalInductionFailure": 93.0,
+        "MorphosyntacticFailure": 35.0,
         "DisentanglementFailure": 2.0,
         "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
-        "action": 62,
-        "object": 72,
-        "polarity": 15,
-        "agent": 47,
-        "tense": 23
+        "action": 70,
+        "object": 71,
+        "polarity": 13,
+        "agent": 53,
+        "tense": 25
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -865,19 +865,19 @@
       "exact_match_accuracy": 0.0,
       "failure_counts": {
         "LexicalInductionFailure": 99,
-        "MorphosyntacticFailure": 47,
+        "MorphosyntacticFailure": 44,
         "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
         "LexicalInductionFailure": 99.0,
-        "MorphosyntacticFailure": 47.0,
+        "MorphosyntacticFailure": 44.0,
         "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
-        "action": 75,
+        "action": 76,
         "object": 76,
-        "polarity": 15,
-        "tense": 34,
+        "polarity": 16,
+        "tense": 29,
         "agent": 40
       },
       "phenomenon_error_rates": {
@@ -1311,7 +1311,7 @@
       },
       "slot_error_counts": {
         "agent": 4,
-        "object": 10
+        "object": 9
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -1710,7 +1710,7 @@
       },
       "slot_error_counts": {
         "agent": 4,
-        "object": 10
+        "object": 9
       },
       "phenomenon_error_rates": {
         "coreference": 20.83,
@@ -1722,8 +1722,8 @@
         "Level_1": 0.0,
         "Level_2": 16.67,
         "Level_3": 0.0,
-        "Level_4": 29.55,
-        "Level_5": 0.0
+        "Level_4": 27.91,
+        "Level_5": 4.0
       },
       "recommendations": [
         "High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.",

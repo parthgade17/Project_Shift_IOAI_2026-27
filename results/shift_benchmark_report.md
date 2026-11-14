@@ -11,10 +11,10 @@ The table below compares baseline models on exact event-frame accuracy, the offi
 
 | Model Architecture | Exact Match (%) | IOAI Composite Score | Disentanglement (%) | Reference Res. (%) | Counterfactual Consist. (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Inductive Rule Learner** | 86.00% | **92.19** | 97.00% | 90.00% | 100.00% |
-| **Statistical Naive Bayes** | 86.00% | **77.64** | 0.00% | 90.00% | 100.00% |
-| **Majority Baseline** | 2.00% | **26.05** | 0.00% | 31.00% | 100.00% |
-| **Surface Lookup Baseline** | 0.00% | **24.60** | 0.00% | 33.00% | 100.00% |
+| **Inductive Rule Learner** | 86.00% | **92.24** | 97.00% | 90.00% | 100.00% |
+| **Statistical Naive Bayes** | 86.00% | **77.69** | 0.00% | 90.00% | 100.00% |
+| **Majority Baseline** | 2.00% | **26.00** | 0.00% | 31.00% | 100.00% |
+| **Surface Lookup Baseline** | 0.00% | **24.57** | 0.00% | 33.00% | 100.00% |
 
 ## 2. Slot-Level Macro F1 Breakdown
 
@@ -22,10 +22,10 @@ Macro F1 scores across individual semantic frame slots:
 
 | Model Architecture | Agent F1 | Action F1 | Object F1 | Tense F1 | Polarity F1 | Mean Slot F1 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| Inductive Rule Learner | 95.93 | 100.00 | 88.90 | 100.00 | 100.00 | **96.97** |
-| Statistical Naive Bayes | 95.93 | 100.00 | 88.90 | 100.00 | 100.00 | **96.97** |
-| Majority Baseline | 52.48 | 36.46 | 25.71 | 76.62 | 51.78 | **48.61** |
-| Surface Lookup Baseline | 58.17 | 22.30 | 23.31 | 65.90 | 56.38 | **45.21** |
+| Inductive Rule Learner | 95.87 | 100.00 | 89.88 | 100.00 | 100.00 | **97.15** |
+| Statistical Naive Bayes | 95.87 | 100.00 | 89.88 | 100.00 | 100.00 | **97.15** |
+| Majority Baseline | 47.25 | 28.51 | 29.16 | 74.80 | 62.20 | **48.38** |
+| Surface Lookup Baseline | 58.04 | 21.70 | 23.41 | 71.07 | 51.16 | **45.08** |
 
 ## 3. Progressive Difficulty Levels (Curriculum Evaluation)
 
@@ -37,8 +37,8 @@ Macro F1 scores across individual semantic frame slots:
 
 | Model Architecture | Level 1 (Direct) | Level 2 (Drift) | Level 3 (Coreference) | Level 4 (Repair/Ellipsis) | Level 5 (Counterfactual) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| Inductive Rule Learner | 100.0% | 91.7% | 100.0% | 70.5% | 100.0% |
-| Statistical Naive Bayes | 100.0% | 91.7% | 100.0% | 70.5% | 100.0% |
+| Inductive Rule Learner | 100.0% | 91.7% | 100.0% | 72.1% | 96.0% |
+| Statistical Naive Bayes | 100.0% | 91.7% | 100.0% | 72.1% | 96.0% |
 | Majority Baseline | 14.3% | 8.3% | 0.0% | 0.0% | 0.0% |
 | Surface Lookup Baseline | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% |
 
@@ -50,17 +50,17 @@ Evaluation of model degradation under adversarial ablations to confirm genuine i
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Majority Baseline | 2.0% | 0.0% | 0.0% | 10.0% | 2.0% | **Robust (Adapting)** |
 | Surface Lookup Baseline | 0.0% | 0.0% | 0.0% | 10.0% | 0.0% | **Robust (Adapting)** |
-| Statistical Naive Bayes | 86.0% | 15.0% | 0.0% | 10.0% | 71.0% | **Robust (Adapting)** |
-| Inductive Rule Learner | 86.0% | 15.0% | 2.2% | 10.0% | 71.0% | **Robust (Adapting)** |
+| Statistical Naive Bayes | 86.0% | 19.0% | 0.0% | 10.0% | 67.0% | **Robust (Adapting)** |
+| Inductive Rule Learner | 86.0% | 19.0% | 2.2% | 10.0% | 67.0% | **Robust (Adapting)** |
 
 ## 5. Model Diagnostics & Error Taxonomy
 
 ### Diagnostic Profile: Majority Baseline
 - **Total Errors**: 100 / 100 (100.0% error rate)
 - **Primary Failure Modes**:
-  - `LexicalInductionFailure`: 95 (95.0% of errors)
+  - `LexicalInductionFailure`: 93 (93.0% of errors)
   - `DiscourseTrackingFailure`: 69 (69.0% of errors)
-  - `MorphosyntacticFailure`: 32 (32.0% of errors)
+  - `MorphosyntacticFailure`: 35 (35.0% of errors)
   - `DisentanglementFailure`: 2 (2.0% of errors)
 - **Recommendations for Improvement**:
   - High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.
@@ -73,7 +73,7 @@ Evaluation of model degradation under adversarial ablations to confirm genuine i
 - **Primary Failure Modes**:
   - `LexicalInductionFailure`: 99 (99.0% of errors)
   - `DiscourseTrackingFailure`: 69 (69.0% of errors)
-  - `MorphosyntacticFailure`: 47 (47.0% of errors)
+  - `MorphosyntacticFailure`: 44 (44.0% of errors)
 - **Recommendations for Improvement**:
   - High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.
   - Significant Morphosyntactic Failure: Check your affix segmentation module. Historical time periods introduce phonological lenitions and suffix overrides for tense (-il, -en, -or) and negation prefixes (no-).

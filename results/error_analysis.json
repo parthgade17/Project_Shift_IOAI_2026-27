@@ -2,30 +2,30 @@
   "analysis_type": "diagnostic_failure_mode_taxonomy",
   "benchmark": "Project SHIFT (IOAI 2027)",
   "num_episodes": 100,
-  "timestamp": "2026-11-14 19:49:21",
+  "timestamp": "2026-11-14 19:50:47",
   "models": {
     "Majority Baseline": {
       "total_episodes": 100,
       "total_errors": 100,
       "exact_match_accuracy": 0.0,
       "failure_counts": {
-        "LexicalInductionFailure": 95,
-        "MorphosyntacticFailure": 32,
+        "LexicalInductionFailure": 93,
+        "MorphosyntacticFailure": 35,
         "DisentanglementFailure": 2,
         "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
-        "LexicalInductionFailure": 95.0,
-        "MorphosyntacticFailure": 32.0,
+        "LexicalInductionFailure": 93.0,
+        "MorphosyntacticFailure": 35.0,
         "DisentanglementFailure": 2.0,
         "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
-        "action": 62,
-        "object": 72,
-        "polarity": 15,
-        "agent": 47,
-        "tense": 23
+        "action": 70,
+        "object": 71,
+        "polarity": 13,
+        "agent": 53,
+        "tense": 25
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -444,19 +444,19 @@
       "exact_match_accuracy": 0.0,
       "failure_counts": {
         "LexicalInductionFailure": 99,
-        "MorphosyntacticFailure": 47,
+        "MorphosyntacticFailure": 44,
         "DiscourseTrackingFailure": 69
       },
       "failure_percentages": {
         "LexicalInductionFailure": 99.0,
-        "MorphosyntacticFailure": 47.0,
+        "MorphosyntacticFailure": 44.0,
         "DiscourseTrackingFailure": 69.0
       },
       "slot_error_counts": {
-        "action": 75,
+        "action": 76,
         "object": 76,
-        "polarity": 15,
-        "tense": 34,
+        "polarity": 16,
+        "tense": 29,
         "agent": 40
       },
       "phenomenon_error_rates": {
@@ -890,7 +890,7 @@
       },
       "slot_error_counts": {
         "agent": 4,
-        "object": 10
+        "object": 9
       },
       "phenomenon_error_rates": {
         "coreference": 100.0,
@@ -1289,7 +1289,7 @@
       },
       "slot_error_counts": {
         "agent": 4,
-        "object": 10
+        "object": 9
       },
       "phenomenon_error_rates": {
         "coreference": 20.83,
@@ -1301,8 +1301,8 @@
         "Level_1": 0.0,
         "Level_2": 16.67,
         "Level_3": 0.0,
-        "Level_4": 29.55,
-        "Level_5": 0.0
+        "Level_4": 27.91,
+        "Level_5": 4.0
       },
       "recommendations": [
         "High Lexical Induction Failure: Your model is failing to bind novel root morphemes from the support set. Ensure your induction algorithm aligns word order constituents (SOV/SVO/VSO) before extracting mappings.",
